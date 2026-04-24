@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bamboo Jardín de Eventos — Jaltenco, Estado de México</title>
+<meta name="description" content="Bamboo Jardín de Eventos en Jaltenco, Méx. Capacidad para 600 personas. Paquetes para bodas, XV años, bautizos, graduaciones y más. Llámanos al 55 8071 0460.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════
+   VARIABLES & RESET
+═══════════════════════════════════════════════ */
+:root {
+  --verde-oscuro: #1a4a2e;
+  --verde-medio: #2d7a4f;
+  --verde-claro: #4caf7d;
+  --teal: #1a9e8f;
+  --azul: #1a5276;
+  --dorado: #c9a84c;
+  --dorado-claro: #f0d080;
+  --crema: #faf8f2;
+  --blanco: #ffffff;
+  --gris-texto: #444;
+  --gris-claro: #f5f5f0;
+  --sombra: 0 4px 24px rgba(26,74,46,0.13);
+  --sombra-fuerte: 0 8px 40px rgba(26,74,46,0.22);
+  --radio: 12px;
+  --transicion: all 0.3s ease;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Nunito', sans-serif;
+  color: var(--gris-texto);
+  background: var(--crema);
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ═══════════════════════════════════════════════
+   UTILIDADES
+═══════════════════════════════════════════════ */
+.container { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
+.section-eyebrow {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+  color: var(--teal);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--verde-oscuro);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.section-subtitle {
+  font-size: 1.05rem;
+  color: #666;
+  line-height: 1.7;
+  max-width: 640px;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--verde-medio);
+  color: var(--blanco);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transicion);
+  box-shadow: 0 4px 16px rgba(45,122,79,0.35);
+}
+.btn-primary:hover { background: var(--verde-oscuro); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(45,122,79,0.4); }
+.btn-whatsapp {
+  background: #25D366;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+}
+.btn-whatsapp:hover { background: #1da851; }
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--verde-medio);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  border: 2px solid var(--verde-medio);
+  cursor: pointer;
+  transition: var(--transicion);
+}
+.btn-outline:hover { background: var(--verde-medio); color: white; transform: translateY(-2px); }
+.divider {
+  width: 60px; height: 3px;
+  background: linear-gradient(to right, var(--teal), var(--dorado));
+  border-radius: 2px;
+  margin: 1rem 0 1.5rem;
+}
+
+/* ═══════════════════════════════════════════════
+   NAVBAR
+═══════════════════════════════════════════════ */
+#navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 900;
+  padding: 0.8rem 0;
+  transition: var(--transicion);
+  background: transparent;
+}
+#navbar.scrolled {
+  background: rgba(255,255,255,0.97);
+  box-shadow: 0 2px 20px rgba(26,74,46,0.12);
+  backdrop-filter: blur(8px);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.nav-logo img {
+  height: 52px;
+  width: auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+.nav-logo-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4rem;
+  color: var(--blanco);
+  transition: var(--transicion);
+  line-height: 1;
+}
+#navbar.scrolled .nav-logo-text { color: var(--verde-oscuro); }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.nav-links a {
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 50px;
+  color: rgba(255,255,255,0.9);
+  transition: var(--transicion);
+}
+#navbar.scrolled .nav-links a { color: var(--verde-oscuro); }
+.nav-links a:hover { background: rgba(255,255,255,0.15); color: white; }
+#navbar.scrolled .nav-links a:hover { background: var(--verde-claro); color: white; }
+.nav-cta {
+  background: var(--dorado) !important;
+  color: var(--verde-oscuro) !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 12px rgba(201,168,76,0.4);
+}
+.nav-cta:hover { background: var(--dorado-claro) !important; transform: translateY(-1px); }
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 910;
+}
+.hamburger span {
+  width: 26px; height: 2.5px;
+  background: white;
+  border-radius: 2px;
+  transition: var(--transicion);
+  display: block;
+}
+#navbar.scrolled .hamburger span { background: var(--verde-oscuro); }
+.hamburger.active span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+.mobile-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 895;
+}
+.mobile-overlay.show { display: block; }
+
+/* Mobile nav drawer */
+@media (max-width: 820px) {
+  .hamburger { display: flex; }
+  .nav-links {
+    position: fixed;
+    top: 0; right: -100%;
+    width: min(300px, 80vw);
+    height: 100dvh;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5rem 2rem 2rem;
+    gap: 0.5rem;
+    z-index: 900;
+    transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+    box-shadow: -4px 0 24px rgba(0,0,0,0.15);
+  }
+  .nav-links.open { right: 0; }
+  .nav-links a { color: var(--verde-oscuro) !important; font-size: 1rem; width: 100%; padding: 0.7rem 1rem; }
+  .nav-links a:hover { background: var(--gris-claro); }
+  .nav-cta { background: var(--dorado) !important; color: var(--verde-oscuro) !important; }
+}
+
+/* ═══════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════ */
+#hero {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--verde-oscuro) 0%, #0d3320 40%, var(--azul) 100%);
+}
+/* Decorative bamboo pattern overlay */
+.hero-bg::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      10deg,
+      transparent 0px, transparent 18px,
+      rgba(255,255,255,0.025) 18px, rgba(255,255,255,0.025) 20px
+    );
+}
+.hero-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 60%, rgba(76,175,125,0.18) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(26,158,143,0.15) 0%, transparent 50%);
+}
+
+/* Hero placeholder — replace with real panoramic image */
+.hero-img-placeholder {
+  position: absolute; inset: 0;
+  /* no image — gradient only */
+  opacity: 0.35;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 7rem 1.5rem 4rem;
+  max-width: 820px;
+}
+.hero-logo {
+  width: clamp(100px, 22vw, 160px);
+  margin: 0 auto 1.5rem;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.5));
+  animation: fadeDown 0.8s ease both;
+}
+.hero-eyebrow {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  color: var(--dorado-claro);
+  margin-bottom: 0.6rem;
+  animation: fadeDown 0.9s 0.1s ease both;
+  opacity: 0;
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  animation: fadeDown 0.9s 0.2s ease both;
+  opacity: 0;
+}
+.hero-title span { color: var(--dorado-claro); }
+.hero-desc {
+  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+  color: rgba(255,255,255,0.82);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  animation: fadeDown 0.9s 0.3s ease both;
+  opacity: 0;
+}
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-bottom: 2.2rem;
+  animation: fadeDown 0.9s 0.4s ease both;
+  opacity: 0;
+}
+.hero-badge {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.22);
+  color: white;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  backdrop-filter: blur(4px);
+}
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  animation: fadeDown 0.9s 0.5s ease both;
+  opacity: 0;
+}
+.scroll-hint {
+  position: absolute;
+  bottom: 2rem; left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  animation: bounceY 2s infinite;
+}
+.scroll-hint svg { opacity: 0.6; }
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounceY {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ═══════════════════════════════════════════════
+   EL JARDÍN
+═══════════════════════════════════════════════ */
+#jardin {
+  padding: 5.5rem 0;
+  background: var(--blanco);
+  position: relative;
+}
+#jardin::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(to right, var(--verde-medio), var(--teal), var(--dorado));
+}
+.jardin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.jardin-text .section-subtitle { margin-bottom: 2rem; }
+.jardin-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.stat-card {
+  background: var(--gris-claro);
+  border-radius: var(--radio);
+  padding: 1.2rem;
+  text-align: center;
+  border-left: 4px solid var(--verde-claro);
+  transition: var(--transicion);
+}
+.stat-card:hover { transform: translateY(-3px); box-shadow: var(--sombra); }
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--verde-oscuro);
+  font-weight: 700;
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 0.2rem;
+  font-weight: 600;
+}
+.jardin-servicios h4 {
+  font-family: 'Playfair Display', serif;
+  color: var(--verde-oscuro);
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+}
+.servicio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.servicio-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.95rem;
+  color: var(--gris-texto);
+}
+.servicio-item::before {
+  content: '🌿';
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* Photo mosaic */
+.jardin-fotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 200px 200px;
+  gap: 0.8rem;
+}
+.foto-slot {
+  border-radius: var(--radio);
+  overflow: hidden;
+  position: relative;
+  background: var(--gris-claro);
+}
+.foto-slot img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.foto-slot:hover img { transform: scale(1.06); }
+.foto-slot.tall { grid-row: 1 / 3; }
+
+/* Placeholder for missing images */
+.foto-placeholder {
+  width: 100%; height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  color: var(--verde-medio);
+  font-size: 0.78rem;
+  text-align: center;
+  padding: 1rem;
+  gap: 0.5rem;
+}
+.foto-placeholder span { font-size: 2rem; }
+
+/* Eventos */
+.eventos-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+.evento-tag {
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  color: var(--verde-oscuro);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+}
+
+/* ═══════════════════════════════════════════════
+   PAQUETES
+═══════════════════════════════════════════════ */
+#paquetes {
+  padding: 5.5rem 0;
+  background: linear-gradient(180deg, var(--gris-claro) 0%, var(--crema) 100%);
+  position: relative;
+  overflow: hidden;
+}
+#paquetes::before {
+  content: '🎋';
+  position: absolute;
+  font-size: 20rem;
+  opacity: 0.04;
+  right: -4rem;
+  top: -4rem;
+  pointer-events: none;
+}
+.paquetes-intro { text-align: center; margin-bottom: 3.5rem; }
+.paquetes-intro .section-subtitle { margin: 0 auto; }
+
+/* Tabs */
+.paquetes-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+.tab-btn {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px;
+  border: 2px solid var(--verde-claro);
+  background: white;
+  color: var(--verde-medio);
+  cursor: pointer;
+  transition: var(--transicion);
+}
+.tab-btn:hover, .tab-btn.active {
+  background: var(--verde-medio);
+  color: white;
+  border-color: var(--verde-medio);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(45,122,79,0.3);
+}
+.tab-btn.premium-tab.active { background: var(--dorado); border-color: var(--dorado); color: var(--verde-oscuro); }
+.tab-btn.premium-tab { border-color: var(--dorado); color: var(--dorado); }
+
+/* Package cards */
+.paquete-panel { display: none; }
+.paquete-panel.active { display: block; animation: fadeIn 0.4s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.paquete-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  max-width: 820px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+}
+.paquete-card.premium { border-top: 5px solid var(--dorado); }
+.paquete-card.basico { border-top: 5px solid var(--teal); }
+.paquete-card.lona { border-top: 5px solid var(--verde-claro); }
+
+.paquete-header {
+  background: linear-gradient(160deg, var(--verde-oscuro), var(--verde-medio));
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.paquete-card.premium .paquete-header {
+  background: linear-gradient(160deg, #5a3e0e, var(--dorado));
+  color: var(--verde-oscuro);
+}
+.paquete-card.lona .paquete-header {
+  background: linear-gradient(160deg, #1a4a2e, var(--teal));
+}
+.paquete-header::after {
+  content: '🎋';
+  position: absolute;
+  font-size: 8rem;
+  opacity: 0.08;
+  right: -1.5rem;
+  bottom: -1.5rem;
+}
+.paquete-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+.paquete-nombre {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.paquete-desc {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.paquete-cotizar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  color: var(--verde-oscuro);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transicion);
+  text-decoration: none;
+  width: fit-content;
+}
+.paquete-card.premium .paquete-cotizar { background: var(--verde-oscuro); color: white; }
+.paquete-cotizar:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+
+.paquete-body { padding: 2rem 2rem 2rem; }
+.paquete-incluye-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--verde-oscuro);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--gris-claro);
+}
+.incluye-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.incluye-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--gris-texto);
+}
+.incluye-check {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--verde-claro), var(--teal));
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-size: 0.65rem;
+  color: white;
+}
+.paquete-card.premium .incluye-check {
+  background: linear-gradient(135deg, var(--dorado), #a07820);
+}
+
+/* ═══════════════════════════════════════════════
+   EXTRAS
+═══════════════════════════════════════════════ */
+#extras {
+  padding: 4rem 0;
+  background: white;
+}
+.extras-intro { text-align: center; margin-bottom: 3rem; }
+.extras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.extra-item {
+  background: var(--gris-claro);
+  border-radius: var(--radio);
+  padding: 1.2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  transition: var(--transicion);
+  border: 1px solid transparent;
+}
+.extra-item:hover {
+  border-color: var(--verde-claro);
+  transform: translateY(-3px);
+  box-shadow: var(--sombra);
+}
+.extra-icon { font-size: 1.4rem; flex-shrink: 0; }
+.extra-text { font-size: 0.87rem; line-height: 1.4; color: var(--gris-texto); font-weight: 600; }
+
+/* ═══════════════════════════════════════════════
+   GALERÍA
+═══════════════════════════════════════════════ */
+#galeria {
+  padding: 5.5rem 0;
+  background: var(--crema);
+}
+.galeria-intro { text-align: center; margin-bottom: 3rem; }
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 220px;
+  gap: 0.8rem;
+}
+.g-item {
+  position: relative;
+  border-radius: var(--radio);
+  overflow: hidden;
+  cursor: pointer;
+  background: #d4edda;
+}
+.g-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.g-item:hover img { transform: scale(1.08); }
+.g-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(26,74,46,0.6) 0%, transparent 60%);
+  opacity: 0;
+  transition: var(--transicion);
+  display: flex; align-items: flex-end; padding: 1rem;
+}
+.g-item:hover .g-overlay { opacity: 1; }
+.g-overlay span { color: white; font-weight: 700; font-size: 0.85rem; }
+.g-item.wide { grid-column: span 2; }
+.g-item.tall { grid-row: span 2; }
+
+/* Placeholder galería */
+.g-placeholder {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #c8e6c9, #a5d6a7);
+  color: var(--verde-oscuro);
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 1rem;
+  gap: 0.4rem;
+}
+.g-placeholder span { font-size: 2.5rem; }
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 85vh; border-radius: var(--radio); object-fit: contain; }
+.lightbox-close {
+  position: absolute; top: 1.2rem; right: 1.5rem;
+  background: none; border: none; color: white;
+  font-size: 2rem; cursor: pointer; opacity: 0.7; transition: var(--transicion);
+}
+.lightbox-close:hover { opacity: 1; transform: rotate(90deg); }
+
+/* ═══════════════════════════════════════════════
+   CONTACTO
+═══════════════════════════════════════════════ */
+#contacto {
+  padding: 5.5rem 0;
+  background: linear-gradient(160deg, var(--verde-oscuro) 0%, #0d2b1a 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+#contacto::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(26,158,143,0.12) 0%, transparent 60%);
+}
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 4rem;
+  align-items: start;
+  position: relative;
+  z-index: 2;
+}
+.contacto-text .section-title { color: white; }
+.contacto-text .section-eyebrow { color: var(--dorado-claro); }
+.contacto-text .section-subtitle { color: rgba(255,255,255,0.75); max-width: 420px; margin-bottom: 2rem; }
+
+.contacto-items { display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 2rem; }
+.contacto-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radio);
+  transition: var(--transicion);
+  text-decoration: none;
+  color: white;
+}
+.contacto-item:hover {
+  background: rgba(255,255,255,0.13);
+  transform: translateX(4px);
+  border-color: rgba(255,255,255,0.25);
+}
+.contacto-icon {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.contacto-icon.tel { background: rgba(76,175,125,0.25); }
+.contacto-icon.wa { background: rgba(37,211,102,0.25); }
+.contacto-icon.ig { background: rgba(193,53,132,0.25); }
+.contacto-icon.mail { background: rgba(26,158,143,0.25); }
+.contacto-label { font-size: 0.75rem; opacity: 0.6; margin-bottom: 0.1rem; }
+.contacto-valor { font-weight: 700; font-size: 0.95rem; }
+
+.social-btns { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+.btn-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: var(--transicion);
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+.btn-social.wa { background: #25D366; color: white; }
+.btn-social.ig { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; }
+.btn-social:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+
+/* Mapa */
+.mapa-wrap {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  border: 3px solid rgba(255,255,255,0.1);
+  position: relative;
+}
+.mapa-wrap iframe {
+  width: 100%;
+  height: 380px;
+  display: block;
+  border: none;
+}
+.mapa-link {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(26,74,46,0.95), transparent);
+  padding: 1.5rem 1.2rem 1rem;
+  text-align: center;
+}
+.mapa-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  background: var(--verde-medio);
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px;
+  transition: var(--transicion);
+  text-decoration: none;
+}
+.mapa-link a:hover { background: var(--teal); transform: translateY(-2px); }
+
+/* ═══════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════ */
+footer {
+  background: #0a1f0f;
+  color: rgba(255,255,255,0.55);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  font-size: 0.85rem;
+}
+footer strong { color: rgba(255,255,255,0.85); }
+
+/* ═══════════════════════════════════════════════
+   WHATSAPP FLOTANTE
+═══════════════════════════════════════════════ */
+.wa-float {
+  position: fixed;
+  bottom: 1.8rem; right: 1.8rem;
+  z-index: 800;
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+  transition: var(--transicion);
+  animation: pulse 2.5s infinite;
+}
+.wa-float:hover { transform: scale(1.12); box-shadow: 0 8px 30px rgba(37,211,102,0.6); }
+.wa-float svg { width: 30px; height: 30px; fill: white; }
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.5); }
+  50% { box-shadow: 0 4px 40px rgba(37,211,102,0.8); }
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .jardin-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .paquete-card { grid-template-columns: 1fr; }
+  .paquete-header { padding: 2rem; }
+  .contacto-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .galeria-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; }
+  .g-item.wide { grid-column: span 2; }
+  .g-item.tall { grid-row: span 1; }
+}
+@media (max-width: 600px) {
+  .jardin-stats { grid-template-columns: 1fr 1fr; }
+  .jardin-fotos { grid-template-rows: 160px 160px; }
+  .galeria-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 150px; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .hero-ctas .btn-primary, .hero-ctas .btn-outline { width: 100%; max-width: 280px; justify-content: center; }
+  .extras-grid { grid-template-columns: 1fr 1fr; }
+  .mapa-wrap iframe { height: 280px; }
+  .social-btns { flex-direction: column; }
+  .btn-social { justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════ WHATSAPP FLOTANTE ════════ -->
+<a class="wa-float" href="https://wa.me/5215580710460?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n%20sobre%20los%20paquetes%20de%20Bamboo%20Jard%C3%ADn%20de%20Eventos" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ════════ NAVBAR ════════ -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <img src="LOGO_BAMBOO_JARDIN_DE_EVENTOS.png" alt="Bamboo Jardín de Eventos" onerror="this.style.display='none'">
+        <span class="nav-logo-text">Bamboo</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#jardin" onclick="closeMobileNav()">El Jardín</a></li>
+        <li><a href="#paquetes" onclick="closeMobileNav()">Paquetes</a></li>
+        <li><a href="#galeria" onclick="closeMobileNav()">Galería</a></li>
+        <li><a href="#contacto" onclick="closeMobileNav()">Contacto</a></li>
+        <li><a href="https://wa.me/5215580710460?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20paquetes" target="_blank" class="nav-cta" onclick="closeMobileNav()">📲 Cotizar</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+
+<!-- ════════ HERO ════════ -->
+<section id="hero">
+  <div class="hero-bg">
+    
+  </div>
+  <div class="hero-inner">
+    <img class="hero-logo" src="LOGO_BAMBOO_JARDIN_DE_EVENTOS.png" alt="Bamboo" onerror="this.style.display='none'">
+    <p class="hero-eyebrow">Tu momento especial merece el mejor escenario</p>
+    <h1 class="hero-title">Bamboo <span>Jardín</span><br>de Eventos</h1>
+    <p class="hero-desc">Somos el espacio ideal para crear los recuerdos que duran toda la vida. Con capacidad para hasta 600 personas y paquetes diseñados para cada tipo de celebración, en Jaltenco, Estado de México.</p>
+    <div class="hero-badges">
+      <span class="hero-badge">🌿 Hasta 600 invitados</span>
+      <span class="hero-badge">🎉 Todo tipo de eventos</span>
+      <span class="hero-badge">🍽️ Catering incluido</span>
+      <span class="hero-badge">🎵 DJ profesional</span>
+      <span class="hero-badge">✨ 5 paquetes disponibles</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="#paquetes" class="btn-primary">🎋 Ver paquetes</a>
+      <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20una%20cotizaci%C3%B3n" target="_blank" class="btn-primary btn-whatsapp">💬 Cotizar ahora</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Descubre más</span>
+    <svg width="16" height="24" viewBox="0 0 16 24" fill="none"><line x1="8" y1="0" x2="8" y2="20" stroke="white" stroke-width="1.5"/><polyline points="2,14 8,22 14,14" stroke="white" stroke-width="1.5" fill="none"/></svg>
+  </div>
+</section>
+
+<!-- ════════ EL JARDÍN ════════ -->
+<section id="jardin">
+  <div class="container">
+    <div class="jardin-grid">
+
+      <div class="jardin-text">
+        <span class="section-eyebrow">Nuestro espacio</span>
+        <h2 class="section-title">El corazón de tu celebración</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">Somos una empresa dedicada a realizar el evento que siempre soñaste, brindando instalaciones y servicios de la más alta calidad, para hacerte sentir un invitado más de tu propio evento.</p>
+
+        <div class="jardin-stats">
+          <div class="stat-card">
+            <div class="stat-num">600</div>
+            <div class="stat-label">Personas de capacidad</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">5</div>
+            <div class="stat-label">Paquetes disponibles</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">5h</div>
+            <div class="stat-label">Servicio de DJ</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">+15</div>
+            <div class="stat-label">Tipos de eventos</div>
+          </div>
+        </div>
+
+        <div class="jardin-servicios">
+          <h4>Servicios disponibles</h4>
+          <div class="servicio-list">
+            <div class="servicio-item">Catering con menú de 3 tiempos</div>
+            <div class="servicio-item">Música: DJ, Grupo Versátil, Banda, Mariachi</div>
+            <div class="servicio-item">Mesa de Dulces y Postres</div>
+            <div class="servicio-item">Event Planner para tu celebración</div>
+            <div class="servicio-item">Loza completa: cristalería, cubiertos y utensilios</div>
+            <div class="servicio-item">Servicio de meseros con capitán</div>
+            <div class="servicio-item">Inflables y entretenimiento para niños</div>
+            <div class="servicio-item">Descorche libre para bebidas del cliente</div>
+          </div>
+        </div>
+
+        <div class="eventos-tags">
+          <span class="evento-tag">XV Años</span>
+          <span class="evento-tag">Bodas</span>
+          <span class="evento-tag">Bautizos</span>
+          <span class="evento-tag">Graduaciones</span>
+          <span class="evento-tag">Cumpleaños</span>
+          <span class="evento-tag">Aniversarios</span>
+          <span class="evento-tag">Congresos</span>
+          <span class="evento-tag">Empresariales</span>
+          <span class="evento-tag">Bazares</span>
+          <span class="evento-tag">y más…</span>
+        </div>
+      </div>
+
+      <div class="jardin-fotos">
+        <div class="foto-slot tall">
+          <img src="bamboo-94b.jpg" alt="Mesa LOVE con sillones trono — Bamboo Jardín de Eventos">
+        </div>
+        <div class="foto-slot">
+          <img src="bamboo-92c.jpg" alt="Interior carpa con montaje rojo vino">
+        </div>
+        <div class="foto-slot">
+          <img src="bamboo-951.jpg" alt="Vista interior del jardín con carpa y mesas doradas">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PAQUETES ════════ -->
+<section id="paquetes">
+  <div class="container">
+    <div class="paquetes-intro">
+      <span class="section-eyebrow">Lo que ofrecemos</span>
+      <h2 class="section-title">Nuestros Paquetes</h2>
+      <div class="divider" style="margin: 0.8rem auto 1rem;"></div>
+      <p class="section-subtitle">Desde una celebración íntima hasta un gran evento, tenemos el paquete perfecto para ti. Todos incluyen el uso del jardín y mobiliario. Selecciona el que mejor se adapte a tu sueño.</p>
+    </div>
+
+    <div class="paquetes-tabs">
+      <button class="tab-btn active" onclick="showPaquete('lona')">🏕️ Con Lona</button>
+      <button class="tab-btn" onclick="showPaquete('basico')">✨ Básico</button>
+      <button class="tab-btn" onclick="showPaquete('basico-vintage')">🌸 Básico Vintage</button>
+      <button class="tab-btn premium-tab" onclick="showPaquete('premium')">👑 Premium</button>
+      <button class="tab-btn premium-tab" onclick="showPaquete('premium-vintage')">💎 Premium Vintage</button>
+    </div>
+
+    <!-- PAQUETE LONA -->
+    <div class="paquete-panel active" id="panel-lona">
+      <div class="paquete-card lona">
+        <div class="paquete-header">
+          <span class="paquete-badge">Paquete de entrada</span>
+          <h3 class="paquete-nombre">Con Lona</h3>
+          <p class="paquete-desc">La opción perfecta si quieres el espacio y el mobiliario, y tú te encargas del catering y la animación. Sencillo, flexible y completo.</p>
+          <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20el%20Paquete%20Con%20Lona%2C%20quisiera%20una%20cotizaci%C3%B3n" target="_blank" class="paquete-cotizar">💬 Cotizar este paquete →</a>
+        </div>
+        <div class="paquete-body">
+          <p class="paquete-incluye-title">✅ ¿Qué incluye?</p>
+          <ul class="incluye-list">
+            <li class="incluye-item"><span class="incluye-check">✓</span>Lona blanca con cortinas decorativas</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Mobiliario y mantelería completa</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Mesa redonda con mantel blanco y silla plegable</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Mesa principal para 5 personas</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Descorche libre para bebidas del cliente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAQUETE BÁSICO -->
+    <div class="paquete-panel" id="panel-basico">
+      <div class="paquete-card basico">
+        <div class="paquete-header">
+          <span class="paquete-badge">El más completo para comenzar</span>
+          <h3 class="paquete-nombre">Básico</h3>
+          <p class="paquete-desc">Todo lo que necesitas para una celebración espectacular: carpa elegante, servicio de alimentos, DJ profesional y entretenimiento para niños.</p>
+          <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20el%20Paquete%20B%C3%A1sico%2C%20quisiera%20una%20cotizaci%C3%B3n" target="_blank" class="paquete-cotizar">💬 Cotizar este paquete →</a>
+        </div>
+        <div class="paquete-body">
+          <p class="paquete-incluye-title">✅ ¿Qué incluye?</p>
+          <ul class="incluye-list">
+            <li class="incluye-item"><span class="incluye-check">✓</span>Carpa plafón liso de 4 metros de altura</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Mobiliario y mantelería completa</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Mesa cuadrada con mantel (color a elegir), silla plegable con funda y moño decorativo</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Mesa principal para 5 personas</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Menú de 3 tiempos para todos los invitados</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Loza completa: cristalería, cubiertos y utensilios</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Servicio de meseros (1 por cada 2 mesas) + capitán coordinador</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>DJ por 5 horas con equipo completo: 12 graves, 8 medios, 6 cabezas móviles, 8 barras LED, 5 máquinas LED, 2 pantallas, 1 videoproyector, esfera disco y cámara de humo</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Inflable grande para entretenimiento infantil</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Descorche libre para bebidas del cliente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAQUETE BÁSICO VINTAGE -->
+    <div class="paquete-panel" id="panel-basico-vintage">
+      <div class="paquete-card basico">
+        <div class="paquete-header">
+          <span class="paquete-badge">Estilo con calidez</span>
+          <h3 class="paquete-nombre">Básico Vintage</h3>
+          <p class="paquete-desc">Todo lo del Básico pero con la elegancia del estilo vintage: mesas de madera con camino de mesa y una decoración llena de carácter y personalidad.</p>
+          <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20el%20Paquete%20B%C3%A1sico%20Vintage%2C%20quisiera%20una%20cotizaci%C3%B3n" target="_blank" class="paquete-cotizar">💬 Cotizar este paquete →</a>
+        </div>
+        <div class="paquete-body">
+          <p class="paquete-incluye-title">✅ ¿Qué incluye?</p>
+          <ul class="incluye-list">
+            <li class="incluye-item"><span class="incluye-check">✓</span>Carpa plafón liso de 4 metros de altura</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Mobiliario y mantelería completa</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span><strong>Mesa vintage con camino de mesa</strong> (acabado rústico y cálido)</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Mesa principal para 5 personas</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Menú de 3 tiempos para todos los invitados</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Loza completa: cristalería, cubiertos y utensilios</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Servicio de meseros (1 por cada 2 mesas) + capitán coordinador</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>DJ por 5 horas con equipo completo de iluminación y sonido</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Inflable grande para entretenimiento infantil</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Descorche libre para bebidas del cliente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAQUETE PREMIUM -->
+    <div class="paquete-panel" id="panel-premium">
+      <div class="paquete-card premium">
+        <div class="paquete-header">
+          <span class="paquete-badge">⭐ El más popular — máxima elegancia</span>
+          <h3 class="paquete-nombre">Premium</h3>
+          <p class="paquete-desc">Para quienes quieren lo mejor: carpa con plafón plisado, cortinas de tela, candiles, sillas Tiffany y detalles que marcan la diferencia.</p>
+          <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20el%20Paquete%20Premium%2C%20quisiera%20una%20cotizaci%C3%B3n" target="_blank" class="paquete-cotizar">💬 Cotizar este paquete →</a>
+        </div>
+        <div class="paquete-body">
+          <p class="paquete-incluye-title">✅ ¿Qué incluye?</p>
+          <ul class="incluye-list">
+            <li class="incluye-item"><span class="incluye-check">✓</span><strong>Carpa plafón plisado 15×20 m</strong>, 4 m de altura, con cortinas de tela y candiles</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Mobiliario y mantelería de lujo</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Mesa cuadrada con mantel y cubremantel (color a elegir) + <strong>silla Tiffany</strong></li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Mesa principal para 10 personas</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Menú de 3 tiempos para todos los invitados</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Loza completa: cristalería, cubiertos y utensilios</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span><strong>4 letras gigantes</strong> decorativas</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Servicio de meseros (1 por cada 2 mesas) + capitán coordinador</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>DJ por 5 horas con equipo completo de iluminación y sonido</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Inflable grande + <strong>brincolin</strong> para entretenimiento infantil</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Descorche libre para bebidas del cliente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAQUETE PREMIUM VINTAGE -->
+    <div class="paquete-panel" id="panel-premium-vintage">
+      <div class="paquete-card premium">
+        <div class="paquete-header">
+          <span class="paquete-badge">⭐ Lujo con alma vintage</span>
+          <h3 class="paquete-nombre">Premium Vintage</h3>
+          <p class="paquete-desc">La experiencia más completa y sofisticada: carpa plisada en ondas, sillas Crossback de madera, letras gigantes y todos los detalles premium que tu evento merece.</p>
+          <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20el%20Paquete%20Premium%20Vintage%2C%20quisiera%20una%20cotizaci%C3%B3n" target="_blank" class="paquete-cotizar">💬 Cotizar este paquete →</a>
+        </div>
+        <div class="paquete-body">
+          <p class="paquete-incluye-title">✅ ¿Qué incluye?</p>
+          <ul class="incluye-list">
+            <li class="incluye-item"><span class="incluye-check">✓</span><strong>Carpa plafón plisado o plafón en ondas</strong>, 4 m de altura, con cortinas de tela y candiles</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Mobiliario y mantelería de lujo</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span><strong>Mesa vintage con camino de mesa + silla Crossback de madera</strong></li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Mesa principal para 5 personas</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Menú de 3 tiempos para todos los invitados</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Loza completa: cristalería, cubiertos y utensilios</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Servicio de meseros (1 por cada 2 mesas) + capitán coordinador</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>DJ por 5 horas con equipo completo de iluminación y sonido</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Inflable grande + <strong>brincolin</strong> para entretenimiento infantil</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span><strong>4 letras gigantes</strong> decorativas</li>
+            <li class="incluye-item"><span class="incluye-check">✓</span>Descorche libre para bebidas del cliente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════ EXTRAS ════════ -->
+<section id="extras">
+  <div class="container">
+    <div class="extras-intro">
+      <span class="section-eyebrow">Personaliza tu evento</span>
+      <h2 class="section-title">Servicios Extra</h2>
+      <div class="divider" style="margin: 0.8rem auto 1rem;"></div>
+      <p class="section-subtitle" style="margin: 0 auto;">¿Quieres algo más especial? Complementa cualquier paquete con nuestros servicios adicionales y haz tu evento verdaderamente único.</p>
+    </div>
+    <div class="extras-grid">
+      <div class="extra-item"><span class="extra-icon">🪑</span><span class="extra-text">Periquera de cristal (4 personas)</span></div>
+      <div class="extra-item"><span class="extra-icon">🪵</span><span class="extra-text">Periquera de madera (4 personas)</span></div>
+      <div class="extra-item"><span class="extra-icon">🛋️</span><span class="extra-text">Sala Lounge (10 personas)</span></div>
+      <div class="extra-item"><span class="extra-icon">🍹</span><span class="extra-text">Barman 5 horas — 5 cócteles + cubeo</span></div>
+      <div class="extra-item"><span class="extra-icon">💕</span><span class="extra-text">Mesa principal "LOVE" con 2 sillones trono Luis XV</span></div>
+      <div class="extra-item"><span class="extra-icon">👑</span><span class="extra-text">Mesa principal "XV AÑOS" con sillón trono Luis XV</span></div>
+      <div class="extra-item"><span class="extra-icon">🍰</span><span class="extra-text">Mesa de dulces Premium (por persona)</span></div>
+      <div class="extra-item"><span class="extra-icon">🧁</span><span class="extra-text">Mesa de dulces Media (por persona)</span></div>
+      <div class="extra-item"><span class="extra-icon">🍬</span><span class="extra-text">Mesa de dulces Básica (por persona)</span></div>
+      <div class="extra-item"><span class="extra-icon">🔤</span><span class="extra-text">Letras gigantes decorativas</span></div>
+      <div class="extra-item"><span class="extra-icon">🔥</span><span class="extra-text">Calentadores de gas</span></div>
+      <div class="extra-item"><span class="extra-icon">⛺</span><span class="extra-text">Carpa cuadriculada para sala lounge</span></div>
+      <div class="extra-item"><span class="extra-icon">💡</span><span class="extra-text">Pista de baile con luz (por módulo)</span></div>
+      <div class="extra-item"><span class="extra-icon">💒</span><span class="extra-text">Ceremonias dentro del jardín</span></div>
+      <div class="extra-item"><span class="extra-icon">⏰</span><span class="extra-text">Hora adicional por mesero</span></div>
+      <div class="extra-item"><span class="extra-icon">🎊</span><span class="extra-text">Tornafiestas</span></div>
+    </div>
+    <div style="text-align:center; margin-top: 2.5rem;">
+      <a href="https://wa.me/5215580710460?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20los%20servicios%20extra" target="_blank" class="btn-primary">💬 Preguntar por extras</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ GALERÍA ════════ -->
+<section id="galeria">
+  <div class="container">
+    <div class="galeria-intro">
+      <span class="section-eyebrow">Momentos que inspiran</span>
+      <h2 class="section-title">Galería de Eventos</h2>
+      <div class="divider" style="margin: 0.8rem auto 1rem;"></div>
+      <p class="section-subtitle" style="margin: 0 auto;">Cada evento es único. Aquí algunos de los momentos especiales que hemos tenido el honor de acompañar.</p>
+    </div>
+
+    <div class="galeria-grid">
+      <div class="g-item wide" onclick="openLightbox(this)">
+        <img src="bamboo-962.jpg" alt="Mesa LOVE con sillones trono al jardín">
+        <div class="g-overlay"><span>Mesa Principal LOVE</span></div>
+      </div>
+      <div class="g-item tall" onclick="openLightbox(this)">
+        <img src="bamboo-926.jpg" alt="Mesa principal con arreglo floral premium">
+        <div class="g-overlay"><span>Arreglo floral Premium</span></div>
+      </div>
+      <div class="g-item" onclick="openLightbox(this)">
+        <img src="bamboo-968.jpg" alt="Interior carpa con pista de baile y mesas doradas">
+        <div class="g-overlay"><span>Pista de baile iluminada</span></div>
+      </div>
+      <div class="g-item" onclick="openLightbox(this)">
+        <img src="bamboo-96a.jpg" alt="Área lounge al aire libre">
+        <div class="g-overlay"><span>Sala Lounge exterior</span></div>
+      </div>
+      <div class="g-item" onclick="openLightbox(this)">
+        <img src="bamboo-95e.jpg" alt="Arco floral con carpa exterior — vista panorámica">
+        <div class="g-overlay"><span>Carpa con arco floral</span></div>
+      </div>
+      <div class="g-item" onclick="openLightbox(this)">
+        <img src="bamboo-99d.jpg" alt="Pasillo de pétalos para ceremonia de boda">
+        <div class="g-overlay"><span>Ceremonia al jardín</span></div>
+      </div>
+      <div class="g-item" onclick="openLightbox(this)">
+        <img src="bamboo-995.jpg" alt="Ceremonia al aire libre con arco de tela">
+        <div class="g-overlay"><span>Ceremonia exterior</span></div>
+      </div>
+      <div class="g-item" onclick="openLightbox(this)">
+        <img src="bamboo-98f.jpg" alt="Decoración corona floral estilo bohemio">
+        <div class="g-overlay"><span>Decoración botánica</span></div>
+      </div>
+      <div class="g-item" onclick="openLightbox(this)">
+        <img src="bamboo-wa1.jpg" alt="Montaje rojo vino con flores">
+        <div class="g-overlay"><span>Montaje elegante</span></div>
+      </div>
+      <div class="g-item wide" onclick="openLightbox(this)">
+        <img src="bamboo-wa2.jpg" alt="Vista amplia jardín dorado">
+        <div class="g-overlay"><span>Jardín Premium dorado</span></div>
+      </div>
+      <div class="g-item" onclick="openLightbox(this)">
+        <img src="bamboo-972.jpg" alt="Paquete vintage rosa mesas de madera">
+        <div class="g-overlay"><span>Paquete Vintage Rosa</span></div>
+      </div>
+      <div class="g-item" onclick="openLightbox(this)">
+        <img src="bamboo-997.jpg" alt="Carpa iluminada fairy lights de noche">
+        <div class="g-overlay"><span>Iluminación nocturna</span></div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:2.5rem;">
+      <a href="https://www.instagram.com/jardinbamboomxoficial/" target="_blank" class="btn-outline">📸 Ver más en Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<!-- ════════ CONTACTO ════════ -->
+<section id="contacto">
+  <div class="container">
+    <div class="contacto-grid">
+
+      <div class="contacto-text">
+        <span class="section-eyebrow">Estamos aquí para ti</span>
+        <h2 class="section-title">Contáctanos</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">¿Tienes una fecha en mente? ¿Quieres saber qué paquete se adapta mejor a ti? Escríbenos y con gusto te damos una cotización sin compromiso.</p>
+
+        <div class="contacto-items">
+          <a href="tel:5580710460" class="contacto-item">
+            <div class="contacto-icon tel">📞</div>
+            <div>
+              <div class="contacto-label">Teléfono</div>
+              <div class="contacto-valor">55 8071 0460</div>
+            </div>
+          </a>
+          <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n%20sobre%20los%20paquetes" target="_blank" class="contacto-item">
+            <div class="contacto-icon wa">💬</div>
+            <div>
+              <div class="contacto-label">WhatsApp Business</div>
+              <div class="contacto-valor">55 8071 0460</div>
+            </div>
+          </a>
+          <a href="https://www.instagram.com/jardinbamboomxoficial/" target="_blank" class="contacto-item">
+            <div class="contacto-icon ig">📸</div>
+            <div>
+              <div class="contacto-label">Instagram</div>
+              <div class="contacto-valor">@jardinbamboomxoficial</div>
+            </div>
+          </a>
+          <a href="mailto:contacto@bamboojardin.com" class="contacto-item">
+            <div class="contacto-icon mail">✉️</div>
+            <div>
+              <div class="contacto-label">Correo electrónico</div>
+              <div class="contacto-valor">contacto@bamboojardin.com</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="social-btns">
+          <a href="https://wa.me/5215580710460?text=Hola%2C%20quisiera%20una%20cotizaci%C3%B3n" target="_blank" class="btn-social wa">
+            💬 Escribir por WhatsApp
+          </a>
+          <a href="https://www.instagram.com/jardinbamboomxoficial/" target="_blank" class="btn-social ig">
+            📸 Seguir en Instagram
+          </a>
+        </div>
+      </div>
+
+      <!-- Mapa -->
+      <div>
+        <div class="mapa-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3757.8!2d-99.0955!3d19.7450!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDQ0JzQyLjAiTiA5OcKwMDUnNDMuOCJX!5e0!3m2!1ses!2smx!4v1"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación Bamboo Jardín de Eventos">
+          </iframe>
+          <div class="mapa-link">
+            <a href="https://share.google/yZz0P48HMQQnwameG" target="_blank">
+              📍 Cómo llegar — Francisco Javier Mina Mz. 14, Jaltenco
+            </a>
+          </div>
+        </div>
+        <p style="color: rgba(255,255,255,0.5); font-size:0.8rem; margin-top:0.8rem; text-align:center;">
+          Francisco Javier Mina Manzana 014, San Andrés, 55780 Jaltenco, Méx.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <p>© 2025 <strong>Bamboo Jardín de Eventos</strong> — Jaltenco, Estado de México</p>
+  <p style="margin-top:0.4rem;">📞 55 8071 0460 &nbsp;|&nbsp; Francisco Javier Mina Mz. 014, San Andrés</p>
+</footer>
+
+<!-- ════════ JS ════════ -->
+<script>
+  /* Navbar scroll */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  /* Mobile nav */
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+    document.getElementById('hamburger').classList.toggle('active');
+    document.getElementById('mobileOverlay').classList.toggle('show');
+    document.body.style.overflow = document.getElementById('navLinks').classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMobileNav() {
+    document.getElementById('navLinks').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('active');
+    document.getElementById('mobileOverlay').classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  /* Paquetes tabs */
+  function showPaquete(id) {
+    document.querySelectorAll('.paquete-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('panel-' + id).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+
+  /* Lightbox */
+  function openLightbox(el) {
+    const img = el.querySelector('img');
+    if (img) {
+      document.getElementById('lightboxImg').src = img.src;
+      document.getElementById('lightboxImg').alt = img.alt;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+</body>
+</html>
