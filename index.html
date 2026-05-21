@@ -101,7 +101,7 @@ body::before{
 /* ═══════════════════════════════════════════════
    HERO — Video fullscreen autoplay
 ═══════════════════════════════════════════════ */
-#hero{position:relative;height:100dvh;min-height:560px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#0a1020}
+#hero{position:relative;height:100dvh;min-height:560px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;overflow:hidden;background:#0a1020}
 /* YouTube iframe fullscreen */
 .hero-yt-wrap{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none}
 .hero-yt-wrap iframe{
@@ -133,7 +133,7 @@ body::before{
     rgba(255,255,255,0.025) 38px, rgba(255,255,255,0.025) 40px
   );
 }
-.hero-inner{position:relative;z-index:5;text-align:center;padding:7rem 1.5rem 6rem;max-width:900px;width:100%}
+.hero-inner{position:relative;z-index:5;text-align:center;padding:3rem 1.5rem 2rem;max-width:900px;width:100%;margin-top:auto}
 .hero-logo{display:block;margin:0 auto 1.4rem;height:clamp(200px,38vw,380px);width:auto;filter:drop-shadow(0 6px 28px rgba(0,0,0,0.7));animation:fadeUp 1s 0.1s ease both}
 .hero-tagline{font-family:'Dancing Script',cursive;font-size:clamp(1.15rem,3.2vw,1.7rem);color:rgba(255,255,255,0.93);margin-bottom:1.6rem;display:block;animation:fadeUp 1s 0.25s ease both;text-shadow:0 2px 14px rgba(0,0,0,0.6)}
 .hero-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:0.6rem;margin-bottom:2.2rem;animation:fadeUp 1s 0.4s ease both}
@@ -142,7 +142,18 @@ body::before{
 .scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;color:rgba(255,255,255,0.65);font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;animation:bounceY 2.2s infinite;z-index:6;text-decoration:none}
 /* Mobile adjustments */
 @media(max-width:600px){
-  .hero-yt-wrap iframe{width:calc(100vh * 16/9);min-width:177.78vh}
+  /* Video contained (not stretched) on mobile */
+  .hero-yt-wrap{display:flex;align-items:center;justify-content:center}
+  .hero-yt-wrap iframe{
+    position:relative;
+    top:auto;left:auto;
+    transform:none;
+    width:100%;
+    height:56vw; /* 16:9 ratio of screen width */
+    min-width:unset;
+    min-height:unset;
+    max-height:56vw;
+  }
   .hero-logo{height:clamp(160px,55vw,260px)}
   .hero-ctas{flex-direction:column;align-items:center}
   .hero-ctas a{width:100%;max-width:280px;justify-content:center}
@@ -404,7 +415,7 @@ footer strong{color:rgba(255,255,255,0.85)}
   width:85%;
   aspect-ratio:1;
   border-radius:50%;
-  background:radial-gradient(ellipse at center, rgba(126,217,87,0.12) 0%, rgba(19,31,93,0.06) 60%, transparent 80%);
+  background:radial-gradient(ellipse at center,rgba(245,197,24,0.07) 0%,transparent 70%);
   z-index:0;
 }
 .logo-display-img{
@@ -413,7 +424,7 @@ footer strong{color:rgba(255,255,255,0.85)}
   width:100%;
   max-width:480px;
   height:auto;
-  filter:drop-shadow(0 8px 32px rgba(19,31,93,0.18));
+  filter:drop-shadow(0 4px 16px rgba(0,0,0,0.10));
   animation:fadeUp 1s 0.2s ease both;
 }
 @media(max-width:900px){
@@ -422,6 +433,53 @@ footer strong{color:rgba(255,255,255,0.85)}
 @media(max-width:600px){
   .logo-display-img{max-width:280px}
   .logo-display-wrap{padding:1rem}
+}
+
+
+/* Garden photo under logo in video section */
+.jardin-foto-wrap{
+  position:relative;
+  width:100%;
+  border-radius:var(--radio-lg);
+  overflow:hidden;
+  margin-top:1.4rem;
+  box-shadow:0 12px 36px rgba(19,31,93,0.18);
+  aspect-ratio:16/9;
+}
+.jardin-foto-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  filter:brightness(0.92) contrast(1.06) saturate(1.08);
+  transition:transform 0.6s ease;
+}
+.jardin-foto-wrap:hover .jardin-foto-img{transform:scale(1.04)}
+.jardin-foto-overlay{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  padding:1rem 1.2rem;
+  background:linear-gradient(to top,rgba(19,31,93,0.80) 0%,transparent 100%);
+  color:white;
+  font-size:0.82rem;
+  font-weight:700;
+  letter-spacing:0.04em;
+}
+@media(max-width:900px){
+  .jardin-foto-wrap{max-width:560px;margin:1.2rem auto 0}
+}
+
+
+/* Navbar logo image */
+.nav-logo-img{
+  height:42px;
+  width:auto;
+  display:block;
+  filter:brightness(0) invert(1) drop-shadow(0 1px 6px rgba(0,0,0,0.3));
+  transition:var(--t);
+}
+#navbar.scrolled .nav-logo-img{
+  filter:none drop-shadow(0 1px 4px rgba(19,31,93,0.15));
 }
 
 </style>
@@ -438,7 +496,7 @@ footer strong{color:rgba(255,255,255,0.85)}
   <div class="container">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">
-        <span class="nav-logo-text">Bamboo</span>
+        <img src="solo%20letras%20bamboo.png" alt="Bamboo" class="nav-logo-img">
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#jardin" onclick="closeMobileNav()">El Jardín</a></li>
@@ -495,13 +553,22 @@ footer strong{color:rgba(255,255,255,0.85)}
   <div class="container">
     <div class="video-grid">
 
-      <!-- Columna logo -->
+      <!-- Columna logo + foto jardín -->
       <div class="video-col logo-col">
         <div class="logo-display-wrap">
           <img
-            src="Logo%20Bamboo%20Nuevo.png"
+            src="logo%20bamboo%2021%20mayo.png"
             alt="Bamboo Jardín de Eventos"
             class="logo-display-img">
+        </div>
+        <div class="jardin-foto-wrap">
+          <img
+            src="Jardin%20de%20eventos%20bamboo.jpeg"
+            alt="Jardín de Eventos Bamboo — Jaltenco"
+            class="jardin-foto-img">
+          <div class="jardin-foto-overlay">
+            <span>🌿 Jaltenco, Estado de México</span>
+          </div>
         </div>
       </div>
 
