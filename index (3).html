@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bamboo Jardín de Eventos — Jaltenco, Estado de México</title>
+<meta name="description" content="Bamboo Jardín de Eventos en Jaltenco, Méx. Capacidad para 600 personas. Paquetes para bodas, XV años, bautizos, graduaciones y más. Contáctanos por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════
+   VARIABLES & RESET
+═══════════════════════════════════════════════ */
+:root {
+  --azul:     #131F5D;
+  --azul-m:   #1a2d8a;
+  --azul-claro:#e8ecf8;
+  --verde:    #7ED957;
+  --verde-d:  #52b230;
+  --amarillo: #f5c518;
+  --amarillo-c:#fff0a0;
+  --blanco:   #ffffff;
+  --gris-1:   #f8f9fc;
+  --gris-2:   #f0f2f8;
+  --gris-3:   #e4e8f4;
+  --texto:    #131F5D;
+  --texto-s:  #3a4a7a;
+  --sombra:   0 4px 24px rgba(19,31,93,0.10);
+  --sombra-f: 0 8px 40px rgba(19,31,93,0.18);
+  --radio:    14px;
+  --radio-lg: 24px;
+  --t:        all 0.3s ease;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;color:var(--texto);background:var(--blanco);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+
+/* ═══════════════════════════════════════════════
+   TEXTURA GLOBAL
+═══════════════════════════════════════════════ */
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='1' fill='%23131F5D' fill-opacity='0.045'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:0;
+}
+
+/* ═══════════════════════════════════════════════
+   UTILIDADES
+═══════════════════════════════════════════════ */
+.container{max-width:1160px;margin:0 auto;padding:0 1.5rem;position:relative;z-index:1}
+.section-eyebrow{font-family:'Dancing Script',cursive;font-size:1.35rem;color:#7ED957;display:block;margin-bottom:0.4rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:#131F5D;line-height:1.2;margin-bottom:1rem}
+.section-subtitle{font-size:1.05rem;color:#3a4a7a;line-height:1.75;max-width:640px}
+.divider{width:60px;height:4px;background:linear-gradient(to right,#131F5D,#7ED957);border-radius:2px;margin:1rem 0 1.5rem}
+.btn-primary{display:inline-flex;align-items:center;gap:0.5rem;background:#131F5D;color:var(--blanco);font-family:'Nunito',sans-serif;font-weight:800;font-size:0.95rem;padding:0.85rem 2rem;border-radius:50px;border:none;cursor:pointer;transition:var(--t);box-shadow:0 4px 16px rgba(19,31,93,0.35)}
+.btn-primary:hover{background:#1a2d8a;transform:translateY(-2px);box-shadow:0 8px 24px rgba(19,31,93,0.45)}
+.btn-amarillo{background:#f5c518;color:#131F5D;box-shadow:0 4px 16px rgba(245,197,24,0.45)}
+.btn-amarillo:hover{background:#ffe566;color:#131F5D}
+.btn-whatsapp{background:#25D366;box-shadow:0 4px 16px rgba(37,211,102,0.35)}
+.btn-whatsapp:hover{background:#1da851}
+.btn-outline{display:inline-flex;align-items:center;gap:0.5rem;background:transparent;color:#131F5D;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.95rem;padding:0.85rem 2rem;border-radius:50px;border:2px solid #131F5D;cursor:pointer;transition:var(--t)}
+.btn-outline:hover{background:#131F5D;color:white;transform:translateY(-2px)}
+
+/* ═══════════════════════════════════════════════
+   NAVBAR
+═══════════════════════════════════════════════ */
+#navbar{position:fixed;top:0;left:0;right:0;z-index:900;padding:0.9rem 0;transition:var(--t);background:transparent}
+#navbar.scrolled{background:rgba(255,255,255,0.98);box-shadow:0 2px 20px rgba(19,31,93,0.10);backdrop-filter:blur(12px)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center}
+.nav-logo-text{font-family:'Dancing Script',cursive;font-size:1.9rem;font-weight:700;color:var(--blanco);transition:var(--t);line-height:1;text-shadow:0 2px 12px rgba(0,0,0,0.35);letter-spacing:-0.01em}
+#navbar.scrolled .nav-logo-text{color:#131F5D;text-shadow:none}
+.nav-links{display:flex;align-items:center;gap:0.3rem}
+.nav-links a{font-weight:700;font-size:0.88rem;padding:0.5rem 0.9rem;border-radius:50px;color:rgba(255,255,255,0.92);transition:var(--t)}
+#navbar.scrolled .nav-links a{color:#131F5D}
+.nav-links a:hover{background:rgba(255,255,255,0.18);color:white}
+#navbar.scrolled .nav-links a:hover{background:#f0f2f8;color:#131F5D}
+.nav-cta{background:#7ED957!important;color:#131F5D!important;font-weight:800!important;box-shadow:0 2px 14px rgba(126,217,87,0.45)}
+.nav-cta:hover{background:#f5c518!important;color:#131F5D!important;transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:910}
+.hamburger span{width:26px;height:2.5px;background:white;border-radius:2px;transition:var(--t);display:block}
+#navbar.scrolled .hamburger span{background:#131F5D}
+.hamburger.active span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:895}
+.mobile-overlay.show{display:block}
+@media(max-width:820px){
+  .hamburger{display:flex}
+  .nav-links{position:fixed;top:0;right:-100%;width:min(300px,80vw);height:100dvh;background:white;flex-direction:column;align-items:flex-start;padding:5rem 2rem 2rem;gap:0.5rem;z-index:900;transition:right 0.35s cubic-bezier(0.4,0,0.2,1);box-shadow:-4px 0 24px rgba(0,0,0,0.15)}
+  .nav-links.open{right:0}
+  .nav-links a{color:#131F5D!important;font-size:1rem;width:100%;padding:0.7rem 1rem}
+  .nav-links a:hover{background:var(--gris-claro)}
+  .nav-cta{background:#7ED957!important;color:#131F5D!important}
+}
+
+/* ═══════════════════════════════════════════════
+   HERO — Video fullscreen autoplay
+═══════════════════════════════════════════════ */
+#hero{position:relative;height:100dvh;min-height:560px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;overflow:hidden;background:#0a1020}
+/* YouTube iframe fullscreen */
+.hero-yt-wrap{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none}
+.hero-yt-wrap iframe{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  /* 16:9 — always fills the viewport */
+  width:calc(100vh * 16/9);
+  height:calc(100vw * 9/16);
+  min-width:100%;
+  min-height:100%;
+  border:none;
+}
+/* Overlay layers */
+.hero-overlay{position:absolute;inset:0;z-index:2;
+  background:linear-gradient(
+    to bottom,
+    rgba(10,16,32,0.45) 0%,
+    rgba(10,16,32,0.15) 40%,
+    rgba(10,16,32,0.15) 60%,
+    rgba(10,16,32,0.75) 100%
+  )
+}
+/* diagonal stripe watermark */
+.hero-overlay::before{content:'';position:absolute;inset:0;
+  background-image:repeating-linear-gradient(
+    -55deg,
+    transparent 0px, transparent 38px,
+    rgba(255,255,255,0.025) 38px, rgba(255,255,255,0.025) 40px
+  );
+}
+.hero-inner{position:relative;z-index:5;text-align:center;padding:3rem 1.5rem 2rem;max-width:900px;width:100%;margin-top:auto}
+.hero-logo{display:block;margin:0 auto 1.4rem;height:clamp(200px,38vw,380px);width:auto;filter:drop-shadow(0 6px 28px rgba(0,0,0,0.7));animation:fadeUp 1s 0.1s ease both}
+.hero-tagline{font-family:'Dancing Script',cursive;font-size:clamp(1.15rem,3.2vw,1.7rem);color:rgba(255,255,255,0.93);margin-bottom:1.6rem;display:block;animation:fadeUp 1s 0.25s ease both;text-shadow:0 2px 14px rgba(0,0,0,0.6)}
+.hero-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:0.6rem;margin-bottom:2.2rem;animation:fadeUp 1s 0.4s ease both}
+.hero-badge{background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.25);color:white;font-size:0.82rem;font-weight:700;padding:0.45rem 1.1rem;border-radius:50px;backdrop-filter:blur(8px)}
+.hero-ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;animation:fadeUp 1s 0.55s ease both}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;color:rgba(255,255,255,0.65);font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;animation:bounceY 2.2s infinite;z-index:6;text-decoration:none}
+/* Mobile adjustments */
+@media(max-width:600px){
+  /* Video: correct 16:9, no stretch */
+  .hero-yt-wrap{display:flex;align-items:center;justify-content:center}
+  .hero-yt-wrap iframe{
+    position:relative;
+    top:auto;left:auto;
+    transform:none;
+    width:100%;
+    height:56vw;
+    min-width:unset;
+    min-height:unset;
+    max-height:56vw;
+  }
+  /* Push ALL content to very bottom, compact */
+  .hero-inner{
+    padding:1rem 1.2rem 1.4rem;
+    margin-top:auto;
+  }
+  /* Hide tagline + badges on mobile — only show CTAs */
+  .hero-tagline{display:none}
+  .hero-badges{display:none}
+  /* CTAs stacked, compact */
+  .hero-ctas{
+    flex-direction:column;
+    align-items:center;
+    gap:0.6rem;
+    margin-bottom:0;
+  }
+  .hero-ctas a{
+    width:100%;
+    max-width:260px;
+    justify-content:center;
+    padding:0.7rem 1.4rem;
+    font-size:0.88rem;
+  }
+  /* Scroll hint up a bit */
+  .scroll-hint{bottom:0.5rem}
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bounceY{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(9px)}}
+
+/* ═══════════════════════════════════════════════
+   SECCIÓN VIDEO — 2 columnas
+═══════════════════════════════════════════════ */
+#video-section{padding:5.5rem 0;background:#f8f9fc;position:relative;overflow:hidden}
+#video-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 10% 60%,rgba(126,217,87,0.10) 0%,transparent 50%),radial-gradient(ellipse at 90% 20%,rgba(19,31,93,0.05) 0%,transparent 45%);pointer-events:none}
+#video-section::after{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to right,#131F5D,#7ED957,#f5c518);pointer-events:none}
+.video-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:2}
+.video-col{position:relative}
+.video-wrap{position:relative;width:100%;border-radius:var(--radio-lg);overflow:hidden;box-shadow:0 16px 48px rgba(19,31,93,0.20);border:3px solid #131F5D;background:#000;aspect-ratio:16/9}
+.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none;display:block}
+.video-accent{position:absolute;top:-14px;left:-14px;right:14px;bottom:-14px;border:2px solid rgba(19,31,93,0.15);border-radius:var(--radio-lg);pointer-events:none;z-index:-1}
+.video-label{margin-top:1rem;display:flex;align-items:center;gap:0.5rem;color:#5a6a9a;font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase}
+.video-label::before{content:'';width:24px;height:1px;background:#131F5D}
+.video-text{color:#131F5D}
+.video-eyebrow{font-family:'Dancing Script',cursive;font-size:1.4rem;color:#7ED957;display:block;margin-bottom:0.5rem}
+.video-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,2.7rem);line-height:1.2;margin-bottom:1rem;color:#131F5D}
+.video-title em{font-style:italic;color:#7ED957}
+.video-divider{width:50px;height:4px;background:linear-gradient(to right,#131F5D,#7ED957);border-radius:2px;margin-bottom:1.4rem}
+.video-desc{font-size:1.05rem;color:#3a4a7a;line-height:1.8;margin-bottom:2rem}
+.video-puntos{display:flex;flex-direction:column;gap:1rem;margin-bottom:2.2rem}
+.video-punto{display:flex;align-items:flex-start;gap:0.9rem}
+.video-punto-icon{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#131F5D,#7ED957);display:flex;align-items:center;justify-content:center;font-size:0.95rem;flex-shrink:0;box-shadow:0 4px 12px rgba(19,31,93,0.25)}
+.video-punto-text strong{display:block;font-size:0.95rem;font-weight:800;color:#131F5D;margin-bottom:0.15rem}
+.video-punto-text span{font-size:0.85rem;color:#5a6a9a}
+.video-ctas{display:flex;flex-wrap:wrap;gap:1rem}
+@media(max-width:900px){
+  .video-grid{grid-template-columns:1fr;gap:3rem}
+  .video-text{order:-1}
+  .video-wrap{max-width:560px;margin:0 auto}
+}
+@media(max-width:600px){
+  .video-ctas{flex-direction:column}
+  .video-ctas a{justify-content:center}
+}
+
+/* ═══════════════════════════════════════════════
+   EL JARDÍN
+═══════════════════════════════════════════════ */
+#jardin{padding:5.5rem 0;background:var(--blanco);position:relative;overflow:hidden}
+#jardin::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(to right,#131F5D,#7ED957,#f5c518)}
+#jardin::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230097b2' fill-opacity='0.022'%3E%3Cpath d='M40 40c0-11 9-20 20-20v4c-8.8 0-16 7.2-16 16H40zm0 0c0 11-9 20-20 20v-4c8.8 0 16-7.2 16-16h4zm0 0c0-11-9-20-20-20v4c8.8 0 16 7.2 16 16h4zm0 0c0 11 9 20 20 20v-4c-8.8 0-16-7.2-16-16H40z'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.jardin-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.jardin-text .section-subtitle{margin-bottom:2rem}
+.jardin-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem}
+.stat-card{background:#f8f9fc;border-radius:var(--radio);padding:1.3rem;text-align:center;border-left:4px solid #131F5D;transition:var(--t);position:relative;overflow:hidden}
+.stat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(19,31,93,0.04) 0%,transparent 60%)}
+.stat-card:hover{transform:translateY(-3px);box-shadow:var(--sombra)}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.1rem;color:#131F5D;font-weight:700;line-height:1}
+.stat-label{font-size:0.78rem;color:#5a6a9a;margin-top:0.25rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em}
+.jardin-servicios h4{font-family:'Playfair Display',serif;color:#131F5D;font-size:1.1rem;margin-bottom:0.9rem}
+.servicio-list{display:flex;flex-direction:column;gap:0.55rem}
+.servicio-item{display:flex;align-items:center;gap:0.7rem;font-size:0.95rem;color:var(--texto)}
+.servicio-item::before{content:'🌿';font-size:0.9rem;flex-shrink:0}
+.jardin-fotos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:200px 200px;gap:0.9rem}
+.foto-slot{border-radius:var(--radio);overflow:hidden;position:relative;background:var(--gris-claro)}
+.foto-slot img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease}
+.foto-slot:hover img{transform:scale(1.06)}
+.foto-slot.tall{grid-row:1/3}
+.foto-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--gris-claro),#c8e6c9);color:var(--v2);font-size:0.78rem;text-align:center;padding:1rem;gap:0.5rem}
+.foto-placeholder span{font-size:2rem}
+.eventos-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.5rem}
+.evento-tag{background:linear-gradient(135deg,#eef0fa,#d6f5b8);color:#131F5D;font-size:0.8rem;font-weight:800;padding:0.38rem 1rem;border-radius:50px;border:1px solid rgba(19,31,93,0.12)}
+
+/* ═══════════════════════════════════════════════
+   PAQUETES
+═══════════════════════════════════════════════ */
+#paquetes{padding:5.5rem 0;background:linear-gradient(180deg,#f0f2f8 0%,#ffffff 100%);position:relative;overflow:hidden}
+#paquetes::before{content:'🎋';position:absolute;font-size:22rem;opacity:0.035;right:-5rem;top:-5rem;pointer-events:none;z-index:0}
+.paquetes-intro{text-align:center;margin-bottom:3.5rem;position:relative;z-index:1}
+.paquetes-intro .section-subtitle{margin:0 auto}
+.paquetes-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem;margin-bottom:2.5rem;position:relative;z-index:1}
+.tab-btn{font-family:'Nunito',sans-serif;font-weight:800;font-size:0.85rem;padding:0.6rem 1.4rem;border-radius:50px;border:2px solid #131F5D;background:white;color:#131F5D;cursor:pointer;transition:var(--t)}
+.tab-btn:hover,.tab-btn.active{background:#131F5D;color:white;border-color:#131F5D;transform:translateY(-2px);box-shadow:0 4px 16px rgba(19,31,93,0.3)}
+.tab-btn.premium-tab.active{background:#7ED957;border-color:#7ED957;color:#131F5D}
+.tab-btn.premium-tab{border-color:#7ED957;color:#2d7a18}
+.paquete-panel{display:none;position:relative;z-index:1}
+.paquete-panel.active{display:block;animation:fadeIn 0.4s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.paquete-card{background:white;border-radius:20px;overflow:hidden;box-shadow:var(--sombra);max-width:820px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr}
+.paquete-card.premium{border-top:5px solid var(--amarillo)}
+.paquete-card.basico{border-top:5px solid var(--v4)}
+.paquete-card.lona{border-top:5px solid var(--v5)}
+.paquete-header{background:linear-gradient(160deg,#131F5D,#1a2d8a);padding:2.5rem 2rem;display:flex;flex-direction:column;justify-content:center;color:white;position:relative;overflow:hidden}
+.paquete-card.premium .paquete-header{background:linear-gradient(160deg,#0d1640,#131F5D);color:white}
+.paquete-card.lona .paquete-header{background:linear-gradient(160deg,#2d7a18,#7ED957)}
+.paquete-header::after{content:'🎋';position:absolute;font-size:8rem;opacity:0.08;right:-1.5rem;bottom:-1.5rem}
+.paquete-badge{font-size:0.7rem;font-weight:800;letter-spacing:0.15em;text-transform:uppercase;opacity:0.8;margin-bottom:0.5rem}
+.paquete-nombre{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2rem);line-height:1.2;margin-bottom:1rem}
+.paquete-desc{font-size:0.9rem;opacity:0.85;line-height:1.6;margin-bottom:1.5rem}
+.paquete-cotizar{display:inline-flex;align-items:center;gap:0.5rem;background:white;color:#131F5D;font-weight:800;font-size:0.85rem;padding:0.7rem 1.4rem;border-radius:50px;border:none;cursor:pointer;transition:var(--t);text-decoration:none;width:fit-content}
+.paquete-card.premium .paquete-cotizar{background:#7ED957;color:#131F5D}
+.paquete-cotizar:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.2)}
+.paquete-body{padding:2rem}
+.paquete-incluye-title{font-family:'Playfair Display',serif;font-size:1rem;color:#131F5D;margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:2px solid #e4e8f4}
+.incluye-list{display:flex;flex-direction:column;gap:0.6rem}
+.incluye-item{display:flex;align-items:flex-start;gap:0.7rem;font-size:0.88rem;line-height:1.45;color:var(--texto)}
+.incluye-check{width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#131F5D,#7ED957);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:0.65rem;color:white}
+.paquete-card.premium .incluye-check{background:linear-gradient(135deg,#7ED957,#131F5D)}
+.paquete-img-wrap{width:100%;margin-bottom:1.2rem;border-radius:10px;overflow:hidden;max-height:200px}
+.paquete-img-wrap img{width:100%;height:200px;object-fit:cover;display:block}
+
+
+/* ═══════════════════════════════════════════════
+   EXTRAS
+═══════════════════════════════════════════════ */
+#extras{padding:4rem 0;background:#ffffff;border-top:4px solid #f0f2f8}
+.extras-intro{text-align:center;margin-bottom:3rem}
+.extras-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.extra-item{background:#f8f9fc;border-radius:var(--radio);padding:1rem 1.2rem;display:flex;align-items:center;gap:0.8rem;border:1px solid rgba(19,31,93,0.08)}
+
+.extra-icon{font-size:1.4rem;flex-shrink:0}
+.extra-text{font-size:0.87rem;line-height:1.4;color:var(--texto);font-weight:700}
+
+/* ═══════════════════════════════════════════════
+   GALERÍA
+═══════════════════════════════════════════════ */
+#galeria{padding:5.5rem 0;background:linear-gradient(180deg,#f0f2f8 0%,#ffffff 100%)}
+.galeria-intro{text-align:center;margin-bottom:3rem}
+.galeria-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:0.8rem}
+.g-item{position:relative;border-radius:var(--radio);overflow:hidden;cursor:pointer;background:#c8e6c9}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease}
+.g-item:hover img{transform:scale(1.08)}
+.g-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(19,31,93,0.80) 0%,transparent 60%);opacity:0;transition:var(--t);display:flex;align-items:flex-end;padding:1rem}
+.g-item:hover .g-overlay{opacity:1}
+.g-overlay span{color:white;font-weight:800;font-size:0.85rem}
+.g-item.wide{grid-column:span 2}
+.g-item.tall{grid-row:span 2}
+.g-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#e4e8f4,#d6f5b8);color:#131F5D;font-size:0.75rem;text-align:center;padding:1rem;gap:0.4rem}
+.g-placeholder span{font-size:2.5rem}
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.93);z-index:1000;align-items:center;justify-content:center;padding:1.5rem}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:85vh;border-radius:var(--radio);object-fit:contain}
+.lightbox-close{position:absolute;top:1.2rem;right:1.5rem;background:none;border:none;color:white;font-size:2rem;cursor:pointer;opacity:0.7;transition:var(--t)}
+.lightbox-close:hover{opacity:1;transform:rotate(90deg)}
+
+/* ═══════════════════════════════════════════════
+   CONTACTO
+═══════════════════════════════════════════════ */
+#contacto{padding:5.5rem 0;background:linear-gradient(160deg,#0d1640 0%,#131F5D 60%,#1a2d8a 100%);color:white;position:relative;overflow:hidden}
+#contacto::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 75% 50%,rgba(126,217,87,0.10) 0%,transparent 55%),radial-gradient(ellipse at 20% 80%,rgba(245,197,24,0.07) 0%,transparent 45%)}
+#contacto::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.03) 1px,transparent 1px);background-size:24px 24px}
+.contacto-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start;position:relative;z-index:2}
+.contacto-text .section-title{color:white}
+.contacto-text .section-eyebrow{color:#7ED957}
+.contacto-text .section-subtitle{color:rgba(255,255,255,0.72);max-width:420px;margin-bottom:2rem}
+.contacto-items{display:flex;flex-direction:column;gap:1.2rem;margin-bottom:2rem}
+.contacto-item{display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radio);transition:var(--t);text-decoration:none;color:white}
+.contacto-item:hover{background:rgba(255,255,255,0.13);transform:translateX(4px);border-color:rgba(255,255,255,0.25)}
+.contacto-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.contacto-icon.wa{background:rgba(37,211,102,0.25)}
+.contacto-icon.ig{background:rgba(193,53,132,0.25)}
+.contacto-icon.mail{background:rgba(126,217,87,0.25)}
+.contacto-label{font-size:0.75rem;opacity:0.6;margin-bottom:0.1rem}
+.contacto-valor{font-weight:800;font-size:0.95rem}
+.social-btns{display:flex;flex-wrap:wrap;gap:0.8rem}
+.btn-social{display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:50px;font-weight:800;font-size:0.9rem;transition:var(--t);cursor:pointer;border:none;text-decoration:none}
+.btn-social.wa{background:#25D366;color:white}
+.btn-social.ig{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:white}
+.btn-social:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+.mapa-wrap{border-radius:20px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,0.4);border:3px solid rgba(255,255,255,0.08);position:relative}
+.mapa-wrap iframe{width:100%;height:380px;display:block;border:none}
+.mapa-link{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(13,22,64,0.96),transparent);padding:1.5rem 1.2rem 1rem;text-align:center}
+.mapa-link a{display:inline-flex;align-items:center;gap:0.5rem;color:#131F5D;font-weight:800;font-size:0.85rem;background:#7ED957;padding:0.6rem 1.4rem;border-radius:50px;transition:var(--t);text-decoration:none}
+.mapa-link a:hover{background:#f5c518;color:#131F5D;transform:translateY(-2px)}
+
+/* ═══════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════ */
+footer{background:#131F5D;color:rgba(255,255,255,0.55);text-align:center;padding:2rem 1.5rem;font-size:0.85rem}
+footer strong{color:rgba(255,255,255,0.85)}
+
+/* ═══════════════════════════════════════════════
+   WHATSAPP FLOTANTE
+═══════════════════════════════════════════════ */
+.wa-float{position:fixed;bottom:1.8rem;right:1.8rem;z-index:800;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.5);transition:var(--t);animation:waPulse 2.5s infinite}
+.wa-float:hover{transform:scale(1.12)}
+.wa-float svg{width:30px;height:30px;fill:white}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.5)}50%{box-shadow:0 4px 40px rgba(37,211,102,0.8)}}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════ */
+@media(max-width:900px){
+  .jardin-grid{grid-template-columns:1fr;gap:3rem}
+  .paquete-card{grid-template-columns:1fr}
+  .paquete-header{padding:2rem}
+  .contacto-grid{grid-template-columns:1fr;gap:3rem}
+  .galeria-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}
+  .g-item.wide{grid-column:span 2}
+  .g-item.tall{grid-row:span 1}
+}
+@media(max-width:600px){
+  .jardin-stats{grid-template-columns:1fr 1fr}
+  .jardin-fotos{grid-template-rows:160px 160px}
+  .galeria-grid{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
+  .hero-ctas{flex-direction:column;align-items:center}
+  .hero-ctas .btn-primary{width:100%;max-width:300px;justify-content:center}
+  .extras-grid{grid-template-columns:1fr 1fr}
+  .mapa-wrap iframe{height:280px}
+  .social-btns{flex-direction:column}
+  .btn-social{justify-content:center}
+}
+
+/* ═══════════════════════════════════════════════
+   CARRUSEL
+═══════════════════════════════════════════════ */
+#carrusel{padding:5rem 0;background:#ffffff;position:relative;overflow:hidden;border-top:4px solid #f0f2f8}
+#carrusel::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(19,31,93,0.04) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+.carrusel-intro{text-align:center;margin-bottom:2.5rem;position:relative;z-index:2}
+.carrusel-intro .section-eyebrow{color:#7ED957}
+.carrusel-intro .section-title{color:#131F5D}
+.carrusel-track-wrap{position:relative;overflow:hidden;border-radius:var(--radio-lg);z-index:2}
+.carrusel-track{display:flex;transition:transform 0.55s cubic-bezier(0.4,0,0.2,1);will-change:transform}
+.carrusel-slide{flex:0 0 100%;position:relative;aspect-ratio:16/7;overflow:hidden;background:#131F5D}
+.carrusel-slide img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.88) contrast(1.05) saturate(1.1)}
+.carrusel-slide-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(13,22,64,0.85) 0%,transparent 100%);padding:2rem 2rem 1.5rem;color:white;font-size:1rem;font-weight:700;letter-spacing:0.02em}
+/* Arrows */
+.carrusel-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:48px;height:48px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.18);color:white;font-size:1.4rem;backdrop-filter:blur(6px);transition:var(--t);box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+.carrusel-btn:hover{background:rgba(0,151,178,0.75);transform:translateY(-50%) scale(1.08)}
+.carrusel-btn.prev{left:1rem}
+.carrusel-btn.next{right:1rem}
+/* Dots */
+.carrusel-dots{display:flex;justify-content:center;gap:0.5rem;margin-top:1.5rem;position:relative;z-index:2}
+.carrusel-dot{width:10px;height:10px;border-radius:50%;background:rgba(19,31,93,0.2);border:none;cursor:pointer;transition:var(--t);padding:0}
+.carrusel-dot.active{background:#7ED957;transform:scale(1.25)}
+/* Thumbnails strip */
+.carrusel-thumbs{display:flex;gap:0.6rem;margin-top:1.2rem;overflow-x:auto;padding-bottom:0.4rem;justify-content:center;position:relative;z-index:2;scrollbar-width:none}
+.carrusel-thumbs::-webkit-scrollbar{display:none}
+.carrusel-thumb{flex:0 0 80px;height:54px;border-radius:8px;overflow:hidden;cursor:pointer;opacity:0.5;transition:var(--t);border:2px solid transparent}
+.carrusel-thumb.active{opacity:1;border-color:#7ED957}
+.carrusel-thumb img{width:100%;height:100%;object-fit:cover}
+@media(max-width:600px){
+  .carrusel-slide{aspect-ratio:4/3}
+  .carrusel-btn{width:38px;height:38px;font-size:1.1rem}
+  .carrusel-thumb{flex:0 0 60px;height:42px}
+}
+
+/* Logo display column in video section */
+.logo-col{display:flex;align-items:center;justify-content:center}
+.logo-display-wrap{
+  position:relative;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
+}
+/* Soft decorative circle behind the logo */
+.logo-display-wrap::before{
+  content:'';
+  position:absolute;
+  width:85%;
+  aspect-ratio:1;
+  border-radius:50%;
+  background:radial-gradient(ellipse at center,rgba(245,197,24,0.07) 0%,transparent 70%);
+  z-index:0;
+}
+.logo-display-img{
+  position:relative;
+  z-index:1;
+  width:100%;
+  max-width:480px;
+  height:auto;
+  filter:drop-shadow(0 4px 16px rgba(0,0,0,0.10));
+  animation:fadeUp 1s 0.2s ease both;
+}
+@media(max-width:900px){
+  .logo-display-img{max-width:360px}
+}
+@media(max-width:600px){
+  .logo-display-img{max-width:280px}
+  .logo-display-wrap{padding:1rem}
+}
+
+
+/* Garden photo under logo in video section */
+.jardin-foto-wrap{
+  position:relative;
+  width:100%;
+  border-radius:var(--radio-lg);
+  overflow:hidden;
+  margin-top:1.4rem;
+  box-shadow:0 12px 36px rgba(19,31,93,0.18);
+  aspect-ratio:16/9;
+}
+.jardin-foto-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  filter:brightness(0.92) contrast(1.06) saturate(1.08);
+  transition:transform 0.6s ease;
+}
+.jardin-foto-wrap:hover .jardin-foto-img{transform:scale(1.04)}
+.jardin-foto-overlay{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  padding:1rem 1.2rem;
+  background:linear-gradient(to top,rgba(19,31,93,0.80) 0%,transparent 100%);
+  color:white;
+  font-size:0.82rem;
+  font-weight:700;
+  letter-spacing:0.04em;
+}
+@media(max-width:900px){
+  .jardin-foto-wrap{max-width:560px;margin:1.2rem auto 0}
+}
+
+
+/* Navbar SVG bamboo icon */
+.nav-logo{display:flex;align-items:center;gap:0.5rem;text-decoration:none}
+.nav-bamboo-icon{
+  height:36px;width:auto;
+  color:rgba(255,255,255,0.92);
+  filter:drop-shadow(0 1px 4px rgba(0,0,0,0.3));
+  transition:var(--t);
+  flex-shrink:0;
+}
+#navbar.scrolled .nav-bamboo-icon{color:#7ED957;filter:none}
+.nav-logo-text{
+  font-family:'Dancing Script',cursive;
+  font-size:1.6rem;font-weight:700;
+  color:rgba(255,255,255,0.95);
+  transition:var(--t);
+  line-height:1;
+  text-shadow:0 2px 10px rgba(0,0,0,0.4);
+}
+#navbar.scrolled .nav-logo-text{color:#131F5D;text-shadow:none}
+
+
+/* ═══════════════════════════════════════════════
+   FOTO JARDÍN — pantalla completa extendida
+═══════════════════════════════════════════════ */
+#foto-jardin{position:relative;overflow:hidden;height:60vh;min-height:400px}
+@media(max-width:600px){#foto-jardin{height:55vw;min-height:240px}}
+.foto-jardin-wrap{position:relative;width:100%;height:100%}
+.foto-jardin-img{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center 40%;
+  display:block;
+  filter:brightness(0.78) contrast(1.08) saturate(1.12);
+}
+.foto-jardin-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(
+    to right,
+    rgba(19,31,93,0.72) 0%,
+    rgba(19,31,93,0.30) 50%,
+    rgba(0,0,0,0.05) 100%
+  );
+  display:flex;align-items:center;
+}
+.foto-jardin-content{
+  padding:2rem 3rem;
+  max-width:520px;
+  color:white;
+}
+.foto-jardin-eyebrow{
+  font-family:'Dancing Script',cursive;
+  font-size:1.3rem;
+  color:#7ED957;
+  display:block;
+  margin-bottom:0.4rem;
+}
+.foto-jardin-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,4vw,3rem);
+  line-height:1.15;
+  margin-bottom:0.6rem;
+  color:white;
+}
+.foto-jardin-sub{
+  font-size:0.95rem;
+  color:rgba(255,255,255,0.78);
+  font-weight:600;
+}
+@media(max-width:600px){
+  .foto-jardin-content{padding:1.4rem 1.5rem}
+  .foto-jardin-overlay{background:linear-gradient(to bottom,rgba(19,31,93,0.55) 0%,rgba(0,0,0,0.3) 100%);align-items:flex-end}
+  .foto-jardin-content{max-width:100%;text-align:center}
+}
+
+</style>
+</head>
+<body>
+
+<!-- ════════ WHATSAPP FLOTANTE ════════ -->
+<a class="wa-float" href="https://wa.me/5215580710460?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n%20sobre%20los%20paquetes%20de%20Bamboo%20Jard%C3%ADn%20de%20Eventos" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ════════ NAVBAR ════════ -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <svg class="nav-bamboo-icon" viewBox="0 0 40 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Left stalk -->
+          <rect x="7" y="4" width="5" height="48" rx="2.5" fill="currentColor" opacity="0.9"/>
+          <rect x="7" y="14" width="5" height="2" rx="1" fill="currentColor" opacity="0.5"/>
+          <rect x="7" y="26" width="5" height="2" rx="1" fill="currentColor" opacity="0.5"/>
+          <rect x="7" y="38" width="5" height="2" rx="1" fill="currentColor" opacity="0.5"/>
+          <!-- Right stalk -->
+          <rect x="17" y="10" width="5" height="42" rx="2.5" fill="currentColor" opacity="0.85"/>
+          <rect x="17" y="20" width="5" height="2" rx="1" fill="currentColor" opacity="0.5"/>
+          <rect x="17" y="32" width="5" height="2" rx="1" fill="currentColor" opacity="0.5"/>
+          <rect x="17" y="44" width="5" height="2" rx="1" fill="currentColor" opacity="0.5"/>
+          <!-- Thin stalk -->
+          <rect x="26" y="16" width="3.5" height="36" rx="1.75" fill="currentColor" opacity="0.7"/>
+          <rect x="26" y="26" width="3.5" height="1.5" rx="0.75" fill="currentColor" opacity="0.4"/>
+          <rect x="26" y="38" width="3.5" height="1.5" rx="0.75" fill="currentColor" opacity="0.4"/>
+          <!-- Leaves left stalk -->
+          <path d="M12 16 Q4 13 2 8 Q6 10 12 14Z" fill="currentColor" opacity="0.75"/>
+          <path d="M12 28 Q3 26 1 20 Q6 23 12 26Z" fill="currentColor" opacity="0.7"/>
+          <path d="M12 40 Q4 38 2 32 Q6 35 12 38Z" fill="currentColor" opacity="0.65"/>
+          <!-- Leaves right stalk -->
+          <path d="M22 22 Q30 18 33 12 Q28 16 22 20Z" fill="currentColor" opacity="0.72"/>
+          <path d="M22 34 Q31 31 34 25 Q29 29 22 32Z" fill="currentColor" opacity="0.68"/>
+        </svg>
+        <span class="nav-logo-text">Bamboo</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#jardin" onclick="closeMobileNav()">El Jardín</a></li>
+        <li><a href="#paquetes" onclick="closeMobileNav()">Paquetes</a></li>
+        <li><a href="#galeria" onclick="closeMobileNav()">Galería</a></li>
+        <li><a href="#contacto" onclick="closeMobileNav()">Contacto</a></li>
+        <li><a href="https://wa.me/5215580710460?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20paquetes" target="_blank" class="nav-cta" onclick="closeMobileNav()">📲 Cotizar</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+
+<!-- ════════ HERO — Video fullscreen autoplay ════════ -->
+<section id="hero">
+  <!-- YouTube fullscreen background -->
+  <div class="hero-yt-wrap">
+    <iframe
+      id="heroYT"
+      src="https://www.youtube-nocookie.com/embed/PB7-IBLy3YM?autoplay=1&mute=1&loop=1&playlist=PB7-IBLy3YM&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&playsinline=1&enablejsapi=1"
+      allow="autoplay; fullscreen"
+      allowfullscreen
+      title="Bamboo Jardín de Eventos">
+    </iframe>
+  </div>
+  <!-- Overlay -->
+  <div class="hero-overlay"></div>
+  <!-- Content -->
+  <div class="hero-inner">
+    <span class="hero-tagline">Tu momento especial merece el mejor escenario</span>
+    <div class="hero-badges">
+      <span class="hero-badge">🌿 Hasta 600 invitados</span>
+      <span class="hero-badge">🎉 Todo tipo de eventos</span>
+      <span class="hero-badge">🍽️ Catering incluido</span>
+      <span class="hero-badge">🎵 DJ profesional</span>
+      <span class="hero-badge">✨ 5 paquetes</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="#paquetes" class="btn-primary btn-amarillo">🎋 Ver paquetes</a>
+      <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20una%20cotizaci%C3%B3n" target="_blank" class="btn-primary btn-whatsapp">💬 Cotizar ahora</a>
+    </div>
+  </div>
+  <a class="scroll-hint" href="#video-section">
+    <span>Conoce más</span>
+    <svg width="16" height="24" viewBox="0 0 16 24" fill="none"><line x1="8" y1="0" x2="8" y2="20" stroke="white" stroke-width="1.5"/><polyline points="2,14 8,22 14,14" stroke="white" stroke-width="1.5" fill="none"/></svg>
+  </a>
+</section>
+
+<!-- ════════ SECCIÓN VIDEO ════════ -->
+<section id="video-section">
+  <div class="container">
+    <div class="video-grid">
+
+      <!-- Columna logo -->
+      <div class="video-col logo-col">
+        <div class="logo-display-wrap">
+          <img
+            src="logo%20bamboo%2021%20mayo.png"
+            alt="Bamboo Jardín de Eventos"
+            class="logo-display-img">
+        </div>
+      </div>
+
+      <!-- Columna texto persuasivo -->
+      <div class="video-text">
+        <span class="video-eyebrow">Más que un espacio</span>
+        <h2 class="video-title">Donde los sueños se vuelven <em>recuerdos</em></h2>
+        <div class="video-divider"></div>
+        <p class="video-desc">En Bamboo creamos experiencias que van más allá de una fiesta. Cada detalle, cada momento, cada sonrisa — los cuidamos como si fueran propios. Somos el escenario perfecto para la celebración que siempre imaginaste.</p>
+        <div class="video-puntos">
+          <div class="video-punto">
+            <div class="video-punto-icon">🌿</div>
+            <div class="video-punto-text">
+              <strong>Ambiente natural único</strong>
+              <span>Jardín al aire libre con zonas cubiertas en Jaltenco, Edo. Méx.</span>
+            </div>
+          </div>
+          <div class="video-punto">
+            <div class="video-punto-icon">👨‍🍳</div>
+            <div class="video-punto-text">
+              <strong>Catering de calidad incluido</strong>
+              <span>Menú de 3 tiempos, meseros con capitán y descorche libre</span>
+            </div>
+          </div>
+          <div class="video-punto">
+            <div class="video-punto-icon">🎵</div>
+            <div class="video-punto-text">
+              <strong>Entretenimiento para todos</strong>
+              <span>DJ 5 horas, banda, mariachi, grupo versátil o lo que prefieras</span>
+            </div>
+          </div>
+          <div class="video-punto">
+            <div class="video-punto-icon">✨</div>
+            <div class="video-punto-text">
+              <strong>Event Planner incluido</strong>
+              <span>Te acompañamos desde la planeación hasta el último baile</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-ctas">
+          <a href="#paquetes" class="btn-primary btn-amarillo">🎋 Ver paquetes y precios</a>
+          <a href="https://wa.me/5215580710460?text=Hola%2C%20vi%20el%20video%20y%20me%20gustar%C3%ADa%20informaci%C3%B3n" target="_blank" class="btn-primary btn-whatsapp">💬 Preguntar por WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ FOTO JARDÍN — Pantalla extendida ════════ -->
+<section id="foto-jardin">
+  <div class="foto-jardin-wrap">
+    <img
+      src="Jardin%20de%20eventos%20bamboo.jpeg"
+      alt="Jardín de Eventos Bamboo — Jaltenco, Estado de México"
+      class="foto-jardin-img">
+    <div class="foto-jardin-overlay">
+      <div class="foto-jardin-content">
+        <span class="foto-jardin-eyebrow">Nuestro jardín</span>
+        <h2 class="foto-jardin-title">Un espacio que enamora</h2>
+        <p class="foto-jardin-sub">Jaltenco, Estado de México · Capacidad para 600 personas</p>
+        <a href="#jardin" class="btn-primary btn-amarillo" style="margin-top:1.4rem">🌿 Conocer más</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ EL JARDÍN ════════ -->
+<section id="jardin">
+  <div class="container">
+    <div class="jardin-grid">
+      <div class="jardin-text">
+        <span class="section-eyebrow">Nuestro espacio</span>
+        <h2 class="section-title">El corazón de tu celebración</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">Somos una empresa dedicada a realizar el evento que siempre soñaste, brindando instalaciones y servicios de la más alta calidad, para hacerte sentir un invitado más de tu propio evento.</p>
+        <div class="jardin-stats">
+          <div class="stat-card"><div class="stat-num">600</div><div class="stat-label">Personas de capacidad</div></div>
+          <div class="stat-card"><div class="stat-num">5</div><div class="stat-label">Paquetes disponibles</div></div>
+          <div class="stat-card"><div class="stat-num">5h</div><div class="stat-label">Servicio de DJ</div></div>
+          <div class="stat-card"><div class="stat-num">+15</div><div class="stat-label">Tipos de eventos</div></div>
+        </div>
+        <div class="jardin-servicios">
+          <h4>Servicios disponibles</h4>
+          <div class="servicio-list">
+            <div class="servicio-item">Catering con menú de 3 tiempos</div>
+            <div class="servicio-item">Música: DJ, Grupo Versátil, Banda, Mariachi</div>
+            <div class="servicio-item">Mesa de Dulces y Postres</div>
+            <div class="servicio-item">Event Planner para tu celebración</div>
+            <div class="servicio-item">Loza completa: cristalería, cubiertos y utensilios</div>
+            <div class="servicio-item">Servicio de meseros con capitán</div>
+            <div class="servicio-item">Inflables y entretenimiento para niños</div>
+            <div class="servicio-item">Descorche libre para bebidas del cliente</div>
+          </div>
+        </div>
+        <div class="eventos-tags">
+          <span class="evento-tag">XV Años</span><span class="evento-tag">Bodas</span>
+          <span class="evento-tag">Bautizos</span><span class="evento-tag">Graduaciones</span>
+          <span class="evento-tag">Cumpleaños</span><span class="evento-tag">Aniversarios</span>
+          <span class="evento-tag">Congresos</span><span class="evento-tag">Empresariales</span>
+          <span class="evento-tag">Bazares</span><span class="evento-tag">y más…</span>
+        </div>
+      </div>
+      <div class="jardin-fotos">
+        <div class="foto-slot tall">
+          <img src="bamboo-94b.jpg" alt="Mesa LOVE con sillones trono" onerror="this.parentElement.innerHTML='<div class=foto-placeholder><span>🌿</span>Jardín Bamboo</div>'">
+        </div>
+        <div class="foto-slot">
+          <img src="bamboo-92c.jpg" alt="Interior carpa montaje rojo vino" onerror="this.parentElement.innerHTML='<div class=foto-placeholder><span>🎉</span>Eventos</div>'">
+        </div>
+        <div class="foto-slot">
+          <img src="bamboo-951.jpg" alt="Vista interior jardín con carpa" onerror="this.parentElement.innerHTML='<div class=foto-placeholder><span>✨</span>Celebraciones</div>'">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PAQUETES ════════ -->
+<section id="paquetes">
+  <div class="container">
+    <div class="paquetes-intro">
+      <span class="section-eyebrow">Encuentra el tuyo</span>
+      <h2 class="section-title">Nuestros Paquetes</h2>
+      <div class="divider" style="margin:0.8rem auto 1rem"></div>
+      <p class="section-subtitle">Cada paquete está diseñado para que disfrutes tu evento sin preocupaciones. Selecciona el que mejor se adapte a tu celebración.</p>
+    </div>
+    <div class="paquetes-tabs">
+      <button class="tab-btn active" onclick="showPaquete('lona',this)">⛺ Lona</button>
+      <button class="tab-btn" onclick="showPaquete('basico',this)">🌿 Básico</button>
+      <button class="tab-btn" onclick="showPaquete('basicovintage',this)">🪵 Básico Vintage</button>
+      <button class="tab-btn premium-tab" onclick="showPaquete('premium',this)">👑 Premium</button>
+      <button class="tab-btn premium-tab" onclick="showPaquete('premiumvintage',this)">✨ Premium Vintage</button>
+    </div>
+
+    <!-- LONA -->
+    <div class="paquete-panel active" id="panel-lona">
+      <div class="paquete-card lona">
+        <div class="paquete-header">
+          <div class="paquete-badge">Paquete</div>
+          <div class="paquete-nombre">Lona</div>
+          <p class="paquete-desc">Celebra al aire libre con la protección de nuestra lona sobre pasto natural. Ambiente abierto, fresco y con todo el espacio para tu fiesta.</p>
+          <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20el%20Paquete%20Lona" target="_blank" class="paquete-cotizar">💬 Cotizar este paquete</a>
+        </div>
+        <div class="paquete-body">
+          <div class="paquete-img-wrap">
+            <img src="PAQUETE_LONA.png" alt="Paquete Lona — Bamboo Jardín de Eventos" onerror="this.style.display='none'">
+          </div>
+          <div class="paquete-incluye-title">✅ ¿Qué incluye?</div>
+          <div class="incluye-list">
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Lona tipo vela sobre jardín de pasto natural</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Mesas cuadradas rústicas de madera</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Sillas Tiffany blancas con cojín</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Mantelería básica</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Loza completa: cristalería, cubiertos y utensilios</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Servicio de meseros con capitán</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Catering menú de 3 tiempos</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>DJ 5 horas</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Event Planner</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Descorche libre</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Estacionamiento</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BÁSICO -->
+    <div class="paquete-panel" id="panel-basico">
+      <div class="paquete-card basico">
+        <div class="paquete-header">
+          <div class="paquete-badge">Paquete</div>
+          <div class="paquete-nombre">Básico</div>
+          <p class="paquete-desc">Montaje clásico con mantelería en color bajo carpa estructural. Elegante, amplio y con todo lo que tu evento necesita.</p>
+          <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20el%20Paquete%20B%C3%A1sico" target="_blank" class="paquete-cotizar">💬 Cotizar este paquete</a>
+        </div>
+        <div class="paquete-body">
+          <div class="paquete-img-wrap">
+            <img src="PAQUETE_BASICO.png" alt="Paquete Básico — Bamboo Jardín de Eventos" onerror="this.style.display='none'">
+          </div>
+          <div class="paquete-incluye-title">✅ ¿Qué incluye?</div>
+          <div class="incluye-list">
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Carpa estructural tipo industrial</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Mesas redondas con mantelería en color</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Sillas Tiffany blancas con moño decorativo</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Loza completa: cristalería, cubiertos y utensilios</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Servicio de meseros con capitán</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Catering menú de 3 tiempos</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>DJ 5 horas</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Pista de baile de madera</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Event Planner</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Descorche libre</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Estacionamiento</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BÁSICO VINTAGE -->
+    <div class="paquete-panel" id="panel-basicovintage">
+      <div class="paquete-card basico">
+        <div class="paquete-header" style="background:linear-gradient(160deg,#131F5D,#2563c7)">
+          <div class="paquete-badge">Paquete</div>
+          <div class="paquete-nombre">Básico Vintage</div>
+          <p class="paquete-desc">El encanto de lo rústico con mesas de madera, sillas vintage y mantelería natural. Una atmósfera cálida y llena de personalidad.</p>
+          <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20el%20Paquete%20B%C3%A1sico%20Vintage" target="_blank" class="paquete-cotizar">💬 Cotizar este paquete</a>
+        </div>
+        <div class="paquete-body">
+          <div class="paquete-img-wrap">
+            <img src="PAQUETE_BASICO_VINTAGE.png" alt="Paquete Básico Vintage — Bamboo Jardín de Eventos" onerror="this.style.display='none'">
+          </div>
+          <div class="paquete-incluye-title">✅ ¿Qué incluye?</div>
+          <div class="incluye-list">
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Carpa tipo industrial con drapeado de tela</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Mesas rectangulares de madera estilo rústico</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Sillas crossback (X-back) de madera natural</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Mantelería natural / corredor de lino</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Loza completa: cristalería, cubiertos y utensilios</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Servicio de meseros con capitán</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Catering menú de 3 tiempos</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>DJ 5 horas</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Event Planner</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Descorche libre</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Estacionamiento</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PREMIUM -->
+    <div class="paquete-panel" id="panel-premium">
+      <div class="paquete-card premium">
+        <div class="paquete-header">
+          <div class="paquete-badge">⭐ El más completo</div>
+          <div class="paquete-nombre">Premium</div>
+          <p class="paquete-desc">Lujo y elegancia en cada detalle. Carpa con drapeado de techo, iluminación de candiles y el montaje más sofisticado del jardín.</p>
+          <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20el%20Paquete%20Premium" target="_blank" class="paquete-cotizar">💬 Cotizar este paquete</a>
+        </div>
+        <div class="paquete-body">
+          <div class="paquete-img-wrap">
+            <img src="PAQUETE_PREMIUM.png" alt="Paquete Premium — Bamboo Jardín de Eventos" onerror="this.style.display='none'">
+          </div>
+          <div class="paquete-incluye-title">✅ ¿Qué incluye?</div>
+          <div class="incluye-list">
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Carpa con drapeado de techo y columnas de tela</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Candiles decorativos colgantes</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Mesas redondas con mantelería blanca premium</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Sillas Tiffany blancas con moño dorado</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Centros de mesa florales</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Loza completa: cristalería, cubiertos y utensilios</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Servicio de meseros con capitán</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Catering menú de 3 tiempos</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>DJ 5 horas + pista de baile de madera</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Event Planner</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Descorche libre · Estacionamiento</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PREMIUM VINTAGE -->
+    <div class="paquete-panel" id="panel-premiumvintage">
+      <div class="paquete-card premium">
+        <div class="paquete-header" style="background:linear-gradient(160deg,#0d1640,#1a2d8a)">
+          <div class="paquete-badge">⭐ Edición especial</div>
+          <div class="paquete-nombre">Premium Vintage</div>
+          <p class="paquete-desc">Lo mejor de dos mundos: la sofisticación premium con la calidez del estilo vintage. Decoración de techo ondulada, mobiliario rústico y una atmósfera única e irrepetible.</p>
+          <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20el%20Paquete%20Premium%20Vintage" target="_blank" class="paquete-cotizar">💬 Cotizar este paquete</a>
+        </div>
+        <div class="paquete-body">
+          <div class="paquete-img-wrap">
+            <img src="PAQUETE_PREMIUM_VINTAGE.png" alt="Paquete Premium Vintage — Bamboo Jardín de Eventos" onerror="this.style.display='none'">
+          </div>
+          <div class="paquete-incluye-title">✅ ¿Qué incluye?</div>
+          <div class="incluye-list">
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Carpa con decoración de techo en pétalos/ondas de tela</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Mesas rectangulares de madera oscura</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Sillas crossback (X-back) de madera</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Centros de mesa florales con globos decorativos</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Loza completa: cristalería, cubiertos y utensilios</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Servicio de meseros con capitán</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Catering menú de 3 tiempos</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>DJ 5 horas + pista de baile</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Event Planner</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Descorche libre · Estacionamiento</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;position:relative;z-index:1">
+      <a href="https://wa.me/5215580710460?text=Hola%2C%20quisiera%20saber%20m%C3%A1s%20sobre%20los%20paquetes%20disponibles" target="_blank" class="btn-primary">💬 Hablar con un asesor</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ EXTRAS ════════ -->
+<section id="extras">
+  <div class="container">
+    <div class="extras-intro">
+      <span class="section-eyebrow">Personaliza tu evento</span>
+      <h2 class="section-title">Servicios Adicionales</h2>
+      <div class="divider" style="margin:0.8rem auto 1rem"></div>
+      <p class="section-subtitle" style="margin:0 auto">Agrega el toque especial a tu celebración con nuestros servicios extra disponibles bajo cotización.</p>
+    </div>
+    <div class="extras-grid">
+      <div class="extra-item"><span class="extra-icon">🪑</span><span class="extra-text">Periqueras de cristal o madera</span></div>
+      <div class="extra-item"><span class="extra-icon">🛋️</span><span class="extra-text">Sala lounge</span></div>
+      <div class="extra-item"><span class="extra-icon">🍹</span><span class="extra-text">Servicio de barman</span></div>
+      <div class="extra-item"><span class="extra-icon">🍬</span><span class="extra-text">Mesa de dulces</span></div>
+      <div class="extra-item"><span class="extra-icon">🔤</span><span class="extra-text">Letras gigantes decorativas</span></div>
+      <div class="extra-item"><span class="extra-icon">🔥</span><span class="extra-text">Calentadores de gas</span></div>
+      <div class="extra-item"><span class="extra-icon">⛺</span><span class="extra-text">Carpa cuadriculada para sala lounge</span></div>
+      <div class="extra-item"><span class="extra-icon">💡</span><span class="extra-text">Pista de baile con luz</span></div>
+      <div class="extra-item"><span class="extra-icon">💒</span><span class="extra-text">Ceremonias dentro del jardín</span></div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="https://wa.me/5215580710460?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20los%20servicios%20extra" target="_blank" class="btn-primary">💬 Preguntar por extras</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ GALERÍA ════════ -->
+<section id="galeria">
+  <div class="container">
+    <div class="galeria-intro">
+      <span class="section-eyebrow">Momentos que inspiran</span>
+      <h2 class="section-title">Galería de Eventos</h2>
+      <div class="divider" style="margin:0.8rem auto 1rem"></div>
+      <p class="section-subtitle" style="margin:0 auto">Cada evento es único. Aquí algunos de los momentos especiales que hemos tenido el honor de acompañar.</p>
+    </div>
+    <div class="galeria-grid">
+      <div class="g-item wide" onclick="openLightbox(this)"><img src="bamboo-962.jpg" alt="Mesa LOVE" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🌿</span>Mesa LOVE</div>'"><div class="g-overlay"><span>Mesa Principal LOVE</span></div></div>
+      <div class="g-item tall" onclick="openLightbox(this)"><img src="bamboo-926.jpg" alt="Arreglo floral" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🌸</span>Arreglo Floral</div>'"><div class="g-overlay"><span>Arreglo floral Premium</span></div></div>
+      <div class="g-item" onclick="openLightbox(this)"><img src="bamboo-968.jpg" alt="Pista de baile" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>✨</span>Pista</div>'"><div class="g-overlay"><span>Pista de baile iluminada</span></div></div>
+      <div class="g-item" onclick="openLightbox(this)"><img src="bamboo-96a.jpg" alt="Área lounge" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🛋️</span>Lounge</div>'"><div class="g-overlay"><span>Sala Lounge exterior</span></div></div>
+      <div class="g-item" onclick="openLightbox(this)"><img src="bamboo-95e.jpg" alt="Arco floral" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>⛺</span>Carpa</div>'"><div class="g-overlay"><span>Carpa con arco floral</span></div></div>
+      <div class="g-item" onclick="openLightbox(this)"><img src="bamboo-99d.jpg" alt="Ceremonia boda" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>💒</span>Ceremonia</div>'"><div class="g-overlay"><span>Ceremonia al jardín</span></div></div>
+      <div class="g-item" onclick="openLightbox(this)"><img src="bamboo-995.jpg" alt="Ceremonia exterior" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>💐</span>Exterior</div>'"><div class="g-overlay"><span>Ceremonia exterior</span></div></div>
+      <div class="g-item" onclick="openLightbox(this)"><img src="bamboo-98f.jpg" alt="Decoración botánica" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🌺</span>Botánica</div>'"><div class="g-overlay"><span>Decoración botánica</span></div></div>
+      <div class="g-item" onclick="openLightbox(this)"><img src="bamboo-wa1.jpg" alt="Montaje elegante" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🍷</span>Montaje</div>'"><div class="g-overlay"><span>Montaje elegante</span></div></div>
+      <div class="g-item wide" onclick="openLightbox(this)"><img src="bamboo-wa2.jpg" alt="Jardín dorado" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🏡</span>Jardín</div>'"><div class="g-overlay"><span>Jardín Premium dorado</span></div></div>
+      <div class="g-item" onclick="openLightbox(this)"><img src="bamboo-972.jpg" alt="Vintage rosa" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🌹</span>Vintage</div>'"><div class="g-overlay"><span>Paquete Vintage Rosa</span></div></div>
+      <div class="g-item" onclick="openLightbox(this)"><img src="bamboo-997.jpg" alt="Fairy lights noche" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🌙</span>Nocturno</div>'"><div class="g-overlay"><span>Iluminación nocturna</span></div></div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="https://www.instagram.com/jardinbamboomxoficial/" target="_blank" class="btn-outline">📸 Ver más en Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+
+<!-- ════════ CARRUSEL ════════ -->
+<section id="carrusel">
+  <div class="container">
+    <div class="carrusel-intro">
+      <span class="section-eyebrow">El jardín en imágenes</span>
+      <h2 class="section-title">Momentos Reales en Bamboo</h2>
+      <div class="divider" style="margin:0.8rem auto 0;background:linear-gradient(to right,#0097b2,#7ed957)"></div>
+    </div>
+    <div class="carrusel-track-wrap">
+      <button class="carrusel-btn prev" onclick="carruselMove(-1)" aria-label="Anterior">&#8249;</button>
+      <button class="carrusel-btn next" onclick="carruselMove(1)" aria-label="Siguiente">&#8250;</button>
+      <div class="carrusel-track" id="carruselTrack">
+        <div class="carrusel-slide">
+          <img src="Carrusel1.jpeg" alt="Sala lounge con carpa cuadriculada azul y blanca — Bamboo Jardín de Eventos">
+          <div class="carrusel-slide-caption">Sala Lounge con Carpa Cuadriculada</div>
+        </div>
+        <div class="carrusel-slide">
+          <img src="Carrusel2.jpeg" alt="Jardín con carpa tipo vela y muebles blancos — Bamboo">
+          <div class="carrusel-slide-caption">Jardín al Aire Libre con Lona</div>
+        </div>
+        <div class="carrusel-slide">
+          <img src="Carrusel3.jpeg" alt="Sofás blancos bajo carpa tipo vela en jardín verde — Bamboo">
+          <div class="carrusel-slide-caption">Área de Descanso y Sala Lounge</div>
+        </div>
+        <div class="carrusel-slide">
+          <img src="Carrusel4.jpeg" alt="Letras gigantes B&Y con arco floral y buganvilias — Bamboo">
+          <div class="carrusel-slide-caption">Letras Gigantes Decorativas</div>
+        </div>
+        <div class="carrusel-slide">
+          <img src="Carrusel5.jpeg" alt="Letras gigantes en jardín con carpa blanca y arco floral — Bamboo">
+          <div class="carrusel-slide-caption">Jardín con Letras y Arco Floral</div>
+        </div>
+        <div class="carrusel-slide">
+          <img src="Carrusel6.jpeg" alt="Montaje rosa bajo carpa con drapeado blanco y sillas Tiffany — Bamboo">
+          <div class="carrusel-slide-caption">Montaje Rosa con Drapeado Premium</div>
+        </div>
+        <div class="carrusel-slide">
+          <img src="Carrusel7.jpeg" alt="Letras gigantes iluminadas en jardín con buganvilias — Bamboo">
+          <div class="carrusel-slide-caption">Letras Gigantes con Iluminación</div>
+        </div>
+      </div>
+    </div>
+    <!-- Dots -->
+    <div class="carrusel-dots" id="carruselDots">
+      <button class="carrusel-dot active" onclick="carruselGoTo(0)"></button>
+      <button class="carrusel-dot" onclick="carruselGoTo(1)"></button>
+      <button class="carrusel-dot" onclick="carruselGoTo(2)"></button>
+      <button class="carrusel-dot" onclick="carruselGoTo(3)"></button>
+      <button class="carrusel-dot" onclick="carruselGoTo(4)"></button>
+      <button class="carrusel-dot" onclick="carruselGoTo(5)"></button>
+      <button class="carrusel-dot" onclick="carruselGoTo(6)"></button>
+    </div>
+    <!-- Thumbnails -->
+    <div class="carrusel-thumbs" id="carruselThumbs">
+      <div class="carrusel-thumb active" onclick="carruselGoTo(0)"><img src="Carrusel1.jpeg" alt=""></div>
+      <div class="carrusel-thumb" onclick="carruselGoTo(1)"><img src="Carrusel2.jpeg" alt=""></div>
+      <div class="carrusel-thumb" onclick="carruselGoTo(2)"><img src="Carrusel3.jpeg" alt=""></div>
+      <div class="carrusel-thumb" onclick="carruselGoTo(3)"><img src="Carrusel4.jpeg" alt=""></div>
+      <div class="carrusel-thumb" onclick="carruselGoTo(4)"><img src="Carrusel5.jpeg" alt=""></div>
+      <div class="carrusel-thumb" onclick="carruselGoTo(5)"><img src="Carrusel6.jpeg" alt=""></div>
+      <div class="carrusel-thumb" onclick="carruselGoTo(6)"><img src="Carrusel7.jpeg" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CONTACTO ════════ -->
+<section id="contacto">
+  <div class="container">
+    <div class="contacto-grid">
+      <div class="contacto-text">
+        <span class="section-eyebrow">Estamos aquí para ti</span>
+        <h2 class="section-title">Contáctanos</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">¿Tienes una fecha en mente? ¿Quieres saber qué paquete se adapta mejor a ti? Escríbenos y con gusto te damos una cotización sin compromiso.</p>
+        <div class="contacto-items">
+          <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n%20sobre%20los%20paquetes" target="_blank" class="contacto-item">
+            <div class="contacto-icon wa"><svg viewBox="0 0 24 24" width="22" height="22" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+            <div><div class="contacto-label">WhatsApp Business</div><div class="contacto-valor">Escríbenos directo</div></div>
+          </a>
+          <a href="https://www.instagram.com/jardinbamboomxoficial/" target="_blank" class="contacto-item">
+            <div class="contacto-icon ig">📸</div>
+            <div><div class="contacto-label">Instagram</div><div class="contacto-valor">@jardinbamboomxoficial</div></div>
+          </a>
+          <a href="mailto:contacto@bamboojardin.com" class="contacto-item">
+            <div class="contacto-icon mail">✉️</div>
+            <div><div class="contacto-label">Correo electrónico</div><div class="contacto-valor">contacto@bamboojardin.com</div></div>
+          </a>
+        </div>
+        <div class="social-btns">
+          <a href="https://wa.me/5215580710460?text=Hola%2C%20quisiera%20una%20cotizaci%C3%B3n" target="_blank" class="btn-social wa">💬 Escribir por WhatsApp</a>
+          <a href="https://www.instagram.com/jardinbamboomxoficial/" target="_blank" class="btn-social ig">📸 Seguir en Instagram</a>
+        </div>
+      </div>
+      <div>
+        <div class="mapa-wrap">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3757.8!2d-99.0955!3d19.7450!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDQ0JzQyLjAiTiA5OcKwMDUnNDMuOCJX!5e0!3m2!1ses!2smx!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación Bamboo"></iframe>
+          <div class="mapa-link"><a href="https://share.google/yZz0P48HMQQnwameG" target="_blank">📍 Cómo llegar — Francisco Javier Mina Mz. 14, Jaltenco</a></div>
+        </div>
+        <p style="color:rgba(255,255,255,0.4);font-size:0.8rem;margin-top:0.8rem;text-align:center">Francisco Javier Mina Manzana 014, San Andrés, 55780 Jaltenco, Méx.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <p>© 2025 <strong>Bamboo Jardín de Eventos</strong> — Jaltenco, Estado de México</p>
+  <p style="margin-top:0.4rem"><a href="https://wa.me/5215580710460" target="_blank" style="color:rgba(255,255,255,0.6);text-decoration:none">💬 WhatsApp</a> &nbsp;|&nbsp; Francisco Javier Mina Mz. 014, San Andrés</p>
+</footer>
+
+<!-- ════════ JS ════════ -->
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); });
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+    document.getElementById('hamburger').classList.toggle('active');
+    document.getElementById('mobileOverlay').classList.toggle('show');
+    document.body.style.overflow = document.getElementById('navLinks').classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMobileNav() {
+    document.getElementById('navLinks').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('active');
+    document.getElementById('mobileOverlay').classList.remove('show');
+    document.body.style.overflow = '';
+  }
+  function showPaquete(id, btn) {
+    document.querySelectorAll('.paquete-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('panel-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+  function openLightbox(el) {
+    const img = el.querySelector('img');
+    if (img && img.src) {
+      document.getElementById('lightboxImg').src = img.src;
+      document.getElementById('lightboxImg').alt = img.alt;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+
+
+<script>
+// ── Carrusel ─────────────────────────────────────────
+(function(){
+  var current = 0;
+  var total = 7;
+  var autoTimer;
+
+  function updateCarrusel(){
+    var track = document.getElementById('carruselTrack');
+    if(!track) return;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    // dots
+    var dots = document.querySelectorAll('.carrusel-dot');
+    dots.forEach(function(d,i){ d.classList.toggle('active', i === current); });
+    // thumbs
+    var thumbs = document.querySelectorAll('.carrusel-thumb');
+    thumbs.forEach(function(t,i){ t.classList.toggle('active', i === current); });
+  }
+
+  window.carruselMove = function(dir){
+    current = (current + dir + total) % total;
+    updateCarrusel();
+    resetAuto();
+  };
+  window.carruselGoTo = function(idx){
+    current = idx;
+    updateCarrusel();
+    resetAuto();
+  };
+
+  function resetAuto(){
+    clearInterval(autoTimer);
+    autoTimer = setInterval(function(){ carruselMove(1); }, 4500);
+  }
+
+  // Touch/swipe support
+  var startX = 0;
+  var track = document.getElementById('carruselTrack');
+  if(track){
+    track.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, {passive:true});
+    track.addEventListener('touchend', function(e){
+      var diff = startX - e.changedTouches[0].clientX;
+      if(Math.abs(diff) > 40) carruselMove(diff > 0 ? 1 : -1);
+    });
+  }
+
+  resetAuto();
+})();
+</script>
+
+</body>
+</html>
