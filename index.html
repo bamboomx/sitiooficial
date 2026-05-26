@@ -517,6 +517,54 @@ footer strong{color:rgba(255,255,255,0.85)}
 ═══════════════════════════════════════════════ */
 #foto-jardin{position:relative;overflow:hidden;height:60vh;min-height:400px}
 @media(max-width:600px){#foto-jardin{height:55vw;min-height:240px}}
+
+/* ═══════════════════════════════════════════════
+   EXTRA FOTO-BANNER SECTIONS (4 nuevas)
+═══════════════════════════════════════════════ */
+.foto-banner{position:relative;overflow:hidden;height:65vh;min-height:420px}
+@media(max-width:600px){.foto-banner{height:60vw;min-height:250px}}
+.foto-banner-wrap{position:relative;width:100%;height:100%}
+.foto-banner-img{width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;filter:brightness(0.75) contrast(1.08) saturate(1.12)}
+.foto-banner.reverse .foto-banner-overlay{background:linear-gradient(to left,rgba(19,31,93,0.75) 0%,rgba(19,31,93,0.28) 50%,rgba(0,0,0,0.05) 100%);align-items:center;justify-content:flex-end}
+.foto-banner.reverse .foto-banner-content{text-align:right}
+.foto-banner-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(19,31,93,0.75) 0%,rgba(19,31,93,0.28) 50%,rgba(0,0,0,0.05) 100%);display:flex;align-items:center}
+.foto-banner-content{padding:2rem 3rem;max-width:560px;color:white}
+.foto-banner-eyebrow{font-family:'Dancing Script',cursive;font-size:1.3rem;color:#7ED957;display:block;margin-bottom:0.4rem}
+.foto-banner-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.8vw,2.8rem);line-height:1.15;margin-bottom:0.7rem;color:white}
+.foto-banner-sub{font-size:1rem;color:rgba(255,255,255,0.82);font-weight:600;line-height:1.55;margin-bottom:1.2rem}
+.foto-banner-content .btn-primary{font-size:0.78rem;padding:0.55rem 1.3rem;border-radius:50px;margin-top:0.8rem;display:inline-flex}
+@media(max-width:600px){.foto-banner-content{padding:1.4rem 1.5rem;max-width:100%}.foto-banner-overlay,.foto-banner.reverse .foto-banner-overlay{background:linear-gradient(to bottom,rgba(19,31,93,0.55) 0%,rgba(0,0,0,0.35) 100%);align-items:flex-end;justify-content:flex-start}.foto-banner.reverse .foto-banner-content{text-align:left}}
+
+/* ═══════════════════════════════════════════════
+   SEGUNDO CARRUSEL
+═══════════════════════════════════════════════ */
+#carrusel2{padding:5rem 0;background:linear-gradient(180deg,#f0f2f8 0%,#ffffff 100%);position:relative;overflow:hidden;border-top:4px solid #e4e8f4}
+#carrusel2::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(19,31,93,0.04) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+.carrusel2-track-wrap{position:relative;overflow:hidden;border-radius:var(--radio-lg);z-index:2}
+.carrusel2-track{display:flex;transition:transform 0.55s cubic-bezier(0.4,0,0.2,1);will-change:transform}
+.carrusel2-slide{flex:0 0 100%;position:relative;aspect-ratio:16/7;overflow:hidden;background:#131F5D}
+.carrusel2-slide img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.88) contrast(1.05) saturate(1.1)}
+.carrusel2-slide-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(13,22,64,0.85) 0%,transparent 100%);padding:2rem 2rem 1.5rem;color:white;font-size:1rem;font-weight:700;letter-spacing:0.02em}
+.carrusel2-dots{display:flex;justify-content:center;gap:0.5rem;margin-top:1.5rem;position:relative;z-index:2}
+.carrusel2-dot{width:10px;height:10px;border-radius:50%;background:rgba(19,31,93,0.2);border:none;cursor:pointer;transition:var(--t);padding:0}
+.carrusel2-dot.active{background:#7ED957;transform:scale(1.25)}
+.carrusel2-thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:0.5rem;margin-top:1.2rem;position:relative;z-index:2}
+.carrusel2-thumb{border-radius:8px;overflow:hidden;cursor:pointer;aspect-ratio:16/10;border:2px solid transparent;transition:var(--t)}
+.carrusel2-thumb.active{border-color:#7ED957;transform:scale(1.04)}
+.carrusel2-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ═══════════════════════════════════════════════
+   EXTRAS con fotos
+═══════════════════════════════════════════════ */
+.extra-item-with-img{background:#f8f9fc;border-radius:var(--radio);overflow:hidden;border:1px solid rgba(19,31,93,0.08);display:flex;flex-direction:column;transition:var(--t)}
+.extra-item-with-img:hover{transform:translateY(-4px);box-shadow:var(--sombra)}
+.extra-item-img{width:100%;aspect-ratio:4/3;overflow:hidden}
+.extra-item-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease}
+.extra-item-with-img:hover .extra-item-img img{transform:scale(1.07)}
+.extra-item-body{padding:0.9rem 1rem;display:flex;align-items:center;gap:0.7rem}
+.extra-item-body .extra-icon{font-size:1.3rem;flex-shrink:0}
+.extra-item-body .extra-text{font-size:0.85rem;line-height:1.4;color:var(--texto);font-weight:700}
+.extras-grid-mixed{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
 .foto-jardin-wrap{position:relative;width:100%;height:100%}
 .foto-jardin-img{
   width:100%;height:100%;
@@ -625,7 +673,7 @@ footer strong{color:rgba(255,255,255,0.85)}
   <div class="hero-yt-wrap">
     <iframe
       id="heroYT"
-      src="https://www.youtube-nocookie.com/embed/PB7-IBLy3YM?autoplay=1&mute=1&loop=1&playlist=PB7-IBLy3YM&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&playsinline=1&enablejsapi=1"
+      src="https://www.youtube-nocookie.com/embed/7Z2fzVy3CMQ?autoplay=1&mute=1&loop=1&playlist=7Z2fzVy3CMQ&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&playsinline=1&enablejsapi=1"
       allow="autoplay; fullscreen"
       allowfullscreen
       title="Bamboo Jardín de Eventos">
@@ -657,25 +705,26 @@ footer strong{color:rgba(255,255,255,0.85)}
 <!-- ════════ SECCIÓN VIDEO ════════ -->
 <section id="video-section">
   <div class="container">
-    <div class="video-grid">
+    <div class="video-grid" style="grid-template-columns:1fr;gap:0">
 
-      <!-- Columna logo -->
-      <div class="video-col logo-col">
-        <div class="logo-display-wrap">
+      <!-- Logo centrado ARRIBA del texto -->
+      <div class="video-col logo-col" style="display:flex;justify-content:center;padding-bottom:2rem">
+        <div class="logo-display-wrap" style="max-width:340px;width:100%">
           <img
-            src="logo%20bamboo%2021%20mayo.png"
+            src="ULTIMO logo bamboo 26 mayo.png"
             alt="Bamboo Jardín de Eventos"
-            class="logo-display-img">
+            class="logo-display-img"
+            style="background:#ffffff;border-radius:16px;padding:18px;box-shadow:0 4px 24px rgba(19,31,93,0.10);max-width:100%">
         </div>
       </div>
 
-      <!-- Columna texto persuasivo -->
-      <div class="video-text">
+      <!-- Columna texto persuasivo — debajo del logo -->
+      <div class="video-text" style="max-width:700px;margin:0 auto;text-align:center">
         <span class="video-eyebrow">Más que un espacio</span>
         <h2 class="video-title">Donde los sueños se vuelven <em>recuerdos</em></h2>
         <div class="video-divider"></div>
         <p class="video-desc">En Bamboo creamos experiencias que van más allá de una fiesta. Cada detalle, cada momento, cada sonrisa — los cuidamos como si fueran propios. Somos el escenario perfecto para la celebración que siempre imaginaste.</p>
-        <div class="video-puntos">
+        <div class="video-puntos" style="text-align:left;max-width:600px;margin-left:auto;margin-right:auto">
           <div class="video-punto">
             <div class="video-punto-icon">🌿</div>
             <div class="video-punto-text">
@@ -705,7 +754,7 @@ footer strong{color:rgba(255,255,255,0.85)}
             </div>
           </div>
         </div>
-        <div class="video-ctas">
+        <div class="video-ctas" style="justify-content:center">
           <a href="#paquetes" class="btn-primary btn-amarillo">🎋 Ver paquetes y precios</a>
           <a href="https://wa.me/5215580710460?text=Hola%2C%20vi%20el%20video%20y%20me%20gustar%C3%ADa%20informaci%C3%B3n" target="_blank" class="btn-primary btn-whatsapp">💬 Preguntar por WhatsApp</a>
         </div>
@@ -729,6 +778,21 @@ footer strong{color:rgba(255,255,255,0.85)}
         <h2 class="foto-jardin-title">Un espacio que enamora</h2>
         <p class="foto-jardin-sub">Jaltenco, Estado de México · Capacidad para 600 personas</p>
         <a href="#jardin" class="btn-primary btn-amarillo" style="margin-top:1.4rem">🌿 Conocer más</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ BANNER FOTO 1 — Carpa Elegante ════════ -->
+<section class="foto-banner">
+  <div class="foto-banner-wrap">
+    <img src="FAVORITA-BAMBOO_CARPA_ELEGANTE_PRO_FOTO.jpeg" alt="Carpa Elegante Bamboo — Jardín de Eventos" class="foto-banner-img" style="object-position:center 30%">
+    <div class="foto-banner-overlay">
+      <div class="foto-banner-content">
+        <span class="foto-banner-eyebrow">Elegancia sin límites</span>
+        <h2 class="foto-banner-title">Tu boda merece el mejor escenario</h2>
+        <p class="foto-banner-sub">Nuestra carpa elegante transforma cualquier sueño en una realidad deslumbrante. Techo de tela drapeada, candelabros de cristal y un jardín que te quita el aliento.</p>
+        <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20la%20carpa%20elegante" target="_blank" class="btn-primary btn-whatsapp">💬 Quiero este espacio</a>
       </div>
     </div>
   </div>
@@ -781,6 +845,75 @@ footer strong{color:rgba(255,255,255,0.85)}
           <img src="bamboo-951.jpg" alt="Vista interior jardín con carpa" onerror="this.parentElement.innerHTML='<div class=foto-placeholder><span>✨</span>Celebraciones</div>'">
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ BANNER FOTO 2 — Mesas Elegantes ════════ -->
+<section class="foto-banner reverse">
+  <div class="foto-banner-wrap">
+    <img src="FAVORITA-BAMBOO_MESAS_ELEGANTES.jpeg" alt="Mesas Elegantes Bamboo — Jardín de Eventos" class="foto-banner-img" style="object-position:center 40%">
+    <div class="foto-banner-overlay">
+      <div class="foto-banner-content">
+        <span class="foto-banner-eyebrow">Detalles que hacen la diferencia</span>
+        <h2 class="foto-banner-title">Cada mesa, una obra de arte</h2>
+        <p class="foto-banner-sub">Montajes premium con sillas doradas, arreglos florales y vajilla completa. Creamos la atmósfera perfecta para que tú y tus invitados vivan un momento inolvidable.</p>
+        <a href="#paquetes" class="btn-primary btn-amarillo">🎋 Ver paquetes</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CARRUSEL 2 — Más Momentos ════════ -->
+<section id="carrusel2">
+  <div class="container">
+    <div class="carrusel-intro">
+      <span class="section-eyebrow">Más momentos especiales</span>
+      <h2 class="section-title">Cada Evento, Una Historia Única</h2>
+      <div class="divider" style="margin:0.8rem auto 0;background:linear-gradient(to right,#131F5D,#7ed957)"></div>
+    </div>
+    <div class="carrusel2-track-wrap">
+      <button class="carrusel-btn prev" onclick="carrusel2Move(-1)" aria-label="Anterior">&#8249;</button>
+      <button class="carrusel-btn next" onclick="carrusel2Move(1)" aria-label="Siguiente">&#8250;</button>
+      <div class="carrusel2-track" id="carrusel2Track">
+        <div class="carrusel2-slide"><img src="74590eeb-65a7-4be8-a031-5916263ed361.jpg" alt="Montaje verde salvia con arreglos altos — Bamboo"><div class="carrusel2-slide-caption">Montaje Premium Verde Salvia con Arreglos Altos</div></div>
+        <div class="carrusel2-slide"><img src="b8c8cce9-b488-47bb-8a49-45cf6ff8cc7c.jpg" alt="Fiesta estilo fútbol con sillas vintage — Bamboo"><div class="carrusel2-slide-caption">Celebración Temática con Estilo Vintage</div></div>
+        <div class="carrusel2-slide"><img src="323f30d8-4cb0-40a0-8db3-42a49f072f71.jpg" alt="Salón rosa con carpa drapeada blanca — Bamboo"><div class="carrusel2-slide-caption">Montaje Rosa con Carpa Drapeada Elegante</div></div>
+        <div class="carrusel2-slide"><img src="BAMBOO_CARPA_PREMIUM_ELEGANTE.jpeg" alt="Interior carpa premium con candelabro — Bamboo"><div class="carrusel2-slide-caption">Carpa Premium con Candelabro de Cristal</div></div>
+        <div class="carrusel2-slide"><img src="BAMBOO_MESAS.jpeg" alt="Mesa oval vintage con sillas crossback doradas — Bamboo"><div class="carrusel2-slide-caption">Mesas Vintage con Sillas Crossback Doradas</div></div>
+        <div class="carrusel2-slide"><img src="2dc09467-a350-4146-93e5-9ca5e465234b.jpg" alt="Vista panorámica carpa básico vintage — Bamboo"><div class="carrusel2-slide-caption">Paquete Básico Vintage — Vista Panorámica</div></div>
+        <div class="carrusel2-slide"><img src="08dcc110-2c88-4ce1-9c27-a8cb0ad66ca6.jpg" alt="Arco floral circular en jardín con carpa — Bamboo"><div class="carrusel2-slide-caption">Arco Floral Circular para Ceremonias</div></div>
+        <div class="carrusel2-slide"><img src="110e53b7-b2d5-4caa-a52f-4568bea756e0.jpg" alt="Vista exterior carpa con jardín verde — Bamboo"><div class="carrusel2-slide-caption">Vista Exterior — Jardín y Carpa Bamboo</div></div>
+        <div class="carrusel2-slide"><img src="c99eb049-9217-4044-9d76-5f0b8efe845b.jpg" alt="Ceremonia al aire libre — Bamboo"><div class="carrusel2-slide-caption">Ceremonia al Aire Libre en el Jardín</div></div>
+        <div class="carrusel2-slide"><img src="cedbbea2-7890-4b0c-b2dc-21c3149e029e.jpg" alt="Ceremonia entre palmeras y flores — Bamboo"><div class="carrusel2-slide-caption">Ceremonia Rodeada de Naturaleza</div></div>
+        <div class="carrusel2-slide"><img src="e1e8d90b-87a2-4987-9fa6-89baea60bec1.jpg" alt="Montaje verde agua con sillas Tiffany — Bamboo"><div class="carrusel2-slide-caption">Montaje Verde Agua con Sillas Tiffany Crystal</div></div>
+      </div>
+    </div>
+    <div class="carrusel2-dots" id="carrusel2Dots">
+      <button class="carrusel2-dot active" onclick="carrusel2GoTo(0)"></button>
+      <button class="carrusel2-dot" onclick="carrusel2GoTo(1)"></button>
+      <button class="carrusel2-dot" onclick="carrusel2GoTo(2)"></button>
+      <button class="carrusel2-dot" onclick="carrusel2GoTo(3)"></button>
+      <button class="carrusel2-dot" onclick="carrusel2GoTo(4)"></button>
+      <button class="carrusel2-dot" onclick="carrusel2GoTo(5)"></button>
+      <button class="carrusel2-dot" onclick="carrusel2GoTo(6)"></button>
+      <button class="carrusel2-dot" onclick="carrusel2GoTo(7)"></button>
+      <button class="carrusel2-dot" onclick="carrusel2GoTo(8)"></button>
+      <button class="carrusel2-dot" onclick="carrusel2GoTo(9)"></button>
+      <button class="carrusel2-dot" onclick="carrusel2GoTo(10)"></button>
+    </div>
+    <div class="carrusel2-thumbs" id="carrusel2Thumbs">
+      <div class="carrusel2-thumb active" onclick="carrusel2GoTo(0)"><img src="74590eeb-65a7-4be8-a031-5916263ed361.jpg" alt=""></div>
+      <div class="carrusel2-thumb" onclick="carrusel2GoTo(1)"><img src="b8c8cce9-b488-47bb-8a49-45cf6ff8cc7c.jpg" alt=""></div>
+      <div class="carrusel2-thumb" onclick="carrusel2GoTo(2)"><img src="323f30d8-4cb0-40a0-8db3-42a49f072f71.jpg" alt=""></div>
+      <div class="carrusel2-thumb" onclick="carrusel2GoTo(3)"><img src="BAMBOO_CARPA_PREMIUM_ELEGANTE.jpeg" alt=""></div>
+      <div class="carrusel2-thumb" onclick="carrusel2GoTo(4)"><img src="BAMBOO_MESAS.jpeg" alt=""></div>
+      <div class="carrusel2-thumb" onclick="carrusel2GoTo(5)"><img src="2dc09467-a350-4146-93e5-9ca5e465234b.jpg" alt=""></div>
+      <div class="carrusel2-thumb" onclick="carrusel2GoTo(6)"><img src="08dcc110-2c88-4ce1-9c27-a8cb0ad66ca6.jpg" alt=""></div>
+      <div class="carrusel2-thumb" onclick="carrusel2GoTo(7)"><img src="110e53b7-b2d5-4caa-a52f-4568bea756e0.jpg" alt=""></div>
+      <div class="carrusel2-thumb" onclick="carrusel2GoTo(8)"><img src="c99eb049-9217-4044-9d76-5f0b8efe845b.jpg" alt=""></div>
+      <div class="carrusel2-thumb" onclick="carrusel2GoTo(9)"><img src="cedbbea2-7890-4b0c-b2dc-21c3149e029e.jpg" alt=""></div>
+      <div class="carrusel2-thumb" onclick="carrusel2GoTo(10)"><img src="e1e8d90b-87a2-4987-9fa6-89baea60bec1.jpg" alt=""></div>
     </div>
   </div>
 </section>
@@ -844,7 +977,7 @@ footer strong{color:rgba(255,255,255,0.85)}
         </div>
         <div class="paquete-body">
           <div class="paquete-img-wrap">
-            <img src="PAQUETE_BASICO.png" alt="Paquete Básico — Bamboo Jardín de Eventos" onerror="this.style.display='none'">
+            <img src="PAQUETE_BASICO_CORRECTO.jpg" alt="Paquete Básico — Bamboo Jardín de Eventos" onerror="this.style.display='none'">
           </div>
           <div class="paquete-incluye-title">✅ ¿Qué incluye?</div>
           <div class="incluye-list">
@@ -970,19 +1103,54 @@ footer strong{color:rgba(255,255,255,0.85)}
       <div class="divider" style="margin:0.8rem auto 1rem"></div>
       <p class="section-subtitle" style="margin:0 auto">Agrega el toque especial a tu celebración con nuestros servicios extra disponibles bajo cotización.</p>
     </div>
-    <div class="extras-grid">
+    <div class="extras-grid-mixed">
+      <!-- Con foto -->
+      <div class="extra-item-with-img">
+        <div class="extra-item-img"><img src="SALA_LAUNGE.jpeg" alt="Sala lounge Bamboo" onerror="this.parentElement.style.display='none'"></div>
+        <div class="extra-item-body"><span class="extra-icon">🛋️</span><span class="extra-text">Sala lounge</span></div>
+      </div>
+      <div class="extra-item-with-img">
+        <div class="extra-item-img"><img src="LETRAS_DECORATIVAS1.jpg" alt="Letras gigantes decorativas Bamboo" onerror="this.parentElement.style.display='none'"></div>
+        <div class="extra-item-body"><span class="extra-icon">🔤</span><span class="extra-text">Letras gigantes decorativas</span></div>
+      </div>
+      <div class="extra-item-with-img">
+        <div class="extra-item-img"><img src="JARDIN_BAMBOO_PISO_CON_LUCES.jpg" alt="Pista de baile LED Bamboo" onerror="this.parentElement.style.display='none'"></div>
+        <div class="extra-item-body"><span class="extra-icon">💡</span><span class="extra-text">Pista de baile con luz LED</span></div>
+      </div>
+      <div class="extra-item-with-img">
+        <div class="extra-item-img"><img src="FAVORITA-Carrusel3.jpeg" alt="Carpa cuadriculada sala lounge Bamboo" onerror="this.parentElement.style.display='none'"></div>
+        <div class="extra-item-body"><span class="extra-icon">⛺</span><span class="extra-text">Carpa cuadriculada para sala lounge</span></div>
+      </div>
+      <div class="extra-item-with-img">
+        <div class="extra-item-img"><img src="WhatsApp_Image_2026-04-14_at_17_22_09.jpeg" alt="Ceremonia en el jardín Bamboo" onerror="this.parentElement.style.display='none'"></div>
+        <div class="extra-item-body"><span class="extra-icon">💒</span><span class="extra-text">Ceremonias dentro del jardín</span></div>
+      </div>
+      <div class="extra-item-with-img">
+        <div class="extra-item-img"><img src="JARDIN_BAMBOO_PISOS_CON_LUCES.jpg" alt="Piso con luces Bamboo" onerror="this.parentElement.style.display='none'"></div>
+        <div class="extra-item-body"><span class="extra-icon">🔥</span><span class="extra-text">Calentadores de gas</span></div>
+      </div>
+      <!-- Sin foto (items restantes) -->
       <div class="extra-item"><span class="extra-icon">🪑</span><span class="extra-text">Periqueras de cristal o madera</span></div>
-      <div class="extra-item"><span class="extra-icon">🛋️</span><span class="extra-text">Sala lounge</span></div>
       <div class="extra-item"><span class="extra-icon">🍹</span><span class="extra-text">Servicio de barman</span></div>
       <div class="extra-item"><span class="extra-icon">🍬</span><span class="extra-text">Mesa de dulces</span></div>
-      <div class="extra-item"><span class="extra-icon">🔤</span><span class="extra-text">Letras gigantes decorativas</span></div>
-      <div class="extra-item"><span class="extra-icon">🔥</span><span class="extra-text">Calentadores de gas</span></div>
-      <div class="extra-item"><span class="extra-icon">⛺</span><span class="extra-text">Carpa cuadriculada para sala lounge</span></div>
-      <div class="extra-item"><span class="extra-icon">💡</span><span class="extra-text">Pista de baile con luz</span></div>
-      <div class="extra-item"><span class="extra-icon">💒</span><span class="extra-text">Ceremonias dentro del jardín</span></div>
     </div>
     <div style="text-align:center;margin-top:2.5rem">
       <a href="https://wa.me/5215580710460?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20los%20servicios%20extra" target="_blank" class="btn-primary">💬 Preguntar por extras</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ BANNER FOTO 3 — Mega Pro ════════ -->
+<section class="foto-banner">
+  <div class="foto-banner-wrap">
+    <img src="FAVORITA-BAMBOO_ELEGANTE_CARPA_mega_pro.jpeg" alt="Gran salón Bamboo — Jardín de Eventos Jaltenco" class="foto-banner-img" style="object-position:center 45%">
+    <div class="foto-banner-overlay">
+      <div class="foto-banner-content">
+        <span class="foto-banner-eyebrow">Hasta 600 invitados</span>
+        <h2 class="foto-banner-title">Un jardín que impresiona desde el primer paso</h2>
+        <p class="foto-banner-sub">Amplio, luminoso y lleno de vida. Nuestro jardín tiene la escala para cualquier celebración y la calidez que convierte cada evento en un recuerdo para toda la vida.</p>
+        <a href="https://wa.me/5215580710460?text=Hola%2C%20quisiera%20una%20cotizaci%C3%B3n" target="_blank" class="btn-primary btn-whatsapp">💬 Cotizar mi evento</a>
+      </div>
     </div>
   </div>
 </section>
@@ -1021,6 +1189,21 @@ footer strong{color:rgba(255,255,255,0.85)}
   <button class="lightbox-close" onclick="closeLightbox()">✕</button>
   <img id="lightboxImg" src="" alt="">
 </div>
+
+<!-- ════════ BANNER FOTO 4 — Carrusel 3 ════════ -->
+<section class="foto-banner reverse">
+  <div class="foto-banner-wrap">
+    <img src="FAVORITA-Carrusel3.jpeg" alt="Sala lounge y jardín — Bamboo Jardín de Eventos" class="foto-banner-img" style="object-position:center 35%">
+    <div class="foto-banner-overlay">
+      <div class="foto-banner-content">
+        <span class="foto-banner-eyebrow">Ambiente y confort</span>
+        <h2 class="foto-banner-title">Disfruta cada rincón de nuestro jardín</h2>
+        <p class="foto-banner-sub">Zonas de descanso, sala lounge bajo carpa cuadriculada y espacios al aire libre con vista al jardín. Todo pensado para que cada momento sea especial.</p>
+        <a href="#contacto" class="btn-primary btn-amarillo">📍 Ver ubicación</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!-- ════════ CARRUSEL ════════ -->
@@ -1219,6 +1402,53 @@ footer strong{color:rgba(255,255,255,0.85)}
   }
 
   resetAuto();
+})();
+</script>
+
+<script>
+// ── Carrusel 2 ─────────────────────────────────────────
+(function(){
+  var current = 0;
+  var total = 11;
+  var autoTimer;
+
+  function updateCarrusel2(){
+    var track = document.getElementById('carrusel2Track');
+    if(!track) return;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    var dots = document.querySelectorAll('.carrusel2-dot');
+    dots.forEach(function(d,i){ d.classList.toggle('active', i === current); });
+    var thumbs = document.querySelectorAll('.carrusel2-thumb');
+    thumbs.forEach(function(t,i){ t.classList.toggle('active', i === current); });
+  }
+
+  window.carrusel2Move = function(dir){
+    current = (current + dir + total) % total;
+    updateCarrusel2();
+    resetAuto2();
+  };
+  window.carrusel2GoTo = function(idx){
+    current = idx;
+    updateCarrusel2();
+    resetAuto2();
+  };
+
+  function resetAuto2(){
+    clearInterval(autoTimer);
+    autoTimer = setInterval(function(){ carrusel2Move(1); }, 5000);
+  }
+
+  var startX = 0;
+  var track = document.getElementById('carrusel2Track');
+  if(track){
+    track.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, {passive:true});
+    track.addEventListener('touchend', function(e){
+      var diff = startX - e.changedTouches[0].clientX;
+      if(Math.abs(diff) > 40) carrusel2Move(diff > 0 ? 1 : -1);
+    });
+  }
+
+  resetAuto2();
 })();
 </script>
 
