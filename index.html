@@ -280,8 +280,8 @@ body::before{
 .incluye-item{display:flex;align-items:flex-start;gap:0.7rem;font-size:0.88rem;line-height:1.45;color:var(--texto)}
 .incluye-check{width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#131F5D,#7ED957);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:0.65rem;color:white}
 .paquete-card.premium .incluye-check{background:linear-gradient(135deg,#7ED957,#131F5D)}
-.paquete-img-wrap{width:100%;margin-bottom:1.2rem;border-radius:10px;overflow:hidden;max-height:200px}
-.paquete-img-wrap img{width:100%;height:200px;object-fit:cover;display:block}
+.paquete-img-wrap{width:100%;margin-bottom:1.2rem;border-radius:10px;overflow:hidden;height:200px;display:block}
+.paquete-img-wrap img{width:100%;height:200px;object-fit:cover;display:block;background:#e4e8f4}
 
 
 /* ═══════════════════════════════════════════════
@@ -408,16 +408,29 @@ footer strong{color:rgba(255,255,255,0.85)}
 
   /* Video section */
   .video-grid{grid-template-columns:1fr!important;gap:0}
+  /* Video section — logo always before text on mobile */
+  #video-section .video-grid{display:flex!important;flex-direction:column!important}
+  #video-section .logo-col{order:-1!important}
+  #video-section .video-text{order:1!important}
   .logo-display-wrap{padding:1rem}
   .logo-display-img{max-width:220px!important}
   .video-puntos{padding-left:0}
   .video-ctas{flex-direction:column;align-items:center}
   .video-ctas .btn-primary{width:100%;max-width:300px;justify-content:center}
 
-  /* Foto banners */
-  .foto-banner{height:auto;min-height:280px}
-  .foto-banner-title{font-size:1.3rem}
-  .foto-banner-sub{font-size:0.85rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  /* Foto banners — mobile: photo shines, minimal text */
+  .foto-banner{height:52vw;min-height:220px}
+  .foto-banner-content a.btn-primary{display:none!important}
+  .foto-banner-eyebrow{font-size:0.75rem!important}
+  .foto-banner-title{font-size:1rem!important;margin-bottom:0.2rem!important}
+  .foto-banner-sub{display:none!important}
+  .foto-banner-overlay{background:linear-gradient(to top,rgba(10,16,40,0.45) 0%,transparent 55%)!important}
+  .foto-banner-content{padding:0.8rem 1rem!important}
+  /* foto-jardin mobile */
+  .foto-jardin-content a.btn-primary{display:none!important}
+  .foto-jardin-eyebrow{font-size:0.75rem!important}
+  .foto-jardin-title{font-size:1rem!important;margin-bottom:0.2rem!important}
+  .foto-jardin-sub{display:none!important}
 
   /* Contacto */
   .mapa-wrap iframe{height:240px}
@@ -752,54 +765,10 @@ footer strong{color:rgba(255,255,255,0.85)}
     linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, transparent 25%, transparent 65%, rgba(10,16,40,0.60) 100%);
   pointer-events:none;
 }
-/* Badge top-left */
-.joya-badge{
-  position:absolute;
-  top:2rem;left:2rem;
-  display:flex;align-items:center;gap:0.5rem;
-  background:rgba(255,255,255,0.14);
-  border:1px solid rgba(255,255,255,0.28);
-  color:white;
-  font-size:0.8rem;font-weight:800;
-  letter-spacing:0.12em;text-transform:uppercase;
-  padding:0.45rem 1rem;border-radius:50px;
-  backdrop-filter:blur(8px);
-  z-index:3;
-}
-/* CTAs bottom-center */
-.joya-cta-wrap{
-  position:absolute;
-  bottom:2.5rem;left:50%;
-  transform:translateX(-50%);
-  display:flex;gap:1rem;flex-wrap:wrap;
-  justify-content:center;
-  z-index:3;
-}
-.joya-cta{
-  display:inline-flex;align-items:center;gap:0.5rem;
-  padding:0.9rem 2rem;
-  border-radius:50px;
-  font-family:'Nunito',sans-serif;
-  font-weight:800;font-size:0.95rem;
-  text-decoration:none;
-  transition:all 0.3s ease;
-  backdrop-filter:blur(8px);
-  background:#25D366;color:white;
-  box-shadow:0 4px 20px rgba(37,211,102,0.4);
-}
-.joya-cta:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,0.55)}
-.joya-cta-secondary{
-  background:rgba(255,255,255,0.15);
-  color:white;
-  border:1.5px solid rgba(255,255,255,0.35);
-  box-shadow:none;
-}
-.joya-cta-secondary:hover{background:rgba(255,255,255,0.28);transform:translateY(-2px)}
+/* joya badge/cta removed */
 @media(max-width:600px){
   #hero-foto-joya{height:70vw;min-height:300px}
-  .joya-badge{top:1rem;left:1rem;font-size:0.7rem;padding:0.35rem 0.8rem}
-  .joya-cta-wrap{bottom:1.5rem;gap:0.6rem}
-  .joya-cta{padding:0.7rem 1.3rem;font-size:0.82rem}
+
 }
 
 </style>
@@ -898,17 +867,9 @@ footer strong{color:rgba(255,255,255,0.85)}
       alt="Bamboo Jardín de Eventos — Gran Carpa Elegante"
       class="joya-img">
     <div class="joya-overlay"></div>
-    <div class="joya-badge">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="#f5c518"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-      <span>Jardín Bamboo</span>
-    </div>
-    <div class="joya-cta-wrap">
-      <a href="https://wa.me/5215580710460?text=Hola%2C%20quisiera%20una%20cotizaci%C3%B3n" target="_blank" class="joya-cta">
-        💬 Quiero celebrar aquí
-      </a>
-      <a href="#paquetes" class="joya-cta joya-cta-secondary">
-        🎋 Ver paquetes
-      </a>
+    <!-- Watermark logo — bottom right, small, subtle -->
+    <div class="joya-watermark">
+      <img src="ULTIMO logo bamboo 26 mayo.png" alt="Bamboo" class="joya-watermark-img">
     </div>
   </div>
 </section>
@@ -1343,8 +1304,14 @@ footer strong{color:rgba(255,255,255,0.85)}
         <div class="extra-item-img"><img src="EXTRAS CEREMONIAS DENTRO DEL JARDIN copy.jpg" alt="Ceremonias dentro del jardín Bamboo" onerror="this.parentElement.style.display='none'"></div>
         <div class="extra-item-body"><span class="extra-icon">💒</span><span class="extra-text">Ceremonias dentro del jardín</span></div>
       </div>
-      <div class="extra-item"><span class="extra-icon">🔤</span><span class="extra-text">Letras gigantes decorativas</span></div>
-      <div class="extra-item"><span class="extra-icon">💡</span><span class="extra-text">Pista de baile con luz</span></div>
+      <div class="extra-item-with-img">
+        <div class="extra-item-img"><img src="LETRAS DECORATIVAS1.jpg" alt="Letras gigantes decorativas Bamboo" onerror="this.parentElement.style.display='none'"></div>
+        <div class="extra-item-body"><span class="extra-icon">🔤</span><span class="extra-text">Letras gigantes decorativas</span></div>
+      </div>
+      <div class="extra-item-with-img">
+        <div class="extra-item-img"><img src="JARDIN BAMBOO PISO CON LUCES.jpg" alt="Pista de baile con luz Bamboo" onerror="this.parentElement.style.display='none'"></div>
+        <div class="extra-item-body"><span class="extra-icon">💡</span><span class="extra-text">Pista de baile con luz</span></div>
+      </div>
     </div>
     <div style="text-align:center;margin-top:2.5rem">
       <a href="https://wa.me/5215580710460?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20los%20servicios%20extra" target="_blank" class="btn-primary">💬 Preguntar por extras</a>
