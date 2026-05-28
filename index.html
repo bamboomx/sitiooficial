@@ -108,12 +108,14 @@ body::before{
   position:absolute;
   top:50%;left:50%;
   transform:translate(-50%,-50%);
-  /* 16:9 — always fills the viewport */
-  width:calc(100vh * 16/9);
-  height:calc(100vw * 9/16);
-  min-width:100%;
+  /* Oversized to force YouTube to serve highest resolution */
+  width:max(calc(100vh * 16/9), 1920px);
+  height:max(calc(100vw * 9/16), 1080px);
+  min-width:177.78vh;
   min-height:100%;
   border:none;
+  /* Scale down visually to fit — quality stays at 1080p */
+  max-width:none;
 }
 /* Overlay layers */
 .hero-overlay{position:absolute;inset:0;z-index:2;
@@ -831,7 +833,7 @@ footer strong{color:rgba(255,255,255,0.85)}
   <div class="hero-yt-wrap">
     <iframe
       id="heroYT"
-      src="https://www.youtube-nocookie.com/embed/7Z2fzVy3CMQ?autoplay=1&mute=1&loop=1&playlist=7Z2fzVy3CMQ&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&playsinline=1&enablejsapi=1"
+      src="https://www.youtube.com/embed/7Z2fzVy3CMQ?autoplay=1&mute=1&loop=1&playlist=7Z2fzVy3CMQ&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&playsinline=1&enablejsapi=1&vq=hd1080&hd=1"
       allow="autoplay; fullscreen"
       allowfullscreen
       title="Bamboo Jardín de Eventos">
