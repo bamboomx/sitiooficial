@@ -286,8 +286,22 @@ body::before{
 .incluye-item{display:flex;align-items:flex-start;gap:0.7rem;font-size:0.88rem;line-height:1.45;color:var(--texto)}
 .incluye-check{width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#131F5D,#7ED957);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:0.65rem;color:white}
 .paquete-card.premium .incluye-check{background:linear-gradient(135deg,#7ED957,#131F5D)}
-.paquete-img-wrap{width:100%;margin-bottom:1.2rem;border-radius:10px;overflow:hidden;max-height:200px}
-.paquete-img-wrap img{width:100%;height:200px;object-fit:cover;display:block}
+.paquete-img-wrap{
+  width:100%;
+  margin-bottom:1.2rem;
+  border-radius:10px;
+  overflow:hidden;
+  height:200px;
+  display:block;
+  background:#e4e8f4;
+}
+.paquete-img-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  min-height:200px;
+}
 
 
 /* ═══════════════════════════════════════════════
@@ -699,6 +713,186 @@ footer strong{color:rgba(255,255,255,0.85)}
 }
 .banner-scroll-hint:hover{color:white}
 
+
+/* ── Collage de tipos de eventos ── */
+#collage-eventos{
+  background:#131F5D;
+  padding:2.2rem 1.5rem;
+  overflow:hidden;
+  position:relative;
+}
+#collage-eventos::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 20% 50%,rgba(126,217,87,0.10) 0%,transparent 60%),
+             radial-gradient(ellipse at 80% 50%,rgba(245,197,24,0.07) 0%,transparent 55%);
+}
+.collage-inner{
+  max-width:1160px;margin:0 auto;
+  position:relative;z-index:1;
+}
+.collage-words{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:0.6rem 1.2rem;
+  line-height:1.15;
+}
+.cw{
+  font-family:'Playfair Display',serif;
+  color:rgba(255,255,255,0.85);
+  font-weight:700;
+  letter-spacing:0.02em;
+  transition:color 0.3s;
+  white-space:nowrap;
+}
+.cw:hover{color:#7ED957}
+.cw-xl{font-size:clamp(2rem,5vw,3.2rem);color:white}
+.cw-lg{font-size:clamp(1.4rem,3.5vw,2.2rem)}
+.cw-md{font-size:clamp(1.1rem,2.5vw,1.6rem);color:rgba(255,255,255,0.75)}
+.cw-sm{font-size:clamp(0.95rem,2vw,1.3rem);color:rgba(255,255,255,0.65)}
+.cw-xs{font-size:clamp(0.78rem,1.5vw,1rem);color:rgba(255,255,255,0.50)}
+.cw.accent{font-family:'Dancing Script',cursive;font-size:clamp(1rem,2vw,1.4rem);color:#7ED957;font-weight:600}
+@media(max-width:600px){
+  #collage-eventos{padding:1.6rem 1rem}
+  .collage-words{gap:0.4rem 0.8rem}
+}
+
+/* Joya photos — contain, don't stretch */
+.foto-banner-img.joya-contain{
+  object-fit:contain;
+  background:#0d1640;
+}
+
+
+/* ════════════════════════════════════════════════
+   MOBILE RESPONSIVE — comprehensive audit fixes
+════════════════════════════════════════════════ */
+@media(max-width:900px){
+  /* Jardin grid */
+  .jardin-grid{grid-template-columns:1fr;gap:2.5rem}
+  .jardin-fotos{grid-template-rows:160px 160px}
+  /* Contacto */
+  .contacto-grid{grid-template-columns:1fr;gap:2.5rem}
+  /* Paquete card */
+  .paquete-card{grid-template-columns:1fr}
+  .paquete-header{padding:2rem}
+  /* Galeria */
+  .galeria-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}
+  .g-item.wide{grid-column:span 2}
+  .g-item.tall{grid-row:span 1}
+  /* Video section logo */
+  .logo-hero-wrap{max-width:100%!important}
+  .logo-hero-img{max-width:100%!important}
+  /* Video-grid logo first */
+  #video-section .video-grid{display:flex!important;flex-direction:column!important}
+  #video-section .logo-col{order:-1!important}
+  #video-section .video-text{order:1!important}
+}
+
+@media(max-width:600px){
+  /* General */
+  .container{padding:0 1rem}
+  .section-title{font-size:clamp(1.5rem,6vw,2rem)}
+
+  /* Hero */
+  .hero-yt-wrap iframe{position:relative;top:auto;left:auto;transform:none;width:100%;height:56vw;min-width:unset;min-height:unset;max-height:56vw}
+  .hero-inner{padding:1rem 1.2rem 1.4rem;margin-top:auto}
+  .hero-tagline{display:none}
+  .hero-badges{display:none}
+  .hero-ctas{flex-direction:column;align-items:center;gap:0.6rem}
+  .hero-ctas a{width:100%;max-width:260px;justify-content:center;padding:0.7rem 1.4rem;font-size:0.88rem}
+  .scroll-hint{bottom:0.5rem}
+
+  /* Video section */
+  #video-section{padding:3rem 0}
+  .logo-hero-wrap{padding:1.2rem 1.4rem!important}
+  .video-desc{font-size:0.95rem}
+  .video-ctas{flex-direction:column}
+  .video-ctas a{justify-content:center;width:100%}
+
+  /* Collage */
+  #collage-eventos{padding:1.4rem 1rem}
+  .collage-words{gap:0.35rem 0.7rem}
+  .cw-xl{font-size:1.6rem}
+  .cw-lg{font-size:1.2rem}
+  .cw-md{font-size:0.95rem}
+  .cw-sm{font-size:0.82rem}
+  .cw-xs{font-size:0.7rem}
+
+  /* Jardin */
+  #jardin{padding:3.5rem 0}
+  .jardin-stats{grid-template-columns:1fr 1fr}
+  .jardin-fotos{grid-template-columns:1fr;grid-template-rows:auto;gap:0.7rem}
+  .foto-slot.tall{grid-row:auto}
+  .eventos-tags{gap:0.4rem}
+  .evento-tag{font-size:0.73rem;padding:0.3rem 0.75rem}
+
+  /* Foto banners — photo shines, minimal text */
+  .foto-banner{height:55vw;min-height:220px}
+  .foto-banner-title{font-size:1rem!important}
+  .foto-banner-eyebrow{font-size:0.75rem!important}
+  .foto-banner-sub{display:none!important}
+  .foto-banner-content a.btn-primary{display:none!important}
+  .banner-scroll-hint{display:none!important}
+  .foto-banner-overlay{background:linear-gradient(to top,rgba(10,16,40,0.55) 0%,transparent 60%)!important}
+  .foto-banner-content{padding:0.8rem 1rem!important}
+
+  /* Foto-jardin */
+  #foto-jardin{height:55vw;min-height:240px}
+  .foto-jardin-content{padding:1rem 1.2rem}
+  .foto-jardin-title{font-size:1.1rem}
+
+  /* Joya-contain banners — show full image */
+  .foto-banner-img.joya-contain{object-fit:contain;max-height:70vw}
+  .foto-banner.has-joya{height:auto;min-height:unset}
+
+  /* Paquetes */
+  #paquetes{padding:3.5rem 0}
+  .paquetes-tabs{gap:0.35rem}
+  .tab-btn{font-size:0.75rem;padding:0.5rem 1rem}
+  .paquete-body{padding:1.4rem}
+  .paquete-img-wrap{height:160px}
+  .paquete-img-wrap img{height:160px}
+
+  /* Extras */
+  #extras{padding:2.5rem 0}
+  .extras-grid-mixed{grid-template-columns:1fr 1fr!important}
+  .extra-item-img{height:90px!important}
+
+  /* Galería */
+  #galeria{padding:3.5rem 0}
+  .galeria-grid{grid-template-columns:1fr 1fr;grid-auto-rows:140px}
+  .g-item.wide{grid-column:span 2}
+
+  /* Carrusel */
+  .carrusel-slide{aspect-ratio:4/3}
+  .carrusel-btn{width:36px;height:36px;font-size:1rem}
+  .carrusel-thumb{flex:0 0 56px;height:40px}
+  .carrusel2-slide{aspect-ratio:4/3}
+  .carrusel2-btn{width:36px;height:36px;font-size:1rem}
+  .carrusel2-thumb{flex:0 0 56px;height:40px}
+
+  /* Contacto */
+  #contacto{padding:3.5rem 0}
+  .contacto-grid{grid-template-columns:1fr}
+  .mapa-wrap iframe{height:240px}
+  .social-btns{flex-direction:column}
+  .btn-social{justify-content:center}
+
+  /* WA float */
+  .wa-float{width:50px;height:50px;bottom:1.2rem;right:1.2rem}
+}
+
+/* Tablet mid-range */
+@media(min-width:601px) and (max-width:900px){
+  #video-section{padding:4rem 0}
+  .foto-banner{height:45vw;min-height:300px}
+  .extras-grid-mixed{grid-template-columns:repeat(3,1fr)!important}
+  .paquete-card{grid-template-columns:1fr}
+  .galeria-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}
+}
+
 </style>
 </head>
 <body>
@@ -774,26 +968,6 @@ footer strong{color:rgba(255,255,255,0.85)}
   </a>
 </section>
 
-<!-- ════════ FOTO JARDÍN — Pantalla extendida ════════ -->
-<section id="foto-jardin">
-  <div class="foto-jardin-wrap">
-    <img
-      src="Jardin de eventos bamboo good photo.jpeg"
-      alt="Jardín de Eventos Bamboo — Jaltenco, Estado de México"
-      class="foto-jardin-img">
-    <div class="foto-jardin-overlay">
-      <div class="foto-jardin-content">
-        <span class="foto-jardin-eyebrow">Nuestro jardín</span>
-        <h2 class="foto-jardin-title">Un espacio que enamora</h2>
-        <a href="#video-section" class="foto-jardin-scroll-hint">
-          <span>Conoce más</span>
-          <svg width="16" height="22" viewBox="0 0 16 24" fill="none"><line x1="8" y1="0" x2="8" y2="18" stroke="white" stroke-width="1.5"/><polyline points="2,12 8,20 14,12" stroke="white" stroke-width="1.5" fill="none"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ════════ SECCIÓN VIDEO ════════ -->
 <section id="video-section">
   <div class="container">
@@ -806,7 +980,7 @@ footer strong{color:rgba(255,255,255,0.85)}
             src="ULTIMO logo bamboo 26 mayo.png"
             alt="Bamboo Jardín de Eventos"
             class="logo-display-img"
-            style="background:#ffffff;border-radius:16px;padding:18px;box-shadow:0 4px 24px rgba(19,31,93,0.10);max-width:100%">
+            style="background:#ffffff;border-radius:16px;padding:18px;box-shadow:0 4px 24px rgba(19,31,93,0.10);max-width:100%;width:100%">
         </div>
       </div>
 
@@ -877,193 +1051,20 @@ footer strong{color:rgba(255,255,255,0.85)}
 
 
 
-<!-- ════════ PAQUETES ════════ -->
-<section id="paquetes">
-  <div class="container">
-    <div class="paquetes-intro">
-      <span class="section-eyebrow">Encuentra el tuyo</span>
-      <h2 class="section-title">Nuestros Paquetes</h2>
-      <div class="divider" style="margin:0.8rem auto 1rem"></div>
-      <p class="section-subtitle">Cada paquete está diseñado para que disfrutes tu evento sin preocupaciones. Selecciona el que mejor se adapte a tu celebración.</p>
-    </div>
-    <div class="paquetes-tabs">
-      <button class="tab-btn active" onclick="showPaquete('lona',this)">⛺ Lona</button>
-      <button class="tab-btn" onclick="showPaquete('basico',this)">🌿 Básico</button>
-      <button class="tab-btn" onclick="showPaquete('basicovintage',this)">🪵 Básico Vintage</button>
-      <button class="tab-btn premium-tab" onclick="showPaquete('premium',this)">👑 Premium</button>
-      <button class="tab-btn premium-tab" onclick="showPaquete('premiumvintage',this)">✨ Premium Vintage</button>
-    </div>
-
-    <!-- LONA -->
-    <div class="paquete-panel active" id="panel-lona">
-      <div class="paquete-card lona">
-        <div class="paquete-header">
-          <div class="paquete-badge">Paquete</div>
-          <div class="paquete-nombre">Lona</div>
-          <p class="paquete-desc">Celebra al aire libre con la protección de nuestra lona sobre pasto natural. Ambiente abierto, fresco y con todo el espacio para tu fiesta.</p>
-          <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20el%20Paquete%20Lona" target="_blank" class="paquete-cotizar">💬 Cotizar este paquete</a>
-        </div>
-        <div class="paquete-body">
-          <div class="paquete-img-wrap">
-            <img src="PAQUETE LONA.png" alt="Paquete Lona — Bamboo Jardín de Eventos" onerror="this.style.display='none'">
-          </div>
-          <div class="paquete-incluye-title">✅ ¿Qué incluye?</div>
-          <div class="incluye-list">
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Lona tipo vela sobre jardín de pasto natural</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Mesas cuadradas rústicas de madera</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Sillas Tiffany blancas con cojín</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Mantelería básica</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Loza completa: cristalería, cubiertos y utensilios</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Servicio de meseros con capitán</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Catering menú de 3 tiempos</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>DJ 5 horas</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Event Planner</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Descorche libre</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Estacionamiento</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- BÁSICO -->
-    <div class="paquete-panel" id="panel-basico">
-      <div class="paquete-card basico">
-        <div class="paquete-header">
-          <div class="paquete-badge">Paquete</div>
-          <div class="paquete-nombre">Básico</div>
-          <p class="paquete-desc">Montaje clásico con mantelería en color bajo carpa estructural. Elegante, amplio y con todo lo que tu evento necesita.</p>
-          <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20el%20Paquete%20B%C3%A1sico" target="_blank" class="paquete-cotizar">💬 Cotizar este paquete</a>
-        </div>
-        <div class="paquete-body">
-          <div class="paquete-img-wrap">
-            <img src="PAQUETE BASICO CORRECTO.jpg" alt="Paquete Básico — Bamboo Jardín de Eventos" onerror="this.style.display='none'">
-          </div>
-          <div class="paquete-incluye-title">✅ ¿Qué incluye?</div>
-          <div class="incluye-list">
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Carpa estructural tipo industrial</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Mesas redondas con mantelería en color</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Sillas Tiffany blancas con moño decorativo</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Loza completa: cristalería, cubiertos y utensilios</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Servicio de meseros con capitán</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Catering menú de 3 tiempos</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>DJ 5 horas</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Pista de baile de madera</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Event Planner</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Descorche libre</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Estacionamiento</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- BÁSICO VINTAGE -->
-    <div class="paquete-panel" id="panel-basicovintage">
-      <div class="paquete-card basico">
-        <div class="paquete-header" style="background:linear-gradient(160deg,#131F5D,#2563c7)">
-          <div class="paquete-badge">Paquete</div>
-          <div class="paquete-nombre">Básico Vintage</div>
-          <p class="paquete-desc">El encanto de lo rústico con mesas de madera, sillas vintage y mantelería natural. Una atmósfera cálida y llena de personalidad.</p>
-          <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20el%20Paquete%20B%C3%A1sico%20Vintage" target="_blank" class="paquete-cotizar">💬 Cotizar este paquete</a>
-        </div>
-        <div class="paquete-body">
-          <div class="paquete-img-wrap">
-            <img src="PAQUETE BASICO VINTAGE.png" alt="Paquete Básico Vintage — Bamboo Jardín de Eventos" onerror="this.style.display='none'">
-          </div>
-          <div class="paquete-incluye-title">✅ ¿Qué incluye?</div>
-          <div class="incluye-list">
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Carpa tipo industrial con drapeado de tela</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Mesas rectangulares de madera estilo rústico</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Sillas crossback (X-back) de madera natural</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Mantelería natural / corredor de lino</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Loza completa: cristalería, cubiertos y utensilios</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Servicio de meseros con capitán</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Catering menú de 3 tiempos</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>DJ 5 horas</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Event Planner</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Descorche libre</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Estacionamiento</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PREMIUM -->
-    <div class="paquete-panel" id="panel-premium">
-      <div class="paquete-card premium">
-        <div class="paquete-header">
-          <div class="paquete-badge">⭐ El más completo</div>
-          <div class="paquete-nombre">Premium</div>
-          <p class="paquete-desc">Lujo y elegancia en cada detalle. Carpa con drapeado de techo, iluminación de candiles y el montaje más sofisticado del jardín.</p>
-          <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20el%20Paquete%20Premium" target="_blank" class="paquete-cotizar">💬 Cotizar este paquete</a>
-        </div>
-        <div class="paquete-body">
-          <div class="paquete-img-wrap">
-            <img src="PAQUETE PREMIUM.png" alt="Paquete Premium — Bamboo Jardín de Eventos" onerror="this.style.display='none'">
-          </div>
-          <div class="paquete-incluye-title">✅ ¿Qué incluye?</div>
-          <div class="incluye-list">
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Carpa con drapeado de techo y columnas de tela</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Candiles decorativos colgantes</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Mesas redondas con mantelería blanca premium</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Sillas Tiffany blancas con moño dorado</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Centros de mesa florales</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Loza completa: cristalería, cubiertos y utensilios</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Servicio de meseros con capitán</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Catering menú de 3 tiempos</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>DJ 5 horas + pista de baile de madera</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Event Planner</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Descorche libre · Estacionamiento</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PREMIUM VINTAGE -->
-    <div class="paquete-panel" id="panel-premiumvintage">
-      <div class="paquete-card premium">
-        <div class="paquete-header" style="background:linear-gradient(160deg,#0d1640,#1a2d8a)">
-          <div class="paquete-badge">⭐ Edición especial</div>
-          <div class="paquete-nombre">Premium Vintage</div>
-          <p class="paquete-desc">Lo mejor de dos mundos: la sofisticación premium con la calidez del estilo vintage. Decoración de techo ondulada, mobiliario rústico y una atmósfera única e irrepetible.</p>
-          <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20el%20Paquete%20Premium%20Vintage" target="_blank" class="paquete-cotizar">💬 Cotizar este paquete</a>
-        </div>
-        <div class="paquete-body">
-          <div class="paquete-img-wrap">
-            <img src="PAQUETE PREMIUM VINTAGE.png" alt="Paquete Premium Vintage — Bamboo Jardín de Eventos" onerror="this.style.display='none'">
-          </div>
-          <div class="paquete-incluye-title">✅ ¿Qué incluye?</div>
-          <div class="incluye-list">
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Carpa con decoración de techo en pétalos/ondas de tela</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Mesas rectangulares de madera oscura</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Sillas crossback (X-back) de madera</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Centros de mesa florales con globos decorativos</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Loza completa: cristalería, cubiertos y utensilios</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Servicio de meseros con capitán</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Catering menú de 3 tiempos</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>DJ 5 horas + pista de baile</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Event Planner</span></div>
-            <div class="incluye-item"><div class="incluye-check">✓</div><span>Descorche libre · Estacionamiento</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:2.5rem;position:relative;z-index:1">
-      <a href="https://wa.me/5215580710460?text=Hola%2C%20quisiera%20saber%20m%C3%A1s%20sobre%20los%20paquetes%20disponibles" target="_blank" class="btn-primary">💬 Hablar con un asesor</a>
-    </div>
-  </div>
-</section>
-
-<!-- ════════ BANNER FOTO 1 — Carpa Elegante ════════ -->
-<section class="foto-banner">
-  <div class="foto-banner-wrap">
-    <img src="FAVORITA-BAMBOO CARPA ELEGANTE PRO FOTO.jpeg" alt="Carpa Elegante Bamboo — Jardín de Eventos" class="foto-banner-img" style="object-position:center 30%">
-    <div class="foto-banner-overlay">
-      <div class="foto-banner-content">
-        <span class="foto-banner-eyebrow">Elegancia sin límites</span>
-        <h2 class="foto-banner-title">Tu boda merece el mejor escenario</h2>
-        <p class="foto-banner-sub">Nuestra carpa elegante transforma cualquier sueño en una realidad deslumbrante. Techo de tela drapeada, candelabros de cristal y un jardín que te quita el aliento.</p>
-        <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20la%20carpa%20elegante" target="_blank" class="btn-primary btn-whatsapp">💬 Quiero este espacio</a>
-      </div>
+<!-- ════════ COLLAGE DE EVENTOS ════════ -->
+<section id="collage-eventos">
+  <div class="collage-inner">
+    <div class="collage-words">
+      <span class="cw cw-xl">XV Años</span>
+      <span class="cw cw-sm">Bautizos</span>
+      <span class="cw cw-lg">Bodas</span>
+      <span class="cw cw-md">Aniversarios</span>
+      <span class="cw cw-xs">Congresos</span>
+      <span class="cw cw-lg">Cumpleaños</span>
+      <span class="cw cw-xs">Empresariales</span>
+      <span class="cw cw-md">Graduaciones</span>
+      <span class="cw cw-sm">Bazares</span>
+      <span class="cw cw-xs accent">y más…</span>
     </div>
   </div>
 </section>
@@ -1119,134 +1120,10 @@ footer strong{color:rgba(255,255,255,0.85)}
   </div>
 </section>
 
-<!-- ════════ BANNER FOTO 2 — Mesas Elegantes ════════ -->
-<section class="foto-banner reverse">
+<!-- ════════ BANNER FOTO 3 — La Joya ════════ -->
+<section class="foto-banner has-joya">
   <div class="foto-banner-wrap">
-    <img src="FAVORITA-BAMBOO MESAS ELEGANTES.jpeg" alt="Mesas Elegantes Bamboo — Jardín de Eventos" class="foto-banner-img" style="object-position:center 40%">
-    <div class="foto-banner-overlay">
-      <div class="foto-banner-content">
-        <span class="foto-banner-eyebrow">Detalles que hacen la diferencia</span>
-        <h2 class="foto-banner-title">Cada mesa, una obra de arte</h2>
-        <p class="foto-banner-sub">Montajes premium con sillas doradas, arreglos florales y vajilla completa. Creamos la atmósfera perfecta para que tú y tus invitados vivan un momento inolvidable.</p>
-        <a href="#paquetes" class="btn-primary btn-amarillo">🎋 Ver paquetes</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════ CARRUSEL 2 — Más Momentos ════════ -->
-<section id="carrusel2">
-  <div class="container">
-    <div class="carrusel-intro">
-      <span class="section-eyebrow">Más momentos especiales</span>
-      <h2 class="section-title">Cada Evento, Una Historia Única</h2>
-      <div class="divider" style="margin:0.8rem auto 0;background:linear-gradient(to right,#131F5D,#7ed957)"></div>
-    </div>
-    <div class="carrusel2-track-wrap">
-      <button class="carrusel-btn prev" onclick="carrusel2Move(-1)" aria-label="Anterior">&#8249;</button>
-      <button class="carrusel-btn next" onclick="carrusel2Move(1)" aria-label="Siguiente">&#8250;</button>
-      <div class="carrusel2-track" id="carrusel2Track">
-        <div class="carrusel2-slide"><img src="74590eeb-65a7-4be8-a031-5916263ed361.jpg" alt="Montaje verde salvia con arreglos altos — Bamboo"><div class="carrusel2-slide-caption">Montaje Premium Verde Salvia con Arreglos Altos</div></div>
-        <div class="carrusel2-slide"><img src="b8c8cce9-b488-47bb-8a49-45cf6ff8cc7c.jpg" alt="Fiesta estilo fútbol con sillas vintage — Bamboo"><div class="carrusel2-slide-caption">Celebración Temática con Estilo Vintage</div></div>
-        <div class="carrusel2-slide"><img src="323f30d8-4cb0-40a0-8db3-42a49f072f71.jpg" alt="Salón rosa con carpa drapeada blanca — Bamboo"><div class="carrusel2-slide-caption">Montaje Rosa con Carpa Drapeada Elegante</div></div>
-        <div class="carrusel2-slide"><img src="BAMBOO CARPA PREMIUM ELEGANTE.jpeg" alt="Interior carpa premium con candelabro — Bamboo"><div class="carrusel2-slide-caption">Carpa Premium con Candelabro de Cristal</div></div>
-        <div class="carrusel2-slide"><img src="BAMBOO MESAS.jpeg" alt="Mesa oval vintage con sillas crossback doradas — Bamboo"><div class="carrusel2-slide-caption">Mesas Vintage con Sillas Crossback Doradas</div></div>
-        <div class="carrusel2-slide"><img src="2dc09467-a350-4146-93e5-9ca5e465234b.jpg" alt="Vista panorámica carpa básico vintage — Bamboo"><div class="carrusel2-slide-caption">Paquete Básico Vintage — Vista Panorámica</div></div>
-        <div class="carrusel2-slide"><img src="08dcc110-2c88-4ce1-9c27-a8cb0ad66ca6.jpg" alt="Arco floral circular en jardín con carpa — Bamboo"><div class="carrusel2-slide-caption">Arco Floral Circular para Ceremonias</div></div>
-        <div class="carrusel2-slide"><img src="110e53b7-b2d5-4caa-a52f-4568bea756e0.jpg" alt="Vista exterior carpa con jardín verde — Bamboo"><div class="carrusel2-slide-caption">Vista Exterior — Jardín y Carpa Bamboo</div></div>
-        <div class="carrusel2-slide"><img src="c99eb049-9217-4044-9d76-5f0b8efe845b.jpg" alt="Ceremonia al aire libre — Bamboo"><div class="carrusel2-slide-caption">Ceremonia al Aire Libre en el Jardín</div></div>
-        <div class="carrusel2-slide"><img src="cedbbea2-7890-4b0c-b2dc-21c3149e029e.jpg" alt="Ceremonia entre palmeras y flores — Bamboo"><div class="carrusel2-slide-caption">Ceremonia Rodeada de Naturaleza</div></div>
-        <div class="carrusel2-slide"><img src="e1e8d90b-87a2-4987-9fa6-89baea60bec1.jpg" alt="Montaje verde agua con sillas Tiffany — Bamboo"><div class="carrusel2-slide-caption">Montaje Verde Agua con Sillas Tiffany Crystal</div></div>
-      </div>
-    </div>
-    <div class="carrusel2-dots" id="carrusel2Dots">
-      <button class="carrusel2-dot active" onclick="carrusel2GoTo(0)"></button>
-      <button class="carrusel2-dot" onclick="carrusel2GoTo(1)"></button>
-      <button class="carrusel2-dot" onclick="carrusel2GoTo(2)"></button>
-      <button class="carrusel2-dot" onclick="carrusel2GoTo(3)"></button>
-      <button class="carrusel2-dot" onclick="carrusel2GoTo(4)"></button>
-      <button class="carrusel2-dot" onclick="carrusel2GoTo(5)"></button>
-      <button class="carrusel2-dot" onclick="carrusel2GoTo(6)"></button>
-      <button class="carrusel2-dot" onclick="carrusel2GoTo(7)"></button>
-      <button class="carrusel2-dot" onclick="carrusel2GoTo(8)"></button>
-      <button class="carrusel2-dot" onclick="carrusel2GoTo(9)"></button>
-      <button class="carrusel2-dot" onclick="carrusel2GoTo(10)"></button>
-    </div>
-    <div class="carrusel2-thumbs" id="carrusel2Thumbs">
-      <div class="carrusel2-thumb active" onclick="carrusel2GoTo(0)"><img src="74590eeb-65a7-4be8-a031-5916263ed361.jpg" alt=""></div>
-      <div class="carrusel2-thumb" onclick="carrusel2GoTo(1)"><img src="b8c8cce9-b488-47bb-8a49-45cf6ff8cc7c.jpg" alt=""></div>
-      <div class="carrusel2-thumb" onclick="carrusel2GoTo(2)"><img src="323f30d8-4cb0-40a0-8db3-42a49f072f71.jpg" alt=""></div>
-      <div class="carrusel2-thumb" onclick="carrusel2GoTo(3)"><img src="BAMBOO CARPA PREMIUM ELEGANTE.jpeg" alt=""></div>
-      <div class="carrusel2-thumb" onclick="carrusel2GoTo(4)"><img src="BAMBOO MESAS.jpeg" alt=""></div>
-      <div class="carrusel2-thumb" onclick="carrusel2GoTo(5)"><img src="2dc09467-a350-4146-93e5-9ca5e465234b.jpg" alt=""></div>
-      <div class="carrusel2-thumb" onclick="carrusel2GoTo(6)"><img src="08dcc110-2c88-4ce1-9c27-a8cb0ad66ca6.jpg" alt=""></div>
-      <div class="carrusel2-thumb" onclick="carrusel2GoTo(7)"><img src="110e53b7-b2d5-4caa-a52f-4568bea756e0.jpg" alt=""></div>
-      <div class="carrusel2-thumb" onclick="carrusel2GoTo(8)"><img src="c99eb049-9217-4044-9d76-5f0b8efe845b.jpg" alt=""></div>
-      <div class="carrusel2-thumb" onclick="carrusel2GoTo(9)"><img src="cedbbea2-7890-4b0c-b2dc-21c3149e029e.jpg" alt=""></div>
-      <div class="carrusel2-thumb" onclick="carrusel2GoTo(10)"><img src="e1e8d90b-87a2-4987-9fa6-89baea60bec1.jpg" alt=""></div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ════════ EXTRAS ════════ -->
-<section id="extras">
-  <div class="container">
-    <div class="extras-intro">
-      <span class="section-eyebrow">Personaliza tu evento</span>
-      <h2 class="section-title">Servicios Adicionales</h2>
-      <div class="divider" style="margin:0.8rem auto 1rem"></div>
-      <p class="section-subtitle" style="margin:0 auto">Agrega el toque especial a tu celebración con nuestros servicios extra disponibles bajo cotización.</p>
-    </div>
-    <div class="extras-grid-mixed">
-      <div class="extra-item-with-img">
-        <div class="extra-item-img"><img src="SECCION EXTRAS PERIQUERA DE MADERA.png" alt="Periqueras de cristal o madera" onerror="this.parentElement.style.display='none'"></div>
-        <div class="extra-item-body"><span class="extra-icon">🪑</span><span class="extra-text">Periqueras de cristal o madera</span></div>
-      </div>
-      <div class="extra-item-with-img">
-        <div class="extra-item-img"><img src="EXTRAS SALA LAUNGE copy.jpeg" alt="Sala lounge Bamboo" onerror="this.parentElement.style.display='none'"></div>
-        <div class="extra-item-body"><span class="extra-icon">🛋️</span><span class="extra-text">Sala lounge</span></div>
-      </div>
-      <div class="extra-item-with-img">
-        <div class="extra-item-img"><img src="EXTRAS servicio de barman.png" alt="Servicio de barman Bamboo" onerror="this.parentElement.style.display='none'"></div>
-        <div class="extra-item-body"><span class="extra-icon">🍹</span><span class="extra-text">Servicio de barman</span></div>
-      </div>
-      <div class="extra-item-with-img">
-        <div class="extra-item-img"><img src="EXTRAS MESA DE DULCES.jpeg" alt="Mesa de dulces Bamboo" onerror="this.parentElement.style.display='none'"></div>
-        <div class="extra-item-body"><span class="extra-icon">🍬</span><span class="extra-text">Mesa de dulces</span></div>
-      </div>
-      <div class="extra-item-with-img">
-        <div class="extra-item-img"><img src="LETRAS DECORATIVAS1.jpg" alt="Letras gigantes decorativas Bamboo" onerror="this.parentElement.style.display='none'"></div>
-        <div class="extra-item-body"><span class="extra-icon">🔤</span><span class="extra-text">Letras gigantes decorativas</span></div>
-      </div>
-      <div class="extra-item-with-img">
-        <div class="extra-item-img"><img src="EXTRAS CARPA CUADRICULADA PARA SALA LOUNGE copy.jpeg" alt="Carpa cuadriculada sala lounge Bamboo" onerror="this.parentElement.style.display='none'"></div>
-        <div class="extra-item-body"><span class="extra-icon">⛺</span><span class="extra-text">Carpa cuadriculada para sala lounge</span></div>
-      </div>
-      <div class="extra-item-with-img">
-        <div class="extra-item-img"><img src="EXTRAS Calentadores de gas.jpg" alt="Calentadores de gas Bamboo" onerror="this.parentElement.style.display='none'"></div>
-        <div class="extra-item-body"><span class="extra-icon">🔥</span><span class="extra-text">Calentadores de gas</span></div>
-      </div>
-      <div class="extra-item-with-img">
-        <div class="extra-item-img"><img src="EXTRAS CEREMONIAS DENTRO DEL JARDIN copy.jpg" alt="Ceremonias dentro del jardín Bamboo" onerror="this.parentElement.style.display='none'"></div>
-        <div class="extra-item-body"><span class="extra-icon">💒</span><span class="extra-text">Ceremonias dentro del jardín</span></div>
-      </div>
-      <div class="extra-item-with-img">
-        <div class="extra-item-img"><img src="JARDIN BAMBOO PISO CON LUCES.jpg" alt="Pista de baile con luz Bamboo" onerror="this.parentElement.style.display='none'"></div>
-        <div class="extra-item-body"><span class="extra-icon">💡</span><span class="extra-text">Pista de baile con luz</span></div>
-      </div>
-    </div>
-    </div>
-    <div style="text-align:center;margin-top:2.5rem">
-      <a href="https://wa.me/5215580710460?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20los%20servicios%20extra" target="_blank" class="btn-primary">💬 Preguntar por extras</a>
-    </div>
-  </div>
-</section>
-
-<!-- ════════ BANNER FOTO 3 — Mega Pro ════════ -->
-<section class="foto-banner">
-  <div class="foto-banner-wrap">
-    <img src="FAVORITA-BAMBOO ELEGANTE CARPA mega pro.jpeg" alt="Gran salón Bamboo — Jardín de Eventos Jaltenco" class="foto-banner-img" style="object-position:center 45%">
+    <img src="la joya bamboo.png" alt="La Joya — Bamboo Jardín de Eventos" class="foto-banner-img joya-contain" style="object-position:center 45%">
     <div class="foto-banner-overlay">
       <div class="foto-banner-content">
         <span class="foto-banner-eyebrow">Hasta 600 invitados</span>
@@ -1258,40 +1135,181 @@ footer strong{color:rgba(255,255,255,0.85)}
   </div>
 </section>
 
-<!-- ════════ GALERÍA ════════ -->
-<section id="galeria">
+<!-- ════════ PAQUETES ════════ -->
+<section id="paquetes">
   <div class="container">
-    <div class="galeria-intro">
-      <span class="section-eyebrow">Momentos que inspiran</span>
-      <h2 class="section-title">Galería de Eventos</h2>
+    <div class="paquetes-intro">
+      <span class="section-eyebrow">Encuentra el tuyo</span>
+      <h2 class="section-title">Nuestros Paquetes</h2>
       <div class="divider" style="margin:0.8rem auto 1rem"></div>
-      <p class="section-subtitle" style="margin:0 auto">Cada evento es único. Aquí algunos de los momentos especiales que hemos tenido el honor de acompañar.</p>
+      <p class="section-subtitle">Cada paquete está diseñado para que disfrutes tu evento sin preocupaciones. Selecciona el que mejor se adapte a tu celebración.</p>
     </div>
-    <div class="galeria-grid">
-      <div class="g-item wide" onclick="openLightbox(this)"><img src="FAVORITA-BAMBOO CARPA ELEGANTE PRO FOTO.jpeg" alt="Carpa elegante montaje dorado" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🌿</span>Carpa Elegante</div>'"><div class="g-overlay"><span>Carpa Elegante Premium</span></div></div>
-      <div class="g-item tall" onclick="openLightbox(this)"><img src="WhatsApp Image 2026-04-14 at 17.22.07.jpeg" alt="Centro de mesa floral" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🌸</span>Centro Floral</div>'"><div class="g-overlay"><span>Centros de Mesa Florales</span></div></div>
-      <div class="g-item" onclick="openLightbox(this)"><img src="JARDIN BAMBOO PISO CON LUCES.jpg" alt="Pista de baile LED" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>✨</span>Pista LED</div>'"><div class="g-overlay"><span>Pista de Baile LED</span></div></div>
-      <div class="g-item" onclick="openLightbox(this)"><img src="SALA LAUNGE.jpeg" alt="Sala lounge exterior" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🛋️</span>Lounge</div>'"><div class="g-overlay"><span>Sala Lounge Exterior</span></div></div>
-      <div class="g-item" onclick="openLightbox(this)"><img src="FAVORITA-BAMBOO ELEGANTE CARPA mega pro.jpeg" alt="Gran carpa interior" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>⛺</span>Carpa</div>'"><div class="g-overlay"><span>Gran Carpa — Vista Interior</span></div></div>
-      <div class="g-item" onclick="openLightbox(this)"><img src="WhatsApp Image 2026-04-14 at 17.22.09.jpeg" alt="Ceremonia al jardín" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>💒</span>Ceremonia</div>'"><div class="g-overlay"><span>Ceremonia en el Jardín</span></div></div>
-      <div class="g-item" onclick="openLightbox(this)"><img src="WhatsApp Image 2026-04-14 at 17.22.12.jpeg" alt="Ceremonia exterior" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>💐</span>Exterior</div>'"><div class="g-overlay"><span>Ceremonia Exterior</span></div></div>
-      <div class="g-item" onclick="openLightbox(this)"><img src="LETRAS DECORATIVAS1.jpg" alt="Letras decorativas" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🌺</span>Letras</div>'"><div class="g-overlay"><span>Letras Decorativas</span></div></div>
-      <div class="g-item" onclick="openLightbox(this)"><img src="WhatsApp Image 2026-04-14 at 17.22.17.jpeg" alt="Montaje elegante" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🍷</span>Montaje</div>'"><div class="g-overlay"><span>Montaje Elegante</span></div></div>
-      <div class="g-item wide" onclick="openLightbox(this)"><img src="FAVORITA-BAMBOO MESAS ELEGANTES.jpeg" alt="Mesas premium doradas" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🏡</span>Mesas</div>'"><div class="g-overlay"><span>Mesas Premium Doradas</span></div></div>
-      <div class="g-item" onclick="openLightbox(this)"><img src="WhatsApp Image 2026-04-14 at 17.22.11.jpeg" alt="Letras gigantes DANI" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🌹</span>Letras</div>'"><div class="g-overlay"><span>Letras Gigantes con Iluminación</span></div></div>
-      <div class="g-item" onclick="openLightbox(this)"><img src="FAVORITA-daab3af1-ed5e-418f-9779-dea859b64091.jpg" alt="Noche de boda" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🌙</span>Nocturno</div>'"><div class="g-overlay"><span>Boda — Iluminación Nocturna</span></div></div>
+    <div class="paquetes-tabs">
+      <button class="tab-btn active" onclick="showPaquete('lona',this)">⛺ Lona</button>
+      <button class="tab-btn" onclick="showPaquete('basico',this)">🌿 Básico</button>
+      <button class="tab-btn" onclick="showPaquete('basicovintage',this)">🪵 Básico Vintage</button>
+      <button class="tab-btn premium-tab" onclick="showPaquete('premium',this)">👑 Premium</button>
+      <button class="tab-btn premium-tab" onclick="showPaquete('premiumvintage',this)">✨ Premium Vintage</button>
     </div>
-    <div style="text-align:center;margin-top:2.5rem">
-      <a href="https://www.instagram.com/jardinbamboomxoficial/" target="_blank" class="btn-outline">📸 Ver más en Instagram</a>
+
+    <!-- LONA -->
+    <div class="paquete-panel active" id="panel-lona">
+      <div class="paquete-card lona">
+        <div class="paquete-header">
+          <div class="paquete-badge">Paquete</div>
+          <div class="paquete-nombre">Lona</div>
+          <p class="paquete-desc">Celebra al aire libre con la protección de nuestra lona sobre pasto natural. Ambiente abierto, fresco y con todo el espacio para tu fiesta.</p>
+          <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20el%20Paquete%20Lona" target="_blank" class="paquete-cotizar">💬 Cotizar este paquete</a>
+        </div>
+        <div class="paquete-body">
+          <div class="paquete-img-wrap">
+            <img src="PAQUETE_LONA.png" alt="Paquete Lona — Bamboo Jardín de Eventos" onerror="this.style.display='none'">
+          </div>
+          <div class="paquete-incluye-title">✅ ¿Qué incluye?</div>
+          <div class="incluye-list">
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Lona tipo vela sobre jardín de pasto natural</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Mesas cuadradas rústicas de madera</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Sillas Tiffany blancas con cojín</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Mantelería básica</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Loza completa: cristalería, cubiertos y utensilios</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Servicio de meseros con capitán</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Catering menú de 3 tiempos</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>DJ 5 horas</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Event Planner</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Descorche libre</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Estacionamiento</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BÁSICO -->
+    <div class="paquete-panel" id="panel-basico">
+      <div class="paquete-card basico">
+        <div class="paquete-header">
+          <div class="paquete-badge">Paquete</div>
+          <div class="paquete-nombre">Básico</div>
+          <p class="paquete-desc">Montaje clásico con mantelería en color bajo carpa estructural. Elegante, amplio y con todo lo que tu evento necesita.</p>
+          <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20el%20Paquete%20B%C3%A1sico" target="_blank" class="paquete-cotizar">💬 Cotizar este paquete</a>
+        </div>
+        <div class="paquete-body">
+          <div class="paquete-img-wrap">
+            <img src="PAQUETE_BASICO_CORRECTO.jpg" alt="Paquete Básico — Bamboo Jardín de Eventos" onerror="this.style.display='none'">
+          </div>
+          <div class="paquete-incluye-title">✅ ¿Qué incluye?</div>
+          <div class="incluye-list">
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Carpa estructural tipo industrial</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Mesas redondas con mantelería en color</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Sillas Tiffany blancas con moño decorativo</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Loza completa: cristalería, cubiertos y utensilios</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Servicio de meseros con capitán</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Catering menú de 3 tiempos</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>DJ 5 horas</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Pista de baile de madera</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Event Planner</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Descorche libre</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Estacionamiento</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BÁSICO VINTAGE -->
+    <div class="paquete-panel" id="panel-basicovintage">
+      <div class="paquete-card basico">
+        <div class="paquete-header" style="background:linear-gradient(160deg,#131F5D,#2563c7)">
+          <div class="paquete-badge">Paquete</div>
+          <div class="paquete-nombre">Básico Vintage</div>
+          <p class="paquete-desc">El encanto de lo rústico con mesas de madera, sillas vintage y mantelería natural. Una atmósfera cálida y llena de personalidad.</p>
+          <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20el%20Paquete%20B%C3%A1sico%20Vintage" target="_blank" class="paquete-cotizar">💬 Cotizar este paquete</a>
+        </div>
+        <div class="paquete-body">
+          <div class="paquete-img-wrap">
+            <img src="PAQUETE_BASICO_VINTAGE.png" alt="Paquete Básico Vintage — Bamboo Jardín de Eventos" onerror="this.style.display='none'">
+          </div>
+          <div class="paquete-incluye-title">✅ ¿Qué incluye?</div>
+          <div class="incluye-list">
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Carpa tipo industrial con drapeado de tela</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Mesas rectangulares de madera estilo rústico</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Sillas crossback (X-back) de madera natural</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Mantelería natural / corredor de lino</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Loza completa: cristalería, cubiertos y utensilios</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Servicio de meseros con capitán</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Catering menú de 3 tiempos</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>DJ 5 horas</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Event Planner</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Descorche libre</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Estacionamiento</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PREMIUM -->
+    <div class="paquete-panel" id="panel-premium">
+      <div class="paquete-card premium">
+        <div class="paquete-header">
+          <div class="paquete-badge">⭐ El más completo</div>
+          <div class="paquete-nombre">Premium</div>
+          <p class="paquete-desc">Lujo y elegancia en cada detalle. Carpa con drapeado de techo, iluminación de candiles y el montaje más sofisticado del jardín.</p>
+          <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20el%20Paquete%20Premium" target="_blank" class="paquete-cotizar">💬 Cotizar este paquete</a>
+        </div>
+        <div class="paquete-body">
+          <div class="paquete-img-wrap">
+            <img src="PAQUETE_PREMIUM.png" alt="Paquete Premium — Bamboo Jardín de Eventos" onerror="this.style.display='none'">
+          </div>
+          <div class="paquete-incluye-title">✅ ¿Qué incluye?</div>
+          <div class="incluye-list">
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Carpa con drapeado de techo y columnas de tela</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Candiles decorativos colgantes</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Mesas redondas con mantelería blanca premium</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Sillas Tiffany blancas con moño dorado</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Centros de mesa florales</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Loza completa: cristalería, cubiertos y utensilios</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Servicio de meseros con capitán</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Catering menú de 3 tiempos</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>DJ 5 horas + pista de baile de madera</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Event Planner</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Descorche libre · Estacionamiento</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PREMIUM VINTAGE -->
+    <div class="paquete-panel" id="panel-premiumvintage">
+      <div class="paquete-card premium">
+        <div class="paquete-header" style="background:linear-gradient(160deg,#0d1640,#1a2d8a)">
+          <div class="paquete-badge">⭐ Edición especial</div>
+          <div class="paquete-nombre">Premium Vintage</div>
+          <p class="paquete-desc">Lo mejor de dos mundos: la sofisticación premium con la calidez del estilo vintage. Decoración de techo ondulada, mobiliario rústico y una atmósfera única e irrepetible.</p>
+          <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20el%20Paquete%20Premium%20Vintage" target="_blank" class="paquete-cotizar">💬 Cotizar este paquete</a>
+        </div>
+        <div class="paquete-body">
+          <div class="paquete-img-wrap">
+            <img src="PAQUETE_PREMIUM_VINTAGE.png" alt="Paquete Premium Vintage — Bamboo Jardín de Eventos" onerror="this.style.display='none'">
+          </div>
+          <div class="paquete-incluye-title">✅ ¿Qué incluye?</div>
+          <div class="incluye-list">
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Carpa con decoración de techo en pétalos/ondas de tela</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Mesas rectangulares de madera oscura</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Sillas crossback (X-back) de madera</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Centros de mesa florales con globos decorativos</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Loza completa: cristalería, cubiertos y utensilios</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Servicio de meseros con capitán</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Catering menú de 3 tiempos</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>DJ 5 horas + pista de baile</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Event Planner</span></div>
+            <div class="incluye-item"><div class="incluye-check">✓</div><span>Descorche libre · Estacionamiento</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;position:relative;z-index:1">
+      <a href="https://wa.me/5215580710460?text=Hola%2C%20quisiera%20saber%20m%C3%A1s%20sobre%20los%20paquetes%20disponibles" target="_blank" class="btn-primary">💬 Hablar con un asesor</a>
     </div>
   </div>
 </section>
-
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-  <img id="lightboxImg" src="" alt="">
-</div>
 
 <!-- ════════ CARRUSEL ════════ -->
 <section id="carrusel">
@@ -1358,6 +1376,181 @@ footer strong{color:rgba(255,255,255,0.85)}
   </div>
 </section>
 
+<!-- ════════ EXTRAS ════════ -->
+<section id="extras">
+  <div class="container">
+    <div class="extras-intro">
+      <span class="section-eyebrow">Personaliza tu evento</span>
+      <h2 class="section-title">Servicios Adicionales</h2>
+      <div class="divider" style="margin:0.8rem auto 1rem"></div>
+      <p class="section-subtitle" style="margin:0 auto">Agrega el toque especial a tu celebración con nuestros servicios extra disponibles bajo cotización.</p>
+    </div>
+    <div class="extras-grid-mixed">
+      <div class="extra-item-with-img">
+        <div class="extra-item-img"><img src="SECCION EXTRAS PERIQUERA DE MADERA.png" alt="Periqueras de cristal o madera" onerror="this.parentElement.style.display='none'"></div>
+        <div class="extra-item-body"><span class="extra-icon">🪑</span><span class="extra-text">Periqueras de cristal o madera</span></div>
+      </div>
+      <div class="extra-item-with-img">
+        <div class="extra-item-img"><img src="EXTRAS SALA LAUNGE copy.jpeg" alt="Sala lounge Bamboo" onerror="this.parentElement.style.display='none'"></div>
+        <div class="extra-item-body"><span class="extra-icon">🛋️</span><span class="extra-text">Sala lounge</span></div>
+      </div>
+      <div class="extra-item-with-img">
+        <div class="extra-item-img"><img src="EXTRAS servicio de barman.png" alt="Servicio de barman Bamboo" onerror="this.parentElement.style.display='none'"></div>
+        <div class="extra-item-body"><span class="extra-icon">🍹</span><span class="extra-text">Servicio de barman</span></div>
+      </div>
+      <div class="extra-item-with-img">
+        <div class="extra-item-img"><img src="EXTRAS MESA DE DULCES.jpeg" alt="Mesa de dulces Bamboo" onerror="this.parentElement.style.display='none'"></div>
+        <div class="extra-item-body"><span class="extra-icon">🍬</span><span class="extra-text">Mesa de dulces</span></div>
+      </div>
+      <div class="extra-item-with-img">
+        <div class="extra-item-img"><img src="LETRAS DECORATIVAS1.jpg" alt="Letras gigantes decorativas Bamboo" onerror="this.parentElement.style.display='none'"></div>
+        <div class="extra-item-body"><span class="extra-icon">🔤</span><span class="extra-text">Letras gigantes decorativas</span></div>
+      </div>
+      <div class="extra-item-with-img">
+        <div class="extra-item-img"><img src="EXTRAS CARPA CUADRICULADA PARA SALA LOUNGE copy.jpeg" alt="Carpa cuadriculada sala lounge Bamboo" onerror="this.parentElement.style.display='none'"></div>
+        <div class="extra-item-body"><span class="extra-icon">⛺</span><span class="extra-text">Carpa cuadriculada para sala lounge</span></div>
+      </div>
+      <div class="extra-item-with-img">
+        <div class="extra-item-img"><img src="EXTRAS Calentadores de gas.jpg" alt="Calentadores de gas Bamboo" onerror="this.parentElement.style.display='none'"></div>
+        <div class="extra-item-body"><span class="extra-icon">🔥</span><span class="extra-text">Calentadores de gas</span></div>
+      </div>
+      <div class="extra-item-with-img">
+        <div class="extra-item-img"><img src="EXTRAS CEREMONIAS DENTRO DEL JARDIN copy.jpg" alt="Ceremonias dentro del jardín Bamboo" onerror="this.parentElement.style.display='none'"></div>
+        <div class="extra-item-body"><span class="extra-icon">💒</span><span class="extra-text">Ceremonias dentro del jardín</span></div>
+      </div>
+      <div class="extra-item-with-img">
+        <div class="extra-item-img"><img src="JARDIN BAMBOO PISO CON LUCES.jpg" alt="Pista de baile con luz Bamboo" onerror="this.parentElement.style.display='none'"></div>
+        <div class="extra-item-body"><span class="extra-icon">💡</span><span class="extra-text">Pista de baile con luz</span></div>
+      </div>
+    </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="https://wa.me/5215580710460?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20los%20servicios%20extra" target="_blank" class="btn-primary">💬 Preguntar por extras</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ BANNER FOTO 1 — La Joya 2 ════════ -->
+<section class="foto-banner">
+  <div class="foto-banner-wrap">
+    <img src="la joya 2 bamboo.png" alt="Carpa Elegante Bamboo — Jardín de Eventos" class="foto-banner-img joya-contain" style="object-position:center 30%">
+    <div class="foto-banner-overlay">
+      <div class="foto-banner-content">
+        <span class="foto-banner-eyebrow">Elegancia sin límites</span>
+        <h2 class="foto-banner-title">Tu boda merece el mejor escenario</h2>
+        <p class="foto-banner-sub">Nuestra carpa elegante transforma cualquier sueño en una realidad deslumbrante. Techo de tela drapeada, candelabros de cristal y un jardín que te quita el aliento.</p>
+        <a href="https://wa.me/5215580710460?text=Hola%2C%20me%20interesa%20la%20carpa%20elegante" target="_blank" class="btn-primary btn-whatsapp">💬 Quiero este espacio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ GALERÍA ════════ -->
+<section id="galeria">
+  <div class="container">
+    <div class="galeria-intro">
+      <span class="section-eyebrow">Momentos que inspiran</span>
+      <h2 class="section-title">Galería de Eventos</h2>
+      <div class="divider" style="margin:0.8rem auto 1rem"></div>
+      <p class="section-subtitle" style="margin:0 auto">Cada evento es único. Aquí algunos de los momentos especiales que hemos tenido el honor de acompañar.</p>
+    </div>
+    <div class="galeria-grid">
+      <div class="g-item wide" onclick="openLightbox(this)"><img src="FAVORITA-BAMBOO CARPA ELEGANTE PRO FOTO.jpeg" alt="Carpa elegante montaje dorado" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🌿</span>Carpa Elegante</div>'"><div class="g-overlay"><span>Carpa Elegante Premium</span></div></div>
+      <div class="g-item tall" onclick="openLightbox(this)"><img src="WhatsApp Image 2026-04-14 at 17.22.07.jpeg" alt="Centro de mesa floral" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🌸</span>Centro Floral</div>'"><div class="g-overlay"><span>Centros de Mesa Florales</span></div></div>
+      <div class="g-item" onclick="openLightbox(this)"><img src="JARDIN BAMBOO PISO CON LUCES.jpg" alt="Pista de baile LED" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>✨</span>Pista LED</div>'"><div class="g-overlay"><span>Pista de Baile LED</span></div></div>
+      <div class="g-item" onclick="openLightbox(this)"><img src="SALA LAUNGE.jpeg" alt="Sala lounge exterior" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🛋️</span>Lounge</div>'"><div class="g-overlay"><span>Sala Lounge Exterior</span></div></div>
+      <div class="g-item" onclick="openLightbox(this)"><img src="FAVORITA-BAMBOO ELEGANTE CARPA mega pro.jpeg" alt="Gran carpa interior" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>⛺</span>Carpa</div>'"><div class="g-overlay"><span>Gran Carpa — Vista Interior</span></div></div>
+      <div class="g-item" onclick="openLightbox(this)"><img src="WhatsApp Image 2026-04-14 at 17.22.09.jpeg" alt="Ceremonia al jardín" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>💒</span>Ceremonia</div>'"><div class="g-overlay"><span>Ceremonia en el Jardín</span></div></div>
+      <div class="g-item" onclick="openLightbox(this)"><img src="WhatsApp Image 2026-04-14 at 17.22.12.jpeg" alt="Ceremonia exterior" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>💐</span>Exterior</div>'"><div class="g-overlay"><span>Ceremonia Exterior</span></div></div>
+      <div class="g-item" onclick="openLightbox(this)"><img src="LETRAS DECORATIVAS1.jpg" alt="Letras decorativas" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🌺</span>Letras</div>'"><div class="g-overlay"><span>Letras Decorativas</span></div></div>
+      <div class="g-item" onclick="openLightbox(this)"><img src="WhatsApp Image 2026-04-14 at 17.22.17.jpeg" alt="Montaje elegante" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🍷</span>Montaje</div>'"><div class="g-overlay"><span>Montaje Elegante</span></div></div>
+      <div class="g-item wide" onclick="openLightbox(this)"><img src="FAVORITA-BAMBOO MESAS ELEGANTES.jpeg" alt="Mesas premium doradas" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🏡</span>Mesas</div>'"><div class="g-overlay"><span>Mesas Premium Doradas</span></div></div>
+      <div class="g-item" onclick="openLightbox(this)"><img src="WhatsApp Image 2026-04-14 at 17.22.11.jpeg" alt="Letras gigantes DANI" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🌹</span>Letras</div>'"><div class="g-overlay"><span>Letras Gigantes con Iluminación</span></div></div>
+      <div class="g-item" onclick="openLightbox(this)"><img src="FAVORITA-BAMBOO ELEGANTE CARPA mega pro.jpeg" alt="Noche de boda" onerror="this.parentElement.innerHTML='<div class=g-placeholder><span>🌙</span>Nocturno</div>'"><div class="g-overlay"><span>Boda — Iluminación Nocturna</span></div></div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="https://www.instagram.com/jardinbamboomxoficial/" target="_blank" class="btn-outline">📸 Ver más en Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<!-- ════════ CARRUSEL 2 — Más Momentos ════════ -->
+<section id="carrusel2">
+  <div class="container">
+    <div class="carrusel-intro">
+      <span class="section-eyebrow">Más momentos especiales</span>
+      <h2 class="section-title">Cada Evento, Una Historia Única</h2>
+      <div class="divider" style="margin:0.8rem auto 0;background:linear-gradient(to right,#131F5D,#7ed957)"></div>
+    </div>
+    <div class="carrusel2-track-wrap">
+      <button class="carrusel-btn prev" onclick="carrusel2Move(-1)" aria-label="Anterior">&#8249;</button>
+      <button class="carrusel-btn next" onclick="carrusel2Move(1)" aria-label="Siguiente">&#8250;</button>
+      <div class="carrusel2-track" id="carrusel2Track">
+        <div class="carrusel2-slide"><img src="74590eeb-65a7-4be8-a031-5916263ed361.jpg" alt="Montaje verde salvia con arreglos altos — Bamboo"><div class="carrusel2-slide-caption">Montaje Premium Verde Salvia con Arreglos Altos</div></div>
+        <div class="carrusel2-slide"><img src="b8c8cce9-b488-47bb-8a49-45cf6ff8cc7c.jpg" alt="Fiesta estilo fútbol con sillas vintage — Bamboo"><div class="carrusel2-slide-caption">Celebración Temática con Estilo Vintage</div></div>
+        <div class="carrusel2-slide"><img src="323f30d8-4cb0-40a0-8db3-42a49f072f71.jpg" alt="Salón rosa con carpa drapeada blanca — Bamboo"><div class="carrusel2-slide-caption">Montaje Rosa con Carpa Drapeada Elegante</div></div>
+        <div class="carrusel2-slide"><img src="BAMBOO CARPA PREMIUM ELEGANTE.jpeg" alt="Interior carpa premium con candelabro — Bamboo"><div class="carrusel2-slide-caption">Carpa Premium con Candelabro de Cristal</div></div>
+        <div class="carrusel2-slide"><img src="BAMBOO MESAS.jpeg" alt="Mesa oval vintage con sillas crossback doradas — Bamboo"><div class="carrusel2-slide-caption">Mesas Vintage con Sillas Crossback Doradas</div></div>
+        <div class="carrusel2-slide"><img src="2dc09467-a350-4146-93e5-9ca5e465234b.jpg" alt="Vista panorámica carpa básico vintage — Bamboo"><div class="carrusel2-slide-caption">Paquete Básico Vintage — Vista Panorámica</div></div>
+        <div class="carrusel2-slide"><img src="08dcc110-2c88-4ce1-9c27-a8cb0ad66ca6.jpg" alt="Arco floral circular en jardín con carpa — Bamboo"><div class="carrusel2-slide-caption">Arco Floral Circular para Ceremonias</div></div>
+        <div class="carrusel2-slide"><img src="110e53b7-b2d5-4caa-a52f-4568bea756e0.jpg" alt="Vista exterior carpa con jardín verde — Bamboo"><div class="carrusel2-slide-caption">Vista Exterior — Jardín y Carpa Bamboo</div></div>
+        <div class="carrusel2-slide"><img src="c99eb049-9217-4044-9d76-5f0b8efe845b.jpg" alt="Ceremonia al aire libre — Bamboo"><div class="carrusel2-slide-caption">Ceremonia al Aire Libre en el Jardín</div></div>
+        <div class="carrusel2-slide"><img src="cedbbea2-7890-4b0c-b2dc-21c3149e029e.jpg" alt="Ceremonia entre palmeras y flores — Bamboo"><div class="carrusel2-slide-caption">Ceremonia Rodeada de Naturaleza</div></div>
+        <div class="carrusel2-slide"><img src="e1e8d90b-87a2-4987-9fa6-89baea60bec1.jpg" alt="Montaje verde agua con sillas Tiffany — Bamboo"><div class="carrusel2-slide-caption">Montaje Verde Agua con Sillas Tiffany Crystal</div></div>
+      </div>
+    </div>
+    <div class="carrusel2-dots" id="carrusel2Dots">
+      <button class="carrusel2-dot active" onclick="carrusel2GoTo(0)"></button>
+      <button class="carrusel2-dot" onclick="carrusel2GoTo(1)"></button>
+      <button class="carrusel2-dot" onclick="carrusel2GoTo(2)"></button>
+      <button class="carrusel2-dot" onclick="carrusel2GoTo(3)"></button>
+      <button class="carrusel2-dot" onclick="carrusel2GoTo(4)"></button>
+      <button class="carrusel2-dot" onclick="carrusel2GoTo(5)"></button>
+      <button class="carrusel2-dot" onclick="carrusel2GoTo(6)"></button>
+      <button class="carrusel2-dot" onclick="carrusel2GoTo(7)"></button>
+      <button class="carrusel2-dot" onclick="carrusel2GoTo(8)"></button>
+      <button class="carrusel2-dot" onclick="carrusel2GoTo(9)"></button>
+      <button class="carrusel2-dot" onclick="carrusel2GoTo(10)"></button>
+    </div>
+    <div class="carrusel2-thumbs" id="carrusel2Thumbs">
+      <div class="carrusel2-thumb active" onclick="carrusel2GoTo(0)"><img src="74590eeb-65a7-4be8-a031-5916263ed361.jpg" alt=""></div>
+      <div class="carrusel2-thumb" onclick="carrusel2GoTo(1)"><img src="b8c8cce9-b488-47bb-8a49-45cf6ff8cc7c.jpg" alt=""></div>
+      <div class="carrusel2-thumb" onclick="carrusel2GoTo(2)"><img src="323f30d8-4cb0-40a0-8db3-42a49f072f71.jpg" alt=""></div>
+      <div class="carrusel2-thumb" onclick="carrusel2GoTo(3)"><img src="BAMBOO CARPA PREMIUM ELEGANTE.jpeg" alt=""></div>
+      <div class="carrusel2-thumb" onclick="carrusel2GoTo(4)"><img src="BAMBOO MESAS.jpeg" alt=""></div>
+      <div class="carrusel2-thumb" onclick="carrusel2GoTo(5)"><img src="2dc09467-a350-4146-93e5-9ca5e465234b.jpg" alt=""></div>
+      <div class="carrusel2-thumb" onclick="carrusel2GoTo(6)"><img src="08dcc110-2c88-4ce1-9c27-a8cb0ad66ca6.jpg" alt=""></div>
+      <div class="carrusel2-thumb" onclick="carrusel2GoTo(7)"><img src="110e53b7-b2d5-4caa-a52f-4568bea756e0.jpg" alt=""></div>
+      <div class="carrusel2-thumb" onclick="carrusel2GoTo(8)"><img src="c99eb049-9217-4044-9d76-5f0b8efe845b.jpg" alt=""></div>
+      <div class="carrusel2-thumb" onclick="carrusel2GoTo(9)"><img src="cedbbea2-7890-4b0c-b2dc-21c3149e029e.jpg" alt=""></div>
+      <div class="carrusel2-thumb" onclick="carrusel2GoTo(10)"><img src="e1e8d90b-87a2-4987-9fa6-89baea60bec1.jpg" alt=""></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ FOTO JARDÍN — Pantalla extendida ════════ -->
+<section id="foto-jardin">
+  <div class="foto-jardin-wrap">
+    <img
+      src="Jardin de eventos bamboo good photo.jpeg"
+      alt="Jardín de Eventos Bamboo — Jaltenco, Estado de México"
+      class="foto-jardin-img">
+    <div class="foto-jardin-overlay">
+      <div class="foto-jardin-content">
+        <span class="foto-jardin-eyebrow">Nuestro jardín</span>
+        <h2 class="foto-jardin-title">Un espacio que enamora</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ════════ CONTACTO ════════ -->
 <section id="contacto">
   <div class="container">
@@ -1376,9 +1569,9 @@ footer strong{color:rgba(255,255,255,0.85)}
             <div class="contacto-icon ig">📸</div>
             <div><div class="contacto-label">Instagram</div><div class="contacto-valor">@jardinbamboomxoficial</div></div>
           </a>
-          <a href="mailto:contacto@bamboojardin.com" class="contacto-item">
+          <a href="mailto:jardindeeventosbamboomx@gmail.com" class="contacto-item">
             <div class="contacto-icon mail">✉️</div>
-            <div><div class="contacto-label">Correo electrónico</div><div class="contacto-valor">contacto@bamboojardin.com</div></div>
+            <div><div class="contacto-label">Correo electrónico</div><div class="contacto-valor">jardindeeventosbamboomx@gmail.com</div></div>
           </a>
         </div>
         <div class="social-btns">
