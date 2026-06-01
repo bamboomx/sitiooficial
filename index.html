@@ -607,6 +607,7 @@ footer strong{color:rgba(255,255,255,0.85)}
 .foto-banner-content .btn-primary{font-size:0.78rem;padding:0.55rem 1.3rem;border-radius:50px;margin-top:0.8rem;display:inline-flex}
 @media(max-width:600px){.foto-banner-content{padding:1.4rem 1.5rem;max-width:100%}.foto-banner-overlay,.foto-banner.reverse .foto-banner-overlay{background:linear-gradient(to bottom,rgba(19,31,93,0.55) 0%,rgba(0,0,0,0.35) 100%);align-items:flex-end;justify-content:flex-start}.foto-banner.reverse .foto-banner-content{text-align:left}}
 
+.joya1-mobile-text{display:none}
 .joya2-mobile-text{display:none}
 
 /* ═══════════════════════════════════════════════
@@ -891,9 +892,12 @@ footer strong{color:rgba(255,255,255,0.85)}
   /* WA float */
   .wa-float{width:50px;height:50px;bottom:1.2rem;right:1.2rem}
 
-  /* ── BANNER 6: joya1 — texto a la derecha ── */
-  .banner-joya1 .foto-banner-overlay{justify-content:flex-end!important;align-items:flex-end!important;background:linear-gradient(to left,rgba(10,16,40,0.70) 0%,transparent 60%)!important}
-  .banner-joya1 .foto-banner-content{text-align:right!important;padding:0.8rem 1rem!important}
+  /* ── BANNER 6: joya1 — imagen completa + texto debajo (igual que banner 10) ── */
+  .banner-joya1{height:auto!important;min-height:unset!important;display:flex!important;flex-direction:column!important}
+  .banner-joya1 .foto-banner-wrap{position:relative;width:100%}
+  .banner-joya1 .foto-banner-img.joya-contain{object-fit:contain!important;width:100%!important;height:auto!important;max-height:none!important;min-height:unset!important;display:block!important}
+  .banner-joya1 .foto-banner-overlay{display:none!important}
+  .joya1-mobile-text{display:block;background:#131F5D;padding:1rem 1.2rem;text-align:center}
 
   /* ── BANNER 10: joya2 — imagen grande, texto debajo ── */
   .banner-joya2{height:auto!important;min-height:unset!important;display:flex;flex-direction:column}
@@ -907,6 +911,25 @@ footer strong{color:rgba(255,255,255,0.85)}
   /* ── BANNER 13: foto-jardin — texto a la derecha ── */
   .foto-jardin-right-mobile .foto-jardin-overlay{background:linear-gradient(to left,rgba(19,31,93,0.75) 0%,rgba(19,31,93,0.30) 50%,rgba(0,0,0,0.05) 100%)!important;align-items:center!important;justify-content:flex-end!important}
   .foto-jardin-right-mobile .foto-jardin-content{text-align:right!important;max-width:100%!important;padding:1rem 1.2rem!important}
+
+  /* ── CAMBIO 2: Contacto móvil — corregir overflow y alineación ── */
+  #contacto{overflow-x:hidden}
+  .contacto-grid{width:100%;box-sizing:border-box;overflow:hidden}
+  .contacto-text{text-align:center;width:100%;overflow-wrap:break-word;word-break:break-word}
+  .contacto-text .section-title{font-size:clamp(1.3rem,6vw,1.8rem)}
+  .contacto-text .section-subtitle{font-size:0.85rem;max-width:100%;margin-left:auto;margin-right:auto}
+  .contacto-text .divider{margin-left:auto;margin-right:auto}
+  .contacto-items{align-items:stretch;width:100%}
+  .contacto-item{width:100%;box-sizing:border-box;padding:0.75rem 0.9rem;gap:0.7rem}
+  .contacto-label{font-size:0.7rem}
+  .contacto-valor{font-size:0.82rem;word-break:break-all;overflow-wrap:anywhere}
+  .social-btns{align-items:center;width:100%}
+  .btn-social{width:100%;max-width:100%;justify-content:center;font-size:0.85rem;padding:0.65rem 1rem}
+  .mapa-wrap{width:100%;box-sizing:border-box}
+  .mapa-wrap iframe{width:100%!important;height:220px}
+
+  /* ── CAMBIO 3: Hero scroll-hint — subir "Conoce más" ── */
+  .scroll-hint{bottom:3.5rem!important}
 }
 
 /* Tablet mid-range */
@@ -1104,7 +1127,7 @@ footer strong{color:rgba(255,255,255,0.85)}
         <div class="divider"></div>
         <p class="section-subtitle">Somos una empresa dedicada a realizar el evento que siempre soñaste, brindando instalaciones y servicios de la más alta calidad, para hacerte sentir un invitado más de tu propio evento.</p>
         <div class="jardin-stats">
-          <div class="stat-card"><div class="stat-num">600</div><div class="stat-label">Personas de capacidad</div></div>
+          <div class="stat-card"><div class="stat-num">600</div><div class="stat-label">personas</div></div>
           <div class="stat-card"><div class="stat-num">5</div><div class="stat-label">Paquetes disponibles</div></div>
           <div class="stat-card"><div class="stat-num">5h</div><div class="stat-label">Servicio de DJ</div></div>
           <div class="stat-card"><div class="stat-num">+15</div><div class="stat-label">Tipos de eventos</div></div>
@@ -1151,6 +1174,11 @@ footer strong{color:rgba(255,255,255,0.85)}
         <a href="https://wa.me/5215580710460?text=Hola%2C%20quisiera%20una%20cotizaci%C3%B3n" target="_blank" class="btn-primary btn-whatsapp">💬 Cotizar mi evento</a>
       </div>
     </div>
+  </div>
+  <!-- Texto exclusivo móvil — debajo de la imagen -->
+  <div class="joya1-mobile-text">
+    <span class="joya2-eyebrow">Hasta 600 invitados</span>
+    <h2 class="joya2-title">Un jardín que impresiona desde el primer paso</h2>
   </div>
 </section>
 
@@ -1532,6 +1560,30 @@ footer strong{color:rgba(255,255,255,0.85)}
           <img src="Carrusel7.jpeg" alt="Letras gigantes iluminadas en jardín con buganvilias — Bamboo">
           <div class="carrusel-slide-caption">Letras Gigantes con Iluminación</div>
         </div>
+        <div class="carrusel-slide">
+          <img src="9413b295-ff66-420c-8d49-05855333dcac.jpg" alt="Montaje vino tinto con sillas Tiffany blancas — Bamboo">
+          <div class="carrusel-slide-caption">Montaje Vino Tinto con Carpa Drapeada</div>
+        </div>
+        <div class="carrusel-slide">
+          <img src="033d2514-4d18-4623-bf75-4b1235794406.jpg" alt="Montaje dorado con carpa plisada y chandelier — Bamboo">
+          <div class="carrusel-slide-caption">Montaje Dorado — Carpa con Chandelier</div>
+        </div>
+        <div class="carrusel-slide">
+          <img src="FAVORITA-CARPA1.jpg" alt="Vista exterior carpa blanca en jardín — Bamboo">
+          <div class="carrusel-slide-caption">Carpa Estructural — Vista Exterior</div>
+        </div>
+        <div class="carrusel-slide">
+          <img src="FAVORITA-daab3af1-ed5e-418f-9779-dea859b64091.jpg" alt="Montaje verde agua con calentadores — Bamboo">
+          <div class="carrusel-slide-caption">Montaje Verde Agua con Calentadores</div>
+        </div>
+        <div class="carrusel-slide">
+          <img src="f30f9bf3-abd7-4434-9a4f-7ad23f6ae2bf.jpg" alt="Arreglo floral tipo corona bohemio — Bamboo">
+          <div class="carrusel-slide-caption">Arreglo Floral Bohemio para Ceremonias</div>
+        </div>
+        <div class="carrusel-slide">
+          <img src="JARDIN_BAMBOO_MESAS_EJEMPLO.jpg" alt="Montaje temático con vajilla artesanal — Bamboo">
+          <div class="carrusel-slide-caption">Montaje Temático con Vajilla Artesanal</div>
+        </div>
       </div>
     </div>
     <!-- Dots -->
@@ -1543,6 +1595,13 @@ footer strong{color:rgba(255,255,255,0.85)}
       <button class="carrusel-dot" onclick="carruselGoTo(4)"></button>
       <button class="carrusel-dot" onclick="carruselGoTo(5)"></button>
       <button class="carrusel-dot" onclick="carruselGoTo(6)"></button>
+      <button class="carrusel-dot" onclick="carruselGoTo(7)"></button>
+      <button class="carrusel-dot" onclick="carruselGoTo(8)"></button>
+      <button class="carrusel-dot" onclick="carruselGoTo(9)"></button>
+      <button class="carrusel-dot" onclick="carruselGoTo(10)"></button>
+      <button class="carrusel-dot" onclick="carruselGoTo(11)"></button>
+      <button class="carrusel-dot" onclick="carruselGoTo(12)"></button>
+      <button class="carrusel-dot" onclick="carruselGoTo(13)"></button>
     </div>
     <!-- Thumbnails -->
     <div class="carrusel-thumbs" id="carruselThumbs">
@@ -1553,6 +1612,13 @@ footer strong{color:rgba(255,255,255,0.85)}
       <div class="carrusel-thumb" onclick="carruselGoTo(4)"><img src="Carrusel5.jpeg" alt=""></div>
       <div class="carrusel-thumb" onclick="carruselGoTo(5)"><img src="Carrusel6.jpeg" alt=""></div>
       <div class="carrusel-thumb" onclick="carruselGoTo(6)"><img src="Carrusel7.jpeg" alt=""></div>
+      <div class="carrusel-thumb" onclick="carruselGoTo(7)"><img src="9413b295-ff66-420c-8d49-05855333dcac.jpg" alt=""></div>
+      <div class="carrusel-thumb" onclick="carruselGoTo(8)"><img src="033d2514-4d18-4623-bf75-4b1235794406.jpg" alt=""></div>
+      <div class="carrusel-thumb" onclick="carruselGoTo(9)"><img src="FAVORITA-CARPA1.jpg" alt=""></div>
+      <div class="carrusel-thumb" onclick="carruselGoTo(10)"><img src="FAVORITA-daab3af1-ed5e-418f-9779-dea859b64091.jpg" alt=""></div>
+      <div class="carrusel-thumb" onclick="carruselGoTo(11)"><img src="f30f9bf3-abd7-4434-9a4f-7ad23f6ae2bf.jpg" alt=""></div>
+      <div class="carrusel-thumb" onclick="carruselGoTo(12)"><img src="JARDIN_BAMBOO_MESAS_EJEMPLO.jpg" alt=""></div>
+      <div class="carrusel-thumb" onclick="carruselGoTo(13)"><img src="JARDIN_BAMBOO_MESAS_EJEMPLO.jpg" alt=""></div>
     </div>
   </div>
 </section>
@@ -1662,7 +1728,7 @@ footer strong{color:rgba(255,255,255,0.85)}
 // ── Carrusel ─────────────────────────────────────────
 (function(){
   var current = 0;
-  var total = 7;
+  var total = 14;
   var autoTimer;
 
   function updateCarrusel(){
